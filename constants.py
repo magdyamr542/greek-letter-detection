@@ -1,33 +1,32 @@
-
 # the size of the pictures that the models expect
-model_input_size = 224 
+model_input_size = 224
 
 # maps a label to a greek letter
 label_to_char = {
-1: "Θ",
-2: "Α",
-3: "Β",
-4: "Τ",
-5: "Ξ",
-6: "Ε",
-7: "Κ",
-8: "Ω",
-9: "Μ",
-10: "Φ",
-11: "Ρ",
-12: "Π",
-13: "Γ",
-14: "Ν",
-15: "Λ",
-16: "Ζ",
-17: "Η",
-18: "Υ",
-19: "Ψ",
-20: "Χ",
-21: "Δ",
-22: "Ο",
-23: "Ι",
-24: "Ϲ"
+    1: "Θ",
+    2: "Α",
+    3: "Β",
+    4: "Τ",
+    5: "Ξ",
+    6: "Ε",
+    7: "Κ",
+    8: "Ω",
+    9: "Μ",
+    10: "Φ",
+    11: "Ρ",
+    12: "Π",
+    13: "Γ",
+    14: "Ν",
+    15: "Λ",
+    16: "Ζ",
+    17: "Η",
+    18: "Υ",
+    19: "Ψ",
+    20: "Χ",
+    21: "Δ",
+    22: "Ο",
+    23: "Ι",
+    24: "Ϲ",
 }
 
 
@@ -60,13 +59,38 @@ category_to_label = {
 }
 
 # the categories are sorted in this way because the used dataloader sorts them this was as well
-categories = [100, 107, 111, 119, 120, 14, 144, 150, 161, 169, 17, 177, 186, 201, 212, 225, 23, 33, 45, 59, 7, 77, 8, 9]
-    
+categories = [
+    100,
+    107,
+    111,
+    119,
+    120,
+    14,
+    144,
+    150,
+    161,
+    169,
+    17,
+    177,
+    186,
+    201,
+    212,
+    225,
+    23,
+    33,
+    45,
+    59,
+    7,
+    77,
+    8,
+    9,
+]
 
-def get_data_by_category(category : int):
+
+def get_data_by_category(category: int):
     """
-        given a category. it returns the category,label,char tuple
+    given a category. it returns the category,label,char tuple
     """
     label = category_to_label[category]
     char = label_to_char[label]
-    return category , label , char
+    return category, label, char

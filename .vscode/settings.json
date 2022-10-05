@@ -9,5 +9,8 @@
     "venv": true
   },
   "editor.tabSize": 4,
-  "editor.detectIndentation": true
+  "editor.detectIndentation": true,
+  "editor.defaultFormatter": "ms-python.python",
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "/home/amr/Documents/greek_letter_detection/venv/bin/black"
 }

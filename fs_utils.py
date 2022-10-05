@@ -1,6 +1,7 @@
 from pathlib import Path
 import os
 
+
 def delete_dir_content(path: str, log=False):
     try:
         if len(os.listdir(path)) > 0:
