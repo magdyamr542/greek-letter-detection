@@ -92,9 +92,9 @@ def draw_boxes(
         end = (int(xmax.item()), int(ymax.item()))
         cv2_image = cv2.rectangle(cv2_image, start, end, (255, 0, 0), 1)
 
-        text = f"{predicted_letter},{predicted_letter_from_detection}"
-        cv2_image = put_asci_text(text, cv2_image, (start[0] + 10, start[1] - 10))
-    print("Overall equal is ", equal, " from total", len(boxes))
+        cv2_image = put_asci_text(
+            predicted_letter_from_detection, cv2_image, (start[0] + 10, start[1] - 10)
+        )
 
     return cv2_image
 
@@ -135,12 +135,9 @@ def main():
     model, optimizer, start_epoch = load_saved_model(model_name, model, optimizer)
     model.eval()
 
-    delete_dir_content("./data/cropped", log=True)
-
     path = args.file
 
     size = (900, 900)
-    # transform the img
     image = Image.open(path).convert("RGB").resize(size)
     t = get_transform(False)
     image = t(image)
