@@ -173,7 +173,7 @@ def create_data():
 if __name__ == "__main__":
     os.chdir(os.getcwd())
     data_dir = "data/training"
-    num_classes = 24
+    num_classes = 25
     batch_size = 40
     num_epochs = 30
 

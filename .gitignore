@@ -9,3 +9,6 @@ image_list
 __pycache__
 venv
 dejavu-fonts-ttf-2.37
+yolo/images
+yolo/training
+yolo/labels

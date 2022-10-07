@@ -31,3 +31,23 @@
 
 1. `python3 test_detection.py -f data/testing/images/homer2/txt8/P_Laur_IV_128r.jpg`
 1. `python3 test_classification.py -f data/cropped/30.png`
+
+### Train YOLO
+1. Clone the yolo project and install the requirements
+   1. `git clone https://github.com/ultralytics/yolov5  # clone`
+   2. `cd yolov5`
+   3. create a **virtualenv** to install the dependencies
+   4. `pip install -r requirements.txt`
+1. Create a directory next to the `yolov5` directory and call it `training`
+   1. cd `..`
+   1. `mkdir training`
+   1. `cd training`
+   1. the directory should contain `images` directory ,`labels` directory and `dataset.yaml` file
+	1. The `images` directory contains the training images 
+	1. The `labels` directory contains a `[image name].txt` file for each image describing the bounding boxes for the image
+	1. The `labels` directory can be created using the `./coco2yolov5.ipynb` file
+	1. The `dataset.yaml` file can be found in `./yolo/dataset.yaml`
+1. Train the yolo model
+	1. `cd yolov5`
+	1. copy the `./yolo/dataset.yaml` to the `data` directory inside of yolo
+	1. `python3 train.py --img 640 --batch 16 --epochs 3 --data dataset.yaml --weights yolov5s.pt`
