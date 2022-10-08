@@ -33,7 +33,7 @@ model_name = "model_detection.bak.pt"
 
 
 def load_saved_model(checkpoint_fpath, model, optimizer):
-    checkpoint = torch.load(checkpoint_fpath)
+    checkpoint = torch.load(checkpoint_fpath , map_location=torch.device('cpu'))
     model.load_state_dict(checkpoint["model_state_dict"])
     optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
     return model, optimizer, checkpoint["epoch"]
