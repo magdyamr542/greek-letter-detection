@@ -25,10 +25,13 @@ model_name = "model_detection.pt"
 
 
 def update_model_with_saved_checkpoint(checkpoint_fpath, model, optimizer):
-    checkpoint = torch.load(checkpoint_fpath)
-    model.load_state_dict(checkpoint["model_state_dict"])
-    optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
-    return model, optimizer, checkpoint["epoch"]
+    try:
+        checkpoint = torch.load(checkpoint_fpath)
+        model.load_state_dict(checkpoint["model_state_dict"])
+        optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
+        return model, optimizer, checkpoint["epoch"]
+    except:
+        return None
 
 
 class Dataset(torch.utils.data.Dataset):
@@ -147,9 +150,13 @@ def main():
     lr_scheduler1 = torch.optim.lr_scheduler.StepLR(optimizer, step_size=1, gamma=2)
     lr_scheduler2 = torch.optim.lr_scheduler.StepLR(optimizer, step_size=3, gamma=0.85)
 
-    model, optimizer, start_epoch = update_model_with_saved_checkpoint(
+    result = update_model_with_saved_checkpoint(
         model_name, model, optimizer
     )
+    start_epoch = -1
+
+    if result:
+        model, optimizer, start_epoch = result
 
     num_epochs = 50
     for epoch in range(start_epoch + 1, num_epochs):
@@ -171,4 +178,6 @@ def main():
     print("That's it!")
 
 
-main()
+if __name__ == "__main__":
+    main()
+
