@@ -19,6 +19,7 @@ import frcnn.transforms as T
 from frcnn.engine import train_one_epoch, evaluate
 import frcnn.utils as utils
 from constants import category_to_label
+from torchvision.models.detection import FasterRCNN_ResNet50_FPN_Weights
 
 
 model_name = "model_detection.pt"
@@ -124,7 +125,7 @@ def get_transform(train):
 def main():
 
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-    num_classes = len(category_to_label)
+    num_classes = len(category_to_label) + 1
     dataset = Dataset(transforms=get_transform(True), isTrain=True)
     dataset_test = Dataset(transforms=get_transform(False), isTrain=False)
 
@@ -140,7 +141,9 @@ def main():
         collate_fn=utils.collate_fn,
     )
 
-    model = torchvision.models.detection.fasterrcnn_resnet50_fpn(pretrained=True)
+    model = torchvision.models.detection.fasterrcnn_resnet50_fpn(
+        weights=FasterRCNN_ResNet50_FPN_Weights.DEFAULT
+    )
     in_features = model.roi_heads.box_predictor.cls_score.in_features
     model.roi_heads.box_predictor = FastRCNNPredictor(in_features, num_classes)
     model.to(device)
@@ -150,9 +153,7 @@ def main():
     lr_scheduler1 = torch.optim.lr_scheduler.StepLR(optimizer, step_size=1, gamma=2)
     lr_scheduler2 = torch.optim.lr_scheduler.StepLR(optimizer, step_size=3, gamma=0.85)
 
-    result = update_model_with_saved_checkpoint(
-        model_name, model, optimizer
-    )
+    result = update_model_with_saved_checkpoint(model_name, model, optimizer)
     start_epoch = -1
 
     if result:
@@ -180,4 +181,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
