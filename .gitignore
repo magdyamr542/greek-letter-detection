@@ -4,6 +4,7 @@
 *.JPG
 *.pt
 training
+!data/training/coco.json
 testing
 image_list
 __pycache__
