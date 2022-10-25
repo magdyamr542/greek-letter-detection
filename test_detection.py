@@ -11,7 +11,6 @@ import torch
 from PIL import Image, ImageFile, ImageDraw, ImageFont
 
 from cv2_utils import read_image_cv2, resize_image_cv2, save_image_cv2, show_image_cv2
-from fs_utils import delete_dir_content
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 import cv2
@@ -23,17 +22,16 @@ from torchvision.models.detection.faster_rcnn import (
 )
 from torchvision.transforms import transforms as T
 from argparse import ArgumentParser
-from pathlib import Path
 from constants import label_to_char
 from constants import model_input_size
 import numpy as np
 
 
-model_name = "model_detection.bak.pt"
+model_name = "model_detection.pt"
 
 
 def load_saved_model(checkpoint_fpath, model, optimizer):
-    checkpoint = torch.load(checkpoint_fpath , map_location=torch.device('cpu'))
+    checkpoint = torch.load(checkpoint_fpath, map_location=torch.device("cpu"))
     model.load_state_dict(checkpoint["model_state_dict"])
     optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
     return model, optimizer, checkpoint["epoch"]

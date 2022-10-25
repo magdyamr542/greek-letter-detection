@@ -12,5 +12,5 @@
   "editor.detectIndentation": true,
   "editor.defaultFormatter": "ms-python.python",
   "python.formatting.provider": "black",
-  "python.formatting.blackPath": "/home/amr/Documents/greek_letter_detection/venv/bin/black"
+  "python.formatting.blackPath": "./venv/bin/black"
 }
