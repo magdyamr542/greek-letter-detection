@@ -25,11 +25,25 @@ from PIL import ImageFile
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 from constants import model_input_size
 
+check_point_name = "classification_model_check_point.pt"
 
-def train_model(model, dataloaders, criterion, optimizer, scheduler, num_epochs=25):
+
+def update_model_with_saved_checkpoint(checkpoint_fpath, model, optimizer):
+    try:
+        checkpoint = torch.load(checkpoint_fpath, model, optimizer)
+        model.load_state_dict(checkpoint["model_state_dict"])
+        optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
+        return model, optimizer, checkpoint["epoch"]
+    except:
+        return None
+
+
+def train_model(
+    model, dataloaders, criterion, optimizer, scheduler, num_epochs=25, start_epoch=-1
+):
     since = time.time()
 
-    for epoch in range(num_epochs):
+    for epoch in range(start_epoch + 1, num_epochs):
         print("Epoch {}/{}".format(epoch, num_epochs - 1))
         print("-" * 10)
 
@@ -73,8 +87,14 @@ def train_model(model, dataloaders, criterion, optimizer, scheduler, num_epochs=
                 scheduler.step()
             print("{} Loss: {:.4f} Acc: {:.4f}".format(phase, epoch_loss, epoch_acc))
 
-        torch.save(model, "classification_model.pt")
-        print()
+        torch.save(
+            {
+                "epoch": epoch,
+                "model_state_dict": model.state_dict(),
+                "optimizer_state_dict": optimizer.state_dict(),
+            },
+            check_point_name,
+        )
 
     time_elapsed = time.time() - since
     print(
@@ -235,11 +255,23 @@ if __name__ == "__main__":
         model.parameters(), lr=0.01, weight_decay=0.0004, momentum=0.8
     )
 
+    result = update_model_with_saved_checkpoint(check_point_name, model, optimizer)
+    start_epoch = -1
+
+    if result:
+        model, optimizer, start_epoch = result
+
     # Setup the loss function
     criterion = nn.CrossEntropyLoss()
     scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=1, gamma=0.85)
 
     # Train and evaluate
     model = train_model(
-        model, dataloaders_dict, criterion, optimizer, scheduler, num_epochs=num_epochs
+        model,
+        dataloaders_dict,
+        criterion,
+        optimizer,
+        scheduler,
+        num_epochs=num_epochs,
+        start_epoch=start_epoch,
     )
