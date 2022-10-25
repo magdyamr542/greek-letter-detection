@@ -21,7 +21,7 @@ from constants import categories
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 num_classes = 24
 model = None
-model_path = "clas_model.pt"
+model_path = "./data/training/classification_model.pt"
 
 
 def load_model(model_path: str):
