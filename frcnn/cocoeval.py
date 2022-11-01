@@ -134,7 +134,7 @@ class COCOeval:
         :return: None
         """
         tic = time.time()
-        self.logger.info("Running per image evaluation...")
+        self.logger.debug("Running per image evaluation...")
         p = self.params
         # add backward compatibility if useSegm is specified in params
         if not p.useSegm is None:
@@ -144,7 +144,7 @@ class COCOeval:
                     p.iouType
                 )
             )
-        self.logger.info("Evaluate annotation type *{}*".format(p.iouType))
+        self.logger.debug("Evaluate annotation type *{}*".format(p.iouType))
         p.imgIds = list(np.unique(p.imgIds))
         if p.useCats:
             p.catIds = list(np.unique(p.catIds))
@@ -175,7 +175,7 @@ class COCOeval:
         ]
         self._paramsEval = copy.deepcopy(self.params)
         toc = time.time()
-        self.logger.info("DONE (t={:0.2f}s).".format(toc - tic))
+        self.logger.debug("DONE (t={:0.2f}s).".format(toc - tic))
 
     def computeIoU(self, imgId, catId):
         p = self.params
