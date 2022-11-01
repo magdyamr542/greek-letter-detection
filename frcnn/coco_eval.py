@@ -1,6 +1,7 @@
 import copy
 import io
 from contextlib import redirect_stdout
+from logging import Logger
 
 import numpy as np
 import pycocotools.mask as mask_util
@@ -11,7 +12,8 @@ from frcnn.cocoeval import COCOeval
 
 
 class CocoEvaluator:
-    def __init__(self, coco_gt, iou_types):
+    def __init__(self, logger: Logger, coco_gt, iou_types):
+        self.logger = logger
         if not isinstance(iou_types, (list, tuple)):
             raise TypeError(
                 f"This constructor expects iou_types of type list or tuple, instead  got {type(iou_types)}"
@@ -22,7 +24,7 @@ class CocoEvaluator:
         self.iou_types = iou_types
         self.coco_eval = {}
         for iou_type in iou_types:
-            self.coco_eval[iou_type] = COCOeval(coco_gt, iouType=iou_type)
+            self.coco_eval[iou_type] = COCOeval(logger, coco_gt, iouType=iou_type)
 
         self.img_ids = []
         self.eval_imgs = {k: [] for k in iou_types}

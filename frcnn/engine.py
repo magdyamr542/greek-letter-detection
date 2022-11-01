@@ -81,7 +81,7 @@ def evaluate(model, data_loader, device, logger: Logger):
 
     coco = get_coco_api_from_dataset(data_loader.dataset)
     iou_types = _get_iou_types(model)
-    coco_evaluator = CocoEvaluator(coco, iou_types)
+    coco_evaluator = CocoEvaluator(logger, coco, iou_types)
 
     for images, targets in metric_logger.log_every(data_loader, 100, header):
         images = list(img.to(device) for img in images)
