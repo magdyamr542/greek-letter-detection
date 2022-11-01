@@ -3,6 +3,7 @@ import logging
 
 def getLogger(file_path: str):
     # create logger
+    logging.basicConfig(filemode="w")
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
 
