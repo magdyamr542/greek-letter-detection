@@ -135,10 +135,10 @@ def main():
     args = parser.parse_args()
     num_epochs = int(args.epochs)
     logger = getLogger(f"logs/detection/{num_epochs}_epochs.txt")
-    logger.debug(f"num of epochs given {num_epochs}")
+    logger.info(f"num of epochs given {num_epochs}")
 
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-    logger.debug(f"using device {str(device)}")
+    logger.info(f"using device {str(device)}")
 
     num_classes = len(category_to_label) + 1
     dataset = Dataset(transforms=get_transform(True), isTrain=True)
@@ -172,9 +172,9 @@ def main():
     start_epoch = -1
 
     if result:
-        logger.debug("found a saved model. will continue from the saved checkpoint")
+        logger.info("found a saved model. will continue from the saved checkpoint")
         model, optimizer, start_epoch = result
-        logger.debug(f"start_epoch of saved checkpoint {start_epoch}")
+        logger.info(f"start_epoch of saved checkpoint {start_epoch}")
         if num_epochs < start_epoch:
             logger.error(
                 f"saved start_epoch={start_epoch} is bigger than given number of epochs={num_epochs}"
@@ -196,7 +196,7 @@ def main():
         elif epoch > 40 and epoch < 48:
             lr_scheduler2.step()
         evaluate(model, data_loader_test, device=device, logger=logger)
-        logger.debug(f"saving check point for {epoch}")
+        logger.info(f"saving check point for {epoch}")
         torch.save(
             {
                 "epoch": epoch,
@@ -206,7 +206,7 @@ def main():
             model_name,
         )
 
-    logger.debug("That's it!")
+    logger.info("That's it!")
 
 
 if __name__ == "__main__":

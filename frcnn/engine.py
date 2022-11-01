@@ -39,8 +39,8 @@ def train_one_epoch(
         loss_value = losses_reduced.item()
 
         if not math.isfinite(loss_value):
-            logger.debug(f"Loss is {loss_value}, stopping training")
-            logger.debug(loss_dict_reduced)
+            logger.info(f"Loss is {loss_value}, stopping training")
+            logger.info(loss_dict_reduced)
             sys.exit(1)
 
         optimizer.zero_grad()
@@ -76,7 +76,7 @@ def evaluate(model, data_loader, device, logger: Logger):
     torch.set_num_threads(1)
     cpu_device = torch.device("cpu")
     model.eval()
-    metric_logger = utils.MetricLogger(delimiter="  ")
+    metric_logger = utils.MetricLogger(logger=logger, delimiter="  ")
     header = "Test:"
 
     coco = get_coco_api_from_dataset(data_loader.dataset)
@@ -105,7 +105,7 @@ def evaluate(model, data_loader, device, logger: Logger):
 
     # gather the stats from all processes
     metric_logger.synchronize_between_processes()
-    logger.debug(f"Averaged stats: {metric_logger}")
+    logger.info(f"Averaged stats: {metric_logger}")
     coco_evaluator.synchronize_between_processes()
 
     # accumulate predictions from all images

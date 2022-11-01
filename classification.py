@@ -53,17 +53,17 @@ def train_model(
     since = time.time()
 
     for epoch in range(start_epoch + 1, num_epochs):
-        logger.debug("Epoch {}/{}".format(epoch, num_epochs - 1))
-        logger.debug("-" * 10)
+        logger.info("Epoch {}/{}".format(epoch, num_epochs - 1))
+        logger.info("-" * 10)
 
         # Each epoch has a training and validation phase
         for phase in ["train", "val"]:
             if phase == "train":
                 model.train()  # Set model to training mode
-                logger.debug("training...")
+                logger.info("training...")
             else:
                 model.eval()  # Set model to evaluate mode
-                logger.debug("evaluating...")
+                logger.info("evaluating...")
 
             running_loss = 0.0
             running_corrects = 0
@@ -94,11 +94,11 @@ def train_model(
             epoch_acc = running_corrects.double() / len(dataloaders[phase].dataset)
             if phase == "val" and scheduler is not None:
                 scheduler.step()
-            logger.debug(
+            logger.info(
                 "{} Loss: {:.4f} Acc: {:.4f}".format(phase, epoch_loss, epoch_acc)
             )
 
-        logger.debug(f"saving checkpoint for epoch {epoch}")
+        logger.info(f"saving checkpoint for epoch {epoch}")
         torch.save(
             {
                 "epoch": epoch,
@@ -109,7 +109,7 @@ def train_model(
         )
 
     time_elapsed = time.time() - since
-    logger.debug(
+    logger.info(
         "Training complete in {:.0f}m {:.0f}s".format(
             time_elapsed // 60, time_elapsed % 60
         )
@@ -150,7 +150,7 @@ def create_data():
     try:
         f = open(glob.glob("*.json")[0])
     except:
-        logger.debug("No json file was found!")
+        logger.info("No json file was found!")
     data = json.load(f)
     f.close()
     l = []
@@ -175,8 +175,8 @@ def create_data():
         try:
             im = Image.open(fname).convert("RGB")
         except:
-            logger.debug("It does not exist:")
-            logger.debug(fname)
+            logger.info("It does not exist:")
+            logger.info(fname)
             continue
         if image_id in val:
             split = "val"
@@ -216,7 +216,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     num_epochs = int(args.epochs)
     logger = getLogger(f"logs/classification/{num_epochs}_epochs.txt")
-    logger.debug(f"num of epochs given {num_epochs}")
+    logger.info(f"num of epochs given {num_epochs}")
 
     if not crops_folder_exist(data_dir):
         create_data()
@@ -267,7 +267,7 @@ if __name__ == "__main__":
 
     # Detect if we have a GPU available
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    logger.debug(f"using device {str(device)}")
+    logger.info(f"using device {str(device)}")
 
     # Send the model to GPU
     model = model.to(device)
@@ -281,9 +281,9 @@ if __name__ == "__main__":
     start_epoch = -1
 
     if result:
-        logger.debug("found a saved model. will continue from the saved checkpoint")
+        logger.info("found a saved model. will continue from the saved checkpoint")
         model, optimizer, start_epoch = result
-        logger.debug(f"start_epoch of saved checkpoint {start_epoch}")
+        logger.info(f"start_epoch of saved checkpoint {start_epoch}")
         if num_epochs < start_epoch:
             logger.error(
                 f"saved start_epoch={start_epoch} is bigger than given number of epochs={num_epochs}"
