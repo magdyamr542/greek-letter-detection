@@ -210,10 +210,13 @@ if __name__ == "__main__":
     num_epochs = 30
 
     parser = ArgumentParser()
-    parser.add_argument("-f", "--file", required=True, help="the log file")
+    parser.add_argument(
+        "-e", "--epochs", required=False, help="the num of epochs file", default=50
+    )
     args = parser.parse_args()
-    file = args.file
-    logger = getLogger(file)
+    num_epochs = int(args.epochs)
+    logger = getLogger(f"logs/classification/{num_epochs}_epochs.txt")
+    logger.debug(f"num of epochs given {num_epochs}")
 
     if not crops_folder_exist(data_dir):
         create_data()
@@ -281,6 +284,11 @@ if __name__ == "__main__":
         logger.debug("found a saved model. will continue from the saved checkpoint")
         model, optimizer, start_epoch = result
         logger.debug(f"start_epoch of saved checkpoint {start_epoch}")
+        if num_epochs < start_epoch:
+            logger.error(
+                f"saved start_epoch={start_epoch} is bigger than given number of epochs={num_epochs}"
+            )
+            exit(1)
 
     # Setup the loss function
     criterion = nn.CrossEntropyLoss()

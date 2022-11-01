@@ -5,13 +5,13 @@ https://pytorch.org/tutorials/intermediate/torchvision_tutorial.html
 A Resnet18 was trained during 60 epochs.
 The mean average precision at 0.5 IOU was 0.16
 """
+from argparse import ArgumentParser
 import os
 import torch
 from PIL import Image
 from sklearn.model_selection import train_test_split
 import json
 from PIL import ImageFile
-from argparse import ArgumentParser
 
 from logger_utils import getLogger
 
@@ -127,11 +127,15 @@ def get_transform(train):
 
 def main():
 
+    num_epochs = 50
     parser = ArgumentParser()
-    parser.add_argument("-f", "--file", required=True, help="the log file")
+    parser.add_argument(
+        "-e", "--epochs", required=False, help="the num of epochs file", default=50
+    )
     args = parser.parse_args()
-    file = args.file
-    logger = getLogger(file)
+    num_epochs = int(args.epochs)
+    logger = getLogger(f"logs/detection/{num_epochs}_epochs.txt")
+    logger.debug(f"num of epochs given {num_epochs}")
 
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
     logger.debug(f"using device {str(device)}")
@@ -171,8 +175,12 @@ def main():
         logger.debug("found a saved model. will continue from the saved checkpoint")
         model, optimizer, start_epoch = result
         logger.debug(f"start_epoch of saved checkpoint {start_epoch}")
+        if num_epochs < start_epoch:
+            logger.error(
+                f"saved start_epoch={start_epoch} is bigger than given number of epochs={num_epochs}"
+            )
+            exit(1)
 
-    num_epochs = 50
     for epoch in range(start_epoch + 1, num_epochs):
         train_one_epoch(
             model,
