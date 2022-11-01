@@ -1,5 +1,6 @@
 __author__ = "tsungyi"
 
+from logging import Logger
 import numpy as np
 import datetime
 import time
@@ -58,15 +59,16 @@ class COCOeval:
     # Data, paper, and tutorials available at:  http://mscoco.org/
     # Code written by Piotr Dollar and Tsung-Yi Lin, 2015.
     # Licensed under the Simplified BSD License [see coco/license.txt]
-    def __init__(self, cocoGt=None, cocoDt=None, iouType="segm"):
+    def __init__(self, logger: Logger, cocoGt=None, cocoDt=None, iouType="segm"):
         """
         Initialize CocoEval using coco APIs for gt and dt
         :param cocoGt: coco object with ground truth annotations
         :param cocoDt: coco object with detection results
         :return: None
         """
+        self.logger = logger
         if not iouType:
-            print("iouType not specified. use default iouType segm")
+            self.logger.info("iouType not specified. use default iouType segm")
         self.cocoGt = cocoGt  # ground truth COCO API
         self.cocoDt = cocoDt  # detections COCO API
         self.evalImgs = defaultdict(
@@ -132,17 +134,17 @@ class COCOeval:
         :return: None
         """
         tic = time.time()
-        print("Running per image evaluation...")
+        self.logger.info("Running per image evaluation...")
         p = self.params
         # add backward compatibility if useSegm is specified in params
         if not p.useSegm is None:
             p.iouType = "segm" if p.useSegm == 1 else "bbox"
-            print(
+            self.logger.info(
                 "useSegm (deprecated) is not None. Running {} evaluation".format(
                     p.iouType
                 )
             )
-        print("Evaluate annotation type *{}*".format(p.iouType))
+        self.logger.info("Evaluate annotation type *{}*".format(p.iouType))
         p.imgIds = list(np.unique(p.imgIds))
         if p.useCats:
             p.catIds = list(np.unique(p.catIds))
@@ -173,7 +175,7 @@ class COCOeval:
         ]
         self._paramsEval = copy.deepcopy(self.params)
         toc = time.time()
-        print("DONE (t={:0.2f}s).".format(toc - tic))
+        self.logger.info("DONE (t={:0.2f}s).".format(toc - tic))
 
     def computeIoU(self, imgId, catId):
         p = self.params
@@ -344,10 +346,10 @@ class COCOeval:
         :param p: input params for evaluation
         :return: None
         """
-        print("Accumulating evaluation results...")
+        self.logger.info("Accumulating evaluation results...")
         tic = time.time()
         if not self.evalImgs:
-            print("Please run evaluate() first")
+            self.logger.info("Please run evaluate() first")
         # allows input customized parameters
         if p is None:
             p = self.params
@@ -452,7 +454,7 @@ class COCOeval:
             "scores": scores,
         }
         toc = time.time()
-        print("DONE (t={:0.2f}s).".format(toc - tic))
+        self.logger.info("DONE (t={:0.2f}s).".format(toc - tic))
 
     def summarize(self):
         """
@@ -492,7 +494,9 @@ class COCOeval:
                 mean_s = -1
             else:
                 mean_s = np.mean(s[s > -1])
-            print(iStr.format(titleStr, typeStr, iouStr, areaRng, maxDets, mean_s))
+            self.logger.info(
+                iStr.format(titleStr, typeStr, iouStr, areaRng, maxDets, mean_s)
+            )
             return mean_s
 
         def _summarizeDets():
