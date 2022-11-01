@@ -11,6 +11,9 @@ from PIL import Image
 from sklearn.model_selection import train_test_split
 import json
 from PIL import ImageFile
+from argparse import ArgumentParser
+
+from logger_utils import getLogger
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 import torchvision
@@ -124,7 +127,15 @@ def get_transform(train):
 
 def main():
 
+    parser = ArgumentParser()
+    parser.add_argument("-f", "--file", required=True, help="the log file")
+    args = parser.parse_args()
+    file = args.file
+    logger = getLogger(file)
+
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+    logger.debug(f"using device {str(device)}")
+
     num_classes = len(category_to_label) + 1
     dataset = Dataset(transforms=get_transform(True), isTrain=True)
     dataset_test = Dataset(transforms=get_transform(False), isTrain=False)
@@ -157,16 +168,27 @@ def main():
     start_epoch = -1
 
     if result:
+        logger.debug("found a saved model. will continue from the saved checkpoint")
         model, optimizer, start_epoch = result
+        logger.debug(f"start_epoch of saved checkpoint {start_epoch}")
 
     num_epochs = 50
     for epoch in range(start_epoch + 1, num_epochs):
-        train_one_epoch(model, optimizer, data_loader, device, epoch, print_freq=10)
+        train_one_epoch(
+            model,
+            optimizer,
+            data_loader,
+            device,
+            epoch,
+            print_freq=10,
+            logger=logger,
+        )
         if epoch < 4:
             lr_scheduler1.step()
         elif epoch > 40 and epoch < 48:
             lr_scheduler2.step()
-        evaluate(model, data_loader_test, device=device)
+        evaluate(model, data_loader_test, device=device, logger=logger)
+        logger.debug(f"saving check point for {epoch}")
         torch.save(
             {
                 "epoch": epoch,
@@ -176,7 +198,7 @@ def main():
             model_name,
         )
 
-    print("That's it!")
+    logger.debug("That's it!")
 
 
 if __name__ == "__main__":

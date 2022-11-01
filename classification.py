@@ -11,6 +11,7 @@ Validation: Loss 0.6916 and Accuracy 0.81
 
 from __future__ import print_function
 from __future__ import division
+from argparse import ArgumentParser
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -20,6 +21,7 @@ from PIL import Image
 import json
 import os, glob, pickle
 from sklearn.model_selection import train_test_split
+from logger_utils import getLogger
 from PIL import ImageFile
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
@@ -39,22 +41,29 @@ def update_model_with_saved_checkpoint(checkpoint_fpath, model, optimizer):
 
 
 def train_model(
-    model, dataloaders, criterion, optimizer, scheduler, num_epochs=25, start_epoch=-1
+    logger,
+    model,
+    dataloaders,
+    criterion,
+    optimizer,
+    scheduler,
+    num_epochs=25,
+    start_epoch=-1,
 ):
     since = time.time()
 
     for epoch in range(start_epoch + 1, num_epochs):
-        print("Epoch {}/{}".format(epoch, num_epochs - 1))
-        print("-" * 10)
+        logger.debug("Epoch {}/{}".format(epoch, num_epochs - 1))
+        logger.debug("-" * 10)
 
         # Each epoch has a training and validation phase
         for phase in ["train", "val"]:
             if phase == "train":
                 model.train()  # Set model to training mode
-                print("training...")
+                logger.debug("training...")
             else:
                 model.eval()  # Set model to evaluate mode
-                print("evaluating")
+                logger.debug("evaluating...")
 
             running_loss = 0.0
             running_corrects = 0
@@ -85,8 +94,11 @@ def train_model(
             epoch_acc = running_corrects.double() / len(dataloaders[phase].dataset)
             if phase == "val" and scheduler is not None:
                 scheduler.step()
-            print("{} Loss: {:.4f} Acc: {:.4f}".format(phase, epoch_loss, epoch_acc))
+            logger.debug(
+                "{} Loss: {:.4f} Acc: {:.4f}".format(phase, epoch_loss, epoch_acc)
+            )
 
+        logger.debug(f"saving checkpoint for epoch {epoch}")
         torch.save(
             {
                 "epoch": epoch,
@@ -97,7 +109,7 @@ def train_model(
         )
 
     time_elapsed = time.time() - since
-    print(
+    logger.debug(
         "Training complete in {:.0f}m {:.0f}s".format(
             time_elapsed // 60, time_elapsed % 60
         )
@@ -138,7 +150,7 @@ def create_data():
     try:
         f = open(glob.glob("*.json")[0])
     except:
-        print("No json file was found!")
+        logger.debug("No json file was found!")
     data = json.load(f)
     f.close()
     l = []
@@ -163,8 +175,8 @@ def create_data():
         try:
             im = Image.open(fname).convert("RGB")
         except:
-            print("It does not exist:")
-            print(fname)
+            logger.debug("It does not exist:")
+            logger.debug(fname)
             continue
         if image_id in val:
             split = "val"
@@ -196,6 +208,12 @@ if __name__ == "__main__":
     num_classes = 25
     batch_size = 40
     num_epochs = 30
+
+    parser = ArgumentParser()
+    parser.add_argument("-f", "--file", required=True, help="the log file")
+    args = parser.parse_args()
+    file = args.file
+    logger = getLogger(file)
 
     if not crops_folder_exist(data_dir):
         create_data()
@@ -246,6 +264,7 @@ if __name__ == "__main__":
 
     # Detect if we have a GPU available
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    logger.debug(f"using device {str(device)}")
 
     # Send the model to GPU
     model = model.to(device)
@@ -259,7 +278,9 @@ if __name__ == "__main__":
     start_epoch = -1
 
     if result:
+        logger.debug("found a saved model. will continue from the saved checkpoint")
         model, optimizer, start_epoch = result
+        logger.debug(f"start_epoch of saved checkpoint {start_epoch}")
 
     # Setup the loss function
     criterion = nn.CrossEntropyLoss()
@@ -267,6 +288,7 @@ if __name__ == "__main__":
 
     # Train and evaluate
     model = train_model(
+        logger,
         model,
         dataloaders_dict,
         criterion,
