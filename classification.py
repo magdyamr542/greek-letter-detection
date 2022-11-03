@@ -12,6 +12,7 @@ Validation: Loss 0.6916 and Accuracy 0.81
 from __future__ import print_function
 from __future__ import division
 from argparse import ArgumentParser
+from logging import Logger
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -41,7 +42,7 @@ def update_model_with_saved_checkpoint(checkpoint_fpath, model, optimizer):
 
 
 def train_model(
-    logger,
+    logger: Logger,
     model,
     dataloaders,
     criterion,
@@ -52,6 +53,8 @@ def train_model(
 ):
     since = time.time()
 
+    logger.info(f"Start training at {since}")
+
     for epoch in range(start_epoch + 1, num_epochs):
         logger.info("Epoch {}/{}".format(epoch, num_epochs - 1))
         logger.info("-" * 10)
@@ -60,10 +63,10 @@ def train_model(
         for phase in ["train", "val"]:
             if phase == "train":
                 model.train()  # Set model to training mode
-                logger.info("training...")
+                logger.info("Training...")
             else:
                 model.eval()  # Set model to evaluate mode
-                logger.info("evaluating...")
+                logger.info("Evaluating...")
 
             running_loss = 0.0
             running_corrects = 0
@@ -98,7 +101,7 @@ def train_model(
                 "{} Loss: {:.4f} Acc: {:.4f}".format(phase, epoch_loss, epoch_acc)
             )
 
-        logger.info(f"saving checkpoint for epoch {epoch}")
+        logger.info(f"Saving checkpoint for epoch {epoch}")
         torch.save(
             {
                 "epoch": epoch,
@@ -175,8 +178,7 @@ def create_data():
         try:
             im = Image.open(fname).convert("RGB")
         except:
-            logger.info("It does not exist:")
-            logger.info(fname)
+            logger.info(f"File not found {fname}")
             continue
         if image_id in val:
             split = "val"
@@ -215,10 +217,12 @@ if __name__ == "__main__":
     args = parser.parse_args()
     num_epochs = int(args.epochs)
     logger = getLogger(f"logs/classification/{num_epochs}_epochs.txt")
-    logger.info(f"num of epochs given {num_epochs}")
+    logger.info(f"Num of epochs given {num_epochs}")
 
     if not crops_folder_exist(data_dir):
+        logger.info(f"No crops found. will create them ...")
         create_data()
+        logger.info(f"Crops were created")
 
     # Augmentations and data transforms
     data_transforms = {
@@ -266,7 +270,7 @@ if __name__ == "__main__":
 
     # Detect if we have a GPU available
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    logger.info(f"using device {str(device)}")
+    logger.info(f"Using device {str(device)}")
 
     # Send the model to GPU
     model = model.to(device)
@@ -280,12 +284,12 @@ if __name__ == "__main__":
     start_epoch = -1
 
     if result:
-        logger.info("found a saved model. will continue from the saved checkpoint")
+        logger.info("Found a saved model. will continue from the saved checkpoint")
         model, optimizer, start_epoch = result
-        logger.info(f"start_epoch of saved checkpoint {start_epoch}")
+        logger.info(f"Start_epoch of saved checkpoint {start_epoch}")
         if num_epochs < start_epoch:
             logger.error(
-                f"saved start_epoch={start_epoch} is bigger than given number of epochs={num_epochs}"
+                f"Saved start_epoch={start_epoch} is bigger than given number of epochs={num_epochs}"
             )
             exit(1)
 
