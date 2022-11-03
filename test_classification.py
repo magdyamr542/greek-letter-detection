@@ -8,7 +8,6 @@ The mean average precision at 0.5 IOU was 0.16
 
 import glob
 import json
-import multiprocessing
 import os
 import pickle
 from multiprocessing.dummy import Pool
@@ -16,12 +15,23 @@ from multiprocessing.dummy import Pool
 import cv2
 import torch
 from PIL import Image, ImageFile
-from typing import Tuple, Any
+from typing import List, Tuple, Any
 from torchvision.datasets.dtd import PIL
 from torchvision.transforms import transforms
 
 from constants import categories, get_data_by_category, model_input_size
-from cv2_utils import read_image_cv2, show_image_cv2
+
+
+class CategoryEvaluationResult:
+    def __init__(
+        self,
+        char: str,
+        total_num_classifications: int,
+        correct_num_classifications: int,
+    ) -> None:
+        self.char = char
+        self.total_num_classifications = total_num_classifications
+        self.correct_num_classifications = correct_num_classifications
 
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
@@ -58,7 +68,7 @@ def create_data_for_testing(test_data_dir: str):
     f.close()
     l = []
 
-    print(f"creating crops for {len(data['images'])} images...")
+    print(f"Creating crops for {len(data['images'])} images...")
 
     for i, image in enumerate(data["images"]):
         img_url = image["img_url"][2:]
@@ -68,7 +78,7 @@ def create_data_for_testing(test_data_dir: str):
             Image.open(fname).convert("RGB")
             l.append(image_id)
         except:
-            print(f"could not open image with id {image_id}")
+            print(f"Could not open image with id {image_id}")
             continue
 
     with open(os.path.join("image_list.bin"), "wb") as fp:  # Pickling
@@ -157,17 +167,41 @@ def evaluate_model(model) -> int:
         glob.glob(os.path.join(categories_dir_path, "**/*.jpg"), recursive=True)
     )
 
-    print(f"will classify {all_crops} crops")
+    print(f"Will classify {all_crops} crops")
     inputs = [
         (model, categories_dir_path, category_dir) for category_dir in categories_dirs
     ]
 
     p = Pool(len(inputs))
-    results = zip(p.map(get_evaluation_for_category, inputs))
-    print(results)
+
+    results: List[CategoryEvaluationResult] = p.map(get_evaluation_for_category, inputs)
+
+    return summarize_evaluation_results(results)
 
 
-def get_evaluation_for_category(input: Tuple[Any, str, str]):
+def summarize_evaluation_results(results: List[CategoryEvaluationResult]) -> int:
+    """_summary_
+    Returns:
+        int: the model accuracy
+    """
+    total_classifications = 0
+    total_correct_classifications = 0
+    for result in results:
+        total_classifications += result.total_num_classifications
+        total_correct_classifications += result.correct_num_classifications
+        char_accuracy = (
+            result.correct_num_classifications / result.total_num_classifications
+        )
+        print(f"Accuracy for char {result.char} = {char_accuracy}")
+
+    model_accuracy = total_correct_classifications / total_classifications
+    print(f"Accuracy for model {result.char} = {char_accuracy}")
+    return model_accuracy
+
+
+def get_evaluation_for_category(
+    input: Tuple[Any, str, str]
+) -> CategoryEvaluationResult:
     model, category_dir_base, category_dir = input
     crops = glob.glob(
         os.path.join(category_dir_base, category_dir, "**/*.jpg"), recursive=True
@@ -190,7 +224,10 @@ def get_evaluation_for_category(input: Tuple[Any, str, str]):
         dir_total_num_classifications += 1
 
     print(f"Done with Category={category_dir} Crops={len(crops)} Char={char} ...")
-    return dir_total_num_classifications, dir_correct_num_classifications
+
+    return CategoryEvaluationResult(
+        char, dir_total_num_classifications, dir_correct_num_classifications
+    )
 
 
 def main():
