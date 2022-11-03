@@ -199,7 +199,7 @@ def create_data():
                 path = os.path.join(crop_directory, crop_filename)
                 crop1 = im.crop((x, y, x + w, y + h))
                 crop1 = crop1.resize(
-                    (model_input_size, model_input_size), Image.BILINEAR
+                    (model_input_size, model_input_size), Image.Resampling.BILINEAR
                 )
                 crop1.save(path, "JPEG", quality=85)
 
