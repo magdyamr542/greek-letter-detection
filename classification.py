@@ -265,7 +265,7 @@ if __name__ == "__main__":
     }
 
     # Initialize the model
-    feature_extract = True  # Flag for feature extracting. When False, we finetune the whole model, when True we only update the reshaped layer params
+    feature_extract = False  # Flag for feature extracting. When False, we finetune the whole model, when True we only update the reshaped layer params
     model = initialize_model(num_classes, feature_extract)
 
     # Detect if we have a GPU available
