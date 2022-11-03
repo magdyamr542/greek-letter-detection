@@ -194,7 +194,7 @@ def summarize_evaluation_results(results: List[CategoryEvaluationResult]) -> int
         print(f"Accuracy for char {result.char} = {char_accuracy}")
 
     model_accuracy = total_correct_classifications / total_classifications
-    print(f"Accuracy for model {result.char} = {char_accuracy}")
+    print(f"Accuracy for model = {char_accuracy}")
     return model_accuracy
 
 
