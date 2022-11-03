@@ -292,6 +292,10 @@ if __name__ == "__main__":
                 f"Saved start_epoch={start_epoch} is bigger than given number of epochs={num_epochs}"
             )
             exit(1)
+    else:
+        logger.info(
+            "No saved checkpoint found. will start training from the beginning..."
+        )
 
     # Setup the loss function
     criterion = nn.CrossEntropyLoss()
