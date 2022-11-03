@@ -8,21 +8,24 @@ The mean average precision at 0.5 IOU was 0.16
 
 import glob
 import json
+import multiprocessing
 import os
 import pickle
+from multiprocessing.dummy import Pool
 
 import cv2
 import torch
 from PIL import Image, ImageFile
+from typing import Tuple, Any
 from torchvision.datasets.dtd import PIL
 from torchvision.transforms import transforms
 
 from constants import categories, get_data_by_category, model_input_size
 from cv2_utils import read_image_cv2, show_image_cv2
 
+
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 num_classes = 24
-model = None
 model_path = "./data/training/classification_model.pt"
 
 
@@ -37,20 +40,25 @@ def crops_folder_exists(test_data_dir: str):
 
 
 def create_data_for_testing(test_data_dir: str):
+    cwd = os.getcwd()
+
     os.chdir(test_data_dir)
     os.mkdir(os.path.join("crops"))
     os.mkdir(os.path.join("crops", "test"))
+
+    # get the coco.json file
     try:
         f = open(glob.glob("*.json")[0])
     except:
         print("No json file was found!")
+        os.chdir(cwd)
         raise
 
     data = json.load(f)
     f.close()
     l = []
 
-    print(f"creating crops for {len(data['images'])} images")
+    print(f"creating crops for {len(data['images'])} images...")
 
     for i, image in enumerate(data["images"]):
         img_url = image["img_url"][2:]
@@ -89,9 +97,11 @@ def create_data_for_testing(test_data_dir: str):
                 path = os.path.join(crop_directory, crop_filename)
                 crop1 = im.crop((x, y, x + w, y + h))
                 crop1 = crop1.resize(
-                    (model_input_size, model_input_size), Image.BILINEAR
+                    (model_input_size, model_input_size), Image.Resampling.BILINEAR
                 )
                 crop1.save(path, "JPEG", quality=85)
+
+    os.chdir(cwd)
 
 
 def load_model(model_path: str):
@@ -120,43 +130,82 @@ def cv2_image_to_pil_image(cv2_image: cv2.Mat) -> PIL.Image:
     return Image.fromarray(cv2_image)
 
 
-def classify(img_tensor: torch.Tensor):
+def do_classify(image_path: str, model):
     """
-    classify gets an image tensor and returns the model classification as a tuple of (char as string , model prediction)
+    classify gets an image path and a model. it returns the classified label
     """
-    input_batch = img_tensor.unsqueeze(0)
-    global model
-    if not model:
-        model = load_model(model_path)
+
+    image = get_image(image_path)
+    image_tensor = get_pil_image_as_tensor(image)
+    input_batch = image_tensor.unsqueeze(0)
 
     result: torch.Tensor = model(input_batch)
     max_index = result.argmax().item()
     _, __, char = get_data_by_category(categories[max_index])
-    return char, result.max().item()
+    return char
+
+
+def evaluate_model(model) -> int:
+    """
+    Returns:
+        int: the model accuracy
+    """
+    categories_dir_path = os.path.join("data", "testing", "crops", "test")
+    categories_dirs = os.listdir(categories_dir_path)
+
+    all_crops = len(
+        glob.glob(os.path.join(categories_dir_path, "**/*.jpg"), recursive=True)
+    )
+
+    print(f"will classify {all_crops} crops")
+    inputs = [
+        (model, categories_dir_path, category_dir) for category_dir in categories_dirs
+    ]
+
+    p = Pool(len(inputs))
+    results = zip(p.map(get_evaluation_for_category, inputs))
+    print(results)
+
+
+def get_evaluation_for_category(input: Tuple[Any, str, str]):
+    model, category_dir_base, category_dir = input
+    crops = glob.glob(
+        os.path.join(category_dir_base, category_dir, "**/*.jpg"), recursive=True
+    )
+
+    dir_total_num_classifications = 0
+    dir_correct_num_classifications = 0
+
+    _, __, char = get_data_by_category(int(category_dir))
+
+    print(f"Classifying Category={category_dir} Crops={len(crops)} Char={char} ...")
+
+    for crop in crops:
+
+        model_char = do_classify(crop, model)
+
+        if model_char == char:
+            dir_correct_num_classifications += 1
+
+        dir_total_num_classifications += 1
+
+    print(f"Done with Category={category_dir} Crops={len(crops)} Char={char} ...")
+    return dir_total_num_classifications, dir_correct_num_classifications
 
 
 def main():
 
     data_dir = "data/testing"
-    print("check if crop folder exists...")
+    print("Check if crop folder exists...")
     if not crops_folder_exists(data_dir):
-        print("crop folder does not exist. make crops...")
+        print("Crop folder does not exist. make crops...")
         create_data_for_testing(data_dir)
-        print("done making crops")
+        print("Done making crops")
 
+    print("Start evaluating classifier")
 
-#     image = get_image(image_path)
-#     image_tensor = get_pil_image_as_tensor(image)
-#     char, pred = classify(image_tensor)
-#     print(
-#         {
-#             "char": char,
-#             "pred": pred,
-#         }
-#     )
-#     cv2_image = read_image_cv2(image_path)
-#     show_image_cv2(cv2_image, "char")
-#     cv2.waitKey()
+    model = load_model(model_path)
+    evaluate_model(model)
 
 
 if __name__ == "__main__":
