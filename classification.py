@@ -33,11 +33,11 @@ check_point_name = "classification_model_check_point.pt"
 
 def update_model_with_saved_checkpoint(checkpoint_fpath, model, optimizer):
     try:
-        checkpoint = torch.load(checkpoint_fpath, model, optimizer)
+        checkpoint = torch.load(checkpoint_fpath, map_location=torch.device("cpu"))
         model.load_state_dict(checkpoint["model_state_dict"])
         optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
         return model, optimizer, checkpoint["epoch"]
-    except:
+    except Exception as e:
         return None
 
 
