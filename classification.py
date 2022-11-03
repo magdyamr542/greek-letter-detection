@@ -125,7 +125,7 @@ def initialize_model(num_classes, feature_extract=False):
     """
     - initializes the resnet18 model replacing the last fully connected layer (fc) with a linear layer that maps to the 24 chars we have.
     """
-    model = models.resnet18(pretrained=True)
+    model = models.resnet18(weights=models.ResNet18_Weights.IMAGENET1K_V1)
     if feature_extract:
         for param in model.parameters():
             param.requires_grad = False  # it's pretrained.

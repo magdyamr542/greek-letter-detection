@@ -6,14 +6,18 @@ def getLogger(file_path: str):
     logging.basicConfig(filemode="w")
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
+    logger.handlers = []
 
-    # create console handler and set level to debug
+    # console handler
     ch = logging.StreamHandler()
-    ch.setLevel(logging.DEBUG)
+    formatter = logging.Formatter("%(message)s")
+    ch.setFormatter(formatter)
+    ch.setLevel(logging.INFO)
     logger.addHandler(ch)
 
     # file handler
-    fh = logging.FileHandler(file_path)
+    fh = logging.FileHandler(file_path, mode="w")
+    fh.setFormatter(formatter)
     logger.addHandler(fh)
 
     return logger
