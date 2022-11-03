@@ -16,8 +16,11 @@ import cv2
 import torch
 from PIL import Image, ImageFile
 from typing import List, Tuple, Any
+import torch.nn as nn
 from torchvision.datasets.dtd import PIL
 from torchvision.transforms import transforms
+from torchvision import models
+
 
 from constants import categories, get_data_by_category, model_input_size
 
@@ -113,10 +116,17 @@ def create_data_for_testing(test_data_dir: str):
 
 
 def load_model():
-    model_path = "./data/training/classification_model.pt"
-    theModel = torch.load(model_path, map_location=torch.device("cpu"))
-    theModel.eval()
-    return theModel
+    num_classes = 25
+    model_path = "./data/training/classification_model_check_point.pt"
+    checkpoint = torch.load(model_path, map_location=torch.device("cpu"))
+    model = models.resnet18(weights=models.ResNet18_Weights.IMAGENET1K_V1)
+    num_ftrs = model.fc.in_features
+    model.fc = nn.Linear(
+        num_ftrs, num_classes
+    )  # only this layer will be trained with our data.
+    model.load_state_dict(checkpoint["model_state_dict"])
+    model.eval()
+    return model
 
 
 def get_image(path: str) -> PIL.Image:
