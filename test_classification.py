@@ -35,8 +35,6 @@ class CategoryEvaluationResult:
 
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
-num_classes = 24
-model_path = "./data/training/classification_model.pt"
 
 
 def crops_folder_exists(test_data_dir: str):
@@ -114,7 +112,8 @@ def create_data_for_testing(test_data_dir: str):
     os.chdir(cwd)
 
 
-def load_model(model_path: str):
+def load_model():
+    model_path = "./data/training/classification_model.pt"
     theModel = torch.load(model_path, map_location=torch.device("cpu"))
     theModel.eval()
     return theModel
@@ -233,15 +232,17 @@ def get_evaluation_for_category(
 def main():
 
     data_dir = "data/testing"
+
+    # prepare data for testing
     print("Check if crop folder exists...")
     if not crops_folder_exists(data_dir):
         print("Crop folder does not exist. make crops...")
         create_data_for_testing(data_dir)
         print("Done making crops")
 
-    print("Start evaluating classifier")
+    print("Start evaluating classifier...")
 
-    model = load_model(model_path)
+    model = load_model()
     evaluate_model(model)
 
 
