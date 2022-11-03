@@ -207,7 +207,6 @@ if __name__ == "__main__":
     data_dir = "data/training"
     num_classes = 25
     batch_size = 40
-    num_epochs = 30
 
     parser = ArgumentParser()
     parser.add_argument(
