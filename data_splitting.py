@@ -1,6 +1,10 @@
+from argparse import ArgumentParser
 import json
+import os
 from sklearn.model_selection import train_test_split
 
+
+# all images
 images = [
     {
         "bln_id": 1,
@@ -1525,12 +1529,56 @@ images = [
 ]
 
 
-train_and_validation, test = train_test_split(
-    images, random_state=4, test_size=0.2, shuffle=True
-)
-train, validation = train_test_split(
-    train_and_validation, random_state=4, test_size=0.15, shuffle=True
-)
+def main():
+    # args
+    parser = ArgumentParser()
+    parser.add_argument(
+        "-t",
+        "--test-size",
+        required=True,
+        help="size of testing images relative to all images",
+    )
+    args = parser.parse_args()
+    test_size = int(args.test_size)
+
+    if test_size < 1:
+        print("test size cannot be smaller than 1")
+        exit(1)
+
+    if test_size > 1 / 2 * len(images):
+        print("test size cannot exceed half of total images")
+        exit(1)
+
+    print(f"num of images {len(images)}")
+    print(f"test size {test_size}")
+
+    train_and_validation, test = train_test_split(
+        images, random_state=4, test_size=test_size, shuffle=True
+    )
+
+    print(f"num of training and validation images {len(train_and_validation)}")
+    print(f"num of testing images {len(test)}")
+
+    def create_coco_file(cocoJson, newImages, filePath):
+        cocoJson["images"] = newImages
+        with open(filePath, "w") as f:
+            json.dump(cocoJson, f)
+
+    base_coco_path = "./data/training/coco.json"
+    with open(base_coco_path) as f:
+        cocoDir = f"coco_test_{test_size}"
+        os.mkdir(cocoDir)
+
+        cocoJson = json.load(f)
+        trainPath =os.path.join(cocoDir, "coco_train.json")
+        testPath =os.path.join(cocoDir, "coco_test.json")
+
+        create_coco_file(cocoJson, train_and_validation, trainPath)
+        create_coco_file(cocoJson, test, testPath)
+        print(f"created {trainPath}")
+        print(f"created {testPath}")
 
 
-print(json.dumps(train_and_validation))
+
+if __name__ == "__main__":
+    main()

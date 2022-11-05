@@ -6,6 +6,7 @@ data/**/*.pt
 data/**/*.DS_Store
 data/training/image_list.bin
 data/testing/image_list.bin
+*coco_test_*
 
 model_detection.pt
 
