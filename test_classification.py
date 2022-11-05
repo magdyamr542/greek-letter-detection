@@ -22,6 +22,7 @@ import torch.nn as nn
 from torchvision.datasets.dtd import PIL
 from torchvision.transforms import transforms
 from torchvision import models
+from pathlib import Path
 
 
 from constants import categories, get_data_by_category, model_input_size
@@ -247,9 +248,9 @@ def get_evaluation_for_category(
 
 
 def main():
-    os.mkdir(os.path.join("logs"))
-    os.mkdir(os.path.join("logs", "classification"))
-    os.mkdir(os.path.join("logs", "classification", "testing"))
+    Path(os.path.join("logs", "classification", "testing")).mkdir(
+        parents=True, exist_ok=True
+    )
     # args
     parser = ArgumentParser()
     parser.add_argument(
