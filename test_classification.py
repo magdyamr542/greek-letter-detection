@@ -188,7 +188,7 @@ def evaluate_model(model, logger: Logger) -> int:
 
     results: List[CategoryEvaluationResult] = p.map(get_evaluation_for_category, inputs)
 
-    return summarize_evaluation_results(results)
+    return summarize_evaluation_results(results, logger)
 
 
 def summarize_evaluation_results(
