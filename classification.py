@@ -205,6 +205,9 @@ def create_data():
 
 
 if __name__ == "__main__":
+    os.mkdir(os.path.join("logs"))
+    os.mkdir(os.path.join("logs", "classification"))
+
     os.chdir(os.getcwd())
     data_dir = "data/training"
     num_classes = 25
