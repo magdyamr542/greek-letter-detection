@@ -1,7 +1,8 @@
 import logging
+from typing import Optional
 
 
-def getLogger(file_path: str):
+def getLogger(file_path: Optional[str] = None) -> logging.Logger:
     # create logger
     logging.basicConfig(filemode="w")
     logger = logging.getLogger()
@@ -16,8 +17,9 @@ def getLogger(file_path: str):
     logger.addHandler(ch)
 
     # file handler
-    fh = logging.FileHandler(file_path, mode="w")
-    fh.setFormatter(formatter)
-    logger.addHandler(fh)
+    if file_path:
+        fh = logging.FileHandler(file_path, mode="w")
+        fh.setFormatter(formatter)
+        logger.addHandler(fh)
 
     return logger

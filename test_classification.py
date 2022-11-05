@@ -8,9 +8,11 @@ The mean average precision at 0.5 IOU was 0.16
 
 import glob
 import json
+from logging import Logger
 import os
 import pickle
 from multiprocessing.dummy import Pool
+from argparse import ArgumentParser
 
 import cv2
 import torch
@@ -23,6 +25,9 @@ from torchvision import models
 
 
 from constants import categories, get_data_by_category, model_input_size
+from logger_utils import getLogger
+
+logger: Logger = getLogger()
 
 
 class CategoryEvaluationResult:
@@ -50,7 +55,7 @@ def crops_folder_exists(test_data_dir: str):
         return False
 
 
-def create_data_for_testing(test_data_dir: str):
+def create_data_for_testing(test_data_dir: str, logger: Logger):
     cwd = os.getcwd()
 
     os.chdir(test_data_dir)
@@ -61,7 +66,7 @@ def create_data_for_testing(test_data_dir: str):
     try:
         f = open(glob.glob("*.json")[0])
     except:
-        print("No json file was found!")
+        logger.info("No json file was found!")
         os.chdir(cwd)
         raise
 
@@ -69,7 +74,7 @@ def create_data_for_testing(test_data_dir: str):
     f.close()
     l = []
 
-    print(f"Creating crops for {len(data['images'])} images...")
+    logger.info(f"Creating crops for {len(data['images'])} images...")
 
     for i, image in enumerate(data["images"]):
         img_url = image["img_url"][2:]
@@ -79,7 +84,7 @@ def create_data_for_testing(test_data_dir: str):
             Image.open(fname).convert("RGB")
             l.append(image_id)
         except:
-            print(f"Could not open image with id {image_id}")
+            logger.info(f"Could not open image with id {image_id}")
             continue
 
     with open(os.path.join("image_list.bin"), "wb") as fp:  # Pickling
@@ -92,7 +97,7 @@ def create_data_for_testing(test_data_dir: str):
         try:
             im = Image.open(fname).convert("RGB")
         except:
-            print(f"Image {fname} does not exist")
+            logger.info(f"Image {fname} does not exist")
             continue
 
         for annotation in data["annotations"]:
@@ -121,9 +126,7 @@ def load_model():
     checkpoint = torch.load(model_path, map_location=torch.device("cpu"))
     model = models.resnet18(weights=models.ResNet18_Weights.IMAGENET1K_V1)
     num_ftrs = model.fc.in_features
-    model.fc = nn.Linear(
-        num_ftrs, num_classes
-    )  # only this layer will be trained with our data.
+    model.fc = nn.Linear(num_ftrs, num_classes)
     model.load_state_dict(checkpoint["model_state_dict"])
     model.eval()
     return model
@@ -149,7 +152,7 @@ def cv2_image_to_pil_image(cv2_image: cv2.Mat) -> PIL.Image:
     return Image.fromarray(cv2_image)
 
 
-def do_classify(image_path: str, model):
+def do_classify(image_path: str, model) -> str:
     """
     classify gets an image path and a model. it returns the classified label
     """
@@ -164,7 +167,7 @@ def do_classify(image_path: str, model):
     return char
 
 
-def evaluate_model(model) -> int:
+def evaluate_model(model, logger: Logger) -> int:
     """
     Returns:
         int: the model accuracy
@@ -176,9 +179,10 @@ def evaluate_model(model) -> int:
         glob.glob(os.path.join(categories_dir_path, "**/*.jpg"), recursive=True)
     )
 
-    print(f"Will classify {all_crops} crops")
+    logger.info(f"Will classify {all_crops} crops")
     inputs = [
-        (model, categories_dir_path, category_dir) for category_dir in categories_dirs
+        (model, categories_dir_path, category_dir, logger)
+        for category_dir in categories_dirs
     ]
 
     p = Pool(len(inputs))
@@ -188,7 +192,9 @@ def evaluate_model(model) -> int:
     return summarize_evaluation_results(results)
 
 
-def summarize_evaluation_results(results: List[CategoryEvaluationResult]) -> int:
+def summarize_evaluation_results(
+    results: List[CategoryEvaluationResult], logger: Logger
+) -> int:
     """_summary_
     Returns:
         int: the model accuracy
@@ -201,17 +207,17 @@ def summarize_evaluation_results(results: List[CategoryEvaluationResult]) -> int
         char_accuracy = (
             result.correct_num_classifications / result.total_num_classifications
         )
-        print(f"Accuracy for char {result.char} = {char_accuracy}")
+        logger.info(f"Accuracy for char {result.char} = {char_accuracy}")
 
     model_accuracy = total_correct_classifications / total_classifications
-    print(f"Accuracy for model = {char_accuracy}")
+    logger.info(f"Accuracy for model = {char_accuracy}")
     return model_accuracy
 
 
 def get_evaluation_for_category(
-    input: Tuple[Any, str, str]
+    input: Tuple[Any, str, str, Logger]
 ) -> CategoryEvaluationResult:
-    model, category_dir_base, category_dir = input
+    model, category_dir_base, category_dir, logger = input
     crops = glob.glob(
         os.path.join(category_dir_base, category_dir, "**/*.jpg"), recursive=True
     )
@@ -221,7 +227,9 @@ def get_evaluation_for_category(
 
     _, __, char = get_data_by_category(int(category_dir))
 
-    print(f"Classifying Category={category_dir} Crops={len(crops)} Char={char} ...")
+    logger.info(
+        f"Classifying Category={category_dir} Crops={len(crops)} Char={char} ..."
+    )
 
     for crop in crops:
 
@@ -232,7 +240,7 @@ def get_evaluation_for_category(
 
         dir_total_num_classifications += 1
 
-    print(f"Done with Category={category_dir} Crops={len(crops)} Char={char} ...")
+    logger.info(f"Done with Category={category_dir} Crops={len(crops)} Char={char} ...")
 
     return CategoryEvaluationResult(
         char, dir_total_num_classifications, dir_correct_num_classifications
@@ -240,20 +248,64 @@ def get_evaluation_for_category(
 
 
 def main():
+    # args
+    parser = ArgumentParser()
+    parser.add_argument(
+        "-c", "--checkpoint", required=True, help="path to the checkpoint file"
+    )
+    args = parser.parse_args()
+    checkpoint: str = args.checkpoint
 
-    data_dir = "data/testing"
+    # validate checkpoint and generate logfile
+    if not os.path.exists(checkpoint):
+        print("check point path does not exists.")
+        exit(1)
+
+    if not os.path.isfile(checkpoint):
+        print("check point path is not a file")
+        exit(1)
+
+    if not checkpoint.endswith(".pt"):
+        print("check point path is not a model check point file")
+        exit(1)
+
+    if not "epoch_" in checkpoint:
+        print("check point path does not contain the epoch number")
+        exit(1)
+
+    epoch_num = checkpoint[
+        checkpoint.find("epoch_") + len("epoch_") : checkpoint.find(".pt")
+    ]
+    logfile = ""
+    try:
+        epoch_num = int(epoch_num)
+        logfile = os.path.join(
+            "logs", "classification", "testing", f"{epoch_num}_epochs.txt"
+        )
+        print(
+            f"the given checkpoint has {epoch_num} epochs. will log testing output to file {logfile}"
+        )
+    except:
+        print("could not parse the epoch number from the check point")
+
+    if os.path.exists(logfile):
+        print(f"the file {logfile} exists. you did this experiment already. exiting")
+        exit(1)
+
+    logger = getLogger(logfile)
 
     # prepare data for testing
-    print("Check if crop folder exists...")
+    data_dir = "data/testing"
+    logger.info("Check if crop folder exists...")
     if not crops_folder_exists(data_dir):
-        print("Crop folder does not exist. make crops...")
-        create_data_for_testing(data_dir)
-        print("Done making crops")
+        logger.info("Crop folder does not exist. make crops...")
+        create_data_for_testing(data_dir, logger)
+        logger.info("Done making crops")
 
-    print("Start evaluating classifier...")
-
+    # evaluate the model
+    logger.info("Start evaluating classifier...")
     model = load_model()
-    evaluate_model(model)
+    evaluate_model(model, logger)
 
 
 if __name__ == "__main__":
