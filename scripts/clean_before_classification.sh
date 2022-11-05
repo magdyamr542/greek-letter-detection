@@ -1,0 +1,1 @@
+rm -rf data/training/crops/ data/training/image_list.bin data/testing/crops/ data/testing/image_list.bin
