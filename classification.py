@@ -24,6 +24,8 @@ import os, glob, pickle
 from sklearn.model_selection import train_test_split
 from logger_utils import getLogger
 from PIL import ImageFile
+from pathlib import Path
+
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 from constants import model_input_size
@@ -205,8 +207,7 @@ def create_data():
 
 
 if __name__ == "__main__":
-    os.mkdir(os.path.join("logs"))
-    os.mkdir(os.path.join("logs", "classification"))
+    Path(os.path.join("logs", "classification")).mkdir(parents=True, exist_ok=True)
 
     os.chdir(os.getcwd())
     data_dir = "data/training"
