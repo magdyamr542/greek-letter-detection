@@ -29,8 +29,11 @@
 
 ### Sample commands
 
-1. `python3 test_detection.py -f data/testing/images/homer2/txt8/P_Laur_IV_128r.jpg`
-1. `python3 test_classification.py -f data/cropped/30.png`
+1. Testing classification model
+	1. `python3 test_classification -c data/training/classification_check_points/classification_model_check_point_not_pretrained_epoch_100.pt`
+	1. It's important for the checkpoint to contain the number of epochs
+1. Testing detection model
+   1. `python3 test_detection.py -f data/testing/images/homer2/txt8/P_Laur_IV_128r.jpg`
 
 ### Train YOLO
 1. Clone the yolo project and install the requirements
