@@ -120,9 +120,8 @@ def create_data_for_testing(test_data_dir: str, logger: Logger):
     os.chdir(cwd)
 
 
-def load_model():
+def load_model(model_path: str):
     num_classes = 25
-    model_path = "./data/training/classification_model_check_point.pt"
     checkpoint = torch.load(model_path, map_location=torch.device("cpu"))
     model = models.resnet18(weights=models.ResNet18_Weights.IMAGENET1K_V1)
     num_ftrs = model.fc.in_features
@@ -304,7 +303,7 @@ def main():
 
     # evaluate the model
     logger.info("Start evaluating classifier...")
-    model = load_model()
+    model = load_model(checkpoint)
     evaluate_model(model, logger)
 
 
