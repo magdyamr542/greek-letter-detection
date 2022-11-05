@@ -247,6 +247,9 @@ def get_evaluation_for_category(
 
 
 def main():
+    os.mkdir(os.path.join("logs"))
+    os.mkdir(os.path.join("logs", "classification"))
+    os.mkdir(os.path.join("logs", "classification", "testing"))
     # args
     parser = ArgumentParser()
     parser.add_argument(
