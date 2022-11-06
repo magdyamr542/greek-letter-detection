@@ -8,11 +8,9 @@ The mean average precision at 0.5 IOU was 0.16
 
 import glob
 import json
-from logging import Logger
 import os
 import pickle
 from multiprocessing.dummy import Pool
-from argparse import ArgumentParser
 
 import cv2
 import torch
@@ -24,14 +22,12 @@ from torchvision.transforms import transforms
 from torchvision import models
 from pathlib import Path
 from constants import categories, get_data_by_category, model_input_size
-from logger_utils import getLogger
 from sacred import Experiment
 from sacred.observers import FileStorageObserver
 from sacred import SETTINGS
 
 # Sacred init
 SETTINGS["CAPTURE_MODE"] = "sys"
-logger: Logger = getLogger()
 ex = Experiment("Test Classification")
 ex.observers.append(FileStorageObserver("sacred_test_classification"))
 
@@ -61,7 +57,7 @@ def crops_folder_exists(test_data_dir: str):
         return False
 
 
-def create_data_for_testing(test_data_dir: str, logger: Logger):
+def create_data_for_testing(test_data_dir: str):
     cwd = os.getcwd()
 
     os.chdir(test_data_dir)
@@ -72,7 +68,7 @@ def create_data_for_testing(test_data_dir: str, logger: Logger):
     try:
         f = open(glob.glob("*.json")[0])
     except:
-        logger.info("No json file was found!")
+        print("No json file was found!")
         os.chdir(cwd)
         raise
 
@@ -80,7 +76,7 @@ def create_data_for_testing(test_data_dir: str, logger: Logger):
     f.close()
     l = []
 
-    logger.info(f"Creating crops for {len(data['images'])} images...")
+    print(f"Creating crops for {len(data['images'])} images...")
 
     for i, image in enumerate(data["images"]):
         img_url = image["img_url"][2:]
@@ -90,7 +86,7 @@ def create_data_for_testing(test_data_dir: str, logger: Logger):
             Image.open(fname).convert("RGB")
             l.append(image_id)
         except:
-            logger.info(f"Could not open image with id {image_id}")
+            print(f"Could not open image with id {image_id}")
             continue
 
     with open(os.path.join("image_list.bin"), "wb") as fp:  # Pickling
@@ -103,7 +99,7 @@ def create_data_for_testing(test_data_dir: str, logger: Logger):
         try:
             im = Image.open(fname).convert("RGB")
         except:
-            logger.info(f"Image {fname} does not exist")
+            print(f"Image {fname} does not exist")
             continue
 
         for annotation in data["annotations"]:
@@ -172,7 +168,7 @@ def do_classify(image_path: str, model) -> str:
     return char
 
 
-def evaluate_model(model, logger: Logger) -> int:
+def evaluate_model(model) -> int:
     """
     Returns:
         int: the model accuracy
@@ -184,22 +180,19 @@ def evaluate_model(model, logger: Logger) -> int:
         glob.glob(os.path.join(categories_dir_path, "**/*.jpg"), recursive=True)
     )
 
-    logger.info(f"Will classify {all_crops} crops")
+    print(f"Will classify {all_crops} crops")
     inputs = [
-        (model, categories_dir_path, category_dir, logger)
-        for category_dir in categories_dirs
+        (model, categories_dir_path, category_dir) for category_dir in categories_dirs
     ]
 
     p = Pool(len(inputs))
 
     results: List[CategoryEvaluationResult] = p.map(get_evaluation_for_category, inputs)
 
-    return summarize_evaluation_results(results, logger)
+    return summarize_evaluation_results(results)
 
 
-def summarize_evaluation_results(
-    results: List[CategoryEvaluationResult], logger: Logger
-) -> int:
+def summarize_evaluation_results(results: List[CategoryEvaluationResult]) -> int:
     """_summary_
     Returns:
         int: the model accuracy
@@ -212,17 +205,17 @@ def summarize_evaluation_results(
         char_accuracy = (
             result.correct_num_classifications / result.total_num_classifications
         )
-        logger.info(f"Accuracy for char {result.char} = {char_accuracy}")
+        print(f"Accuracy for char {result.char} = {char_accuracy}")
 
     model_accuracy = total_correct_classifications / total_classifications
-    logger.info(f"Accuracy for model = {char_accuracy}")
+    print(f"Accuracy for model = {char_accuracy}")
     return model_accuracy
 
 
 def get_evaluation_for_category(
-    input: Tuple[Any, str, str, Logger]
+    input: Tuple[Any, str, str]
 ) -> CategoryEvaluationResult:
-    model, category_dir_base, category_dir, logger = input
+    model, category_dir_base, category_dir = input
     crops = glob.glob(
         os.path.join(category_dir_base, category_dir, "**/*.jpg"), recursive=True
     )
@@ -232,9 +225,7 @@ def get_evaluation_for_category(
 
     _, __, char = get_data_by_category(int(category_dir))
 
-    logger.info(
-        f"Classifying Category={category_dir} Crops={len(crops)} Char={char} ..."
-    )
+    print(f"Classifying Category={category_dir} Crops={len(crops)} Char={char} ...")
 
     for crop in crops:
 
@@ -245,7 +236,7 @@ def get_evaluation_for_category(
 
         dir_total_num_classifications += 1
 
-    logger.info(f"Done with Category={category_dir} Crops={len(crops)} Char={char} ...")
+    print(f"Done with Category={category_dir} Crops={len(crops)} Char={char} ...")
 
     return CategoryEvaluationResult(
         char, dir_total_num_classifications, dir_correct_num_classifications
@@ -305,17 +296,15 @@ def main(checkpoint: str):
         print(f"the file {logfile} exists. you did this experiment already. exiting")
         exit(1)
 
-    logger = getLogger(logfile)
-
     # prepare data for testing
     data_dir = "data/testing"
-    logger.info("Check if crop folder exists...")
+    print("Check if crop folder exists...")
     if not crops_folder_exists(data_dir):
-        logger.info("Crop folder does not exist. make crops...")
-        create_data_for_testing(data_dir, logger)
-        logger.info("Done making crops")
+        print("Crop folder does not exist. make crops...")
+        create_data_for_testing(data_dir)
+        print("Done making crops")
 
     # evaluate the model
-    logger.info("Start evaluating classifier...")
+    print("Start evaluating classifier...")
     model = load_model(checkpoint)
-    evaluate_model(model, logger)
+    evaluate_model(model)
