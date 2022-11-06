@@ -122,10 +122,14 @@ def create_data_for_testing(test_data_dir: str):
     os.chdir(cwd)
 
 
-def load_model(model_path: str):
+@ex.capture
+def load_model(model_path: str, useWeights: bool = True):
     num_classes = 25
     checkpoint = torch.load(model_path, map_location=torch.device("cpu"))
-    model = models.resnet18(weights=models.ResNet18_Weights.IMAGENET1K_V1)
+    weights = models.ResNet18_Weights.IMAGENET1K_V1 if useWeights else None
+    if not useWeights:
+        print("using the model without the weights ResNet18_Weights.IMAGENET1K_V1")
+    model = models.resnet18(weights=weights)
     num_ftrs = model.fc.in_features
     model.fc = nn.Linear(num_ftrs, num_classes)
     model.load_state_dict(checkpoint["model_state_dict"])
@@ -246,6 +250,7 @@ def get_evaluation_for_category(
 @ex.config
 def my_config():
     checkpoint = ""
+    useWeights = True
 
 
 @ex.automain
