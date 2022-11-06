@@ -140,20 +140,21 @@ def initialize_model(num_classes, feature_extract=False):
 
 
 def crops_folder_exist(data_dir):
-    os.chdir(os.path.join(data_dir))
-    assert os.path.exists(os.path.join("images")), "Data directory does not exist!"
-    if os.path.exists(os.path.join("crops")):
+    assert os.path.exists(
+        os.path.join(data_dir, "images")
+    ), "Data directory does not exist!"
+    if os.path.exists(os.path.join(data_dir, "crops")):
         return True
     else:
         return False
 
 
-def create_data():
-    os.mkdir(os.path.join("crops"))
-    os.mkdir(os.path.join("crops", "train"))
-    os.mkdir(os.path.join("crops", "val"))
+def create_data(data_dir: str):
+    os.mkdir(os.path.join(data_dir, "crops"))
+    os.mkdir(os.path.join(data_dir, "crops", "train"))
+    os.mkdir(os.path.join(data_dir, "crops", "val"))
     try:
-        f = open(glob.glob("*.json")[0])
+        f = open(glob.glob(os.path.join(data_dir, "*.json"))[0])
     except:
         logger.info("No json file was found!")
     data = json.load(f)
@@ -161,14 +162,14 @@ def create_data():
     l = []
     for i, image in enumerate(data["images"]):
         img_url = image["img_url"][2:]
-        fname = os.path.join(img_url)
+        fname = os.path.join(data_dir, img_url)
         image_id = image["bln_id"]
         try:
             Image.open(fname).convert("RGB")
             l.append(image_id)
         except:
             continue
-    with open(os.path.join("image_list.bin"), "wb") as fp:  # Pickling
+    with open(os.path.join(data_dir, "image_list.bin"), "wb") as fp:  # Pickling
         pickle.dump(l, fp)
 
     train, val = train_test_split(l, random_state=8)
@@ -176,7 +177,7 @@ def create_data():
     for i, image in enumerate(data["images"]):
         img_url = image["img_url"][2:]
         image_id = image["bln_id"]
-        fname = os.path.join(img_url)
+        fname = os.path.join(data_dir, img_url)
         try:
             im = Image.open(fname).convert("RGB")
         except:
@@ -195,7 +196,9 @@ def create_data():
                 crop_directory = annotation["category_id"]
                 if crop_directory in [108, 208, 31, 76, 176]:
                     continue
-                crop_directory = os.path.join("crops", split, str(crop_directory))
+                crop_directory = os.path.join(
+                    data_dir, "crops", split, str(crop_directory)
+                )
                 if not os.path.exists(crop_directory):
                     os.mkdir(crop_directory)
                 path = os.path.join(crop_directory, crop_filename)
@@ -209,24 +212,46 @@ def create_data():
 if __name__ == "__main__":
     Path(os.path.join("logs", "classification")).mkdir(parents=True, exist_ok=True)
 
-    os.chdir(os.getcwd())
     data_dir = "data/training"
     num_classes = 25
     batch_size = 40
 
     parser = ArgumentParser()
     parser.add_argument(
+        "-c",
+        "--checkpoint",
+        required=False,
+        help="path to the checkpoint file",
+        default="./data/training/classification_model_check_point.pt",
+    )
+    parser.add_argument(
         "-e", "--epochs", required=False, help="the num of epochs file", default=50
     )
     args = parser.parse_args()
     num_epochs = int(args.epochs)
+    checkpoint: str = args.checkpoint
+
     logger = getLogger(f"logs/classification/{num_epochs}_epochs.txt")
     logger.info(f"Num of epochs given {num_epochs}")
+    logger.info(f"Checkpoint given {checkpoint}")
 
     if not crops_folder_exist(data_dir):
         logger.info(f"No crops found. will create them ...")
-        create_data()
+        create_data(data_dir)
         logger.info(f"Crops were created")
+
+    # validate checkpoint
+    if not os.path.exists(checkpoint):
+        print("Check point path does not exists.")
+        exit(1)
+
+    if not os.path.isfile(checkpoint):
+        print("Check point path is not a file")
+        exit(1)
+
+    if not checkpoint.endswith(".pt"):
+        print("Check point path is not a model check point file")
+        exit(1)
 
     # Augmentations and data transforms
     data_transforms = {
@@ -251,10 +276,10 @@ if __name__ == "__main__":
     # Create training and validation datasets
     image_datasets = {
         "train": datasets.ImageFolder(
-            os.path.join("crops", "train"), data_transforms["train"]
+            os.path.join(data_dir, "crops", "train"), data_transforms["train"]
         ),
         "val": datasets.ImageFolder(
-            os.path.join("crops", "val"), data_transforms["val"]
+            os.path.join(data_dir, "crops", "val"), data_transforms["val"]
         ),
     }
 
@@ -284,19 +309,22 @@ if __name__ == "__main__":
         model.parameters(), lr=0.01, weight_decay=0.0004, momentum=0.8
     )
 
-    result = update_model_with_saved_checkpoint(check_point_name, model, optimizer)
-    start_epoch = -1
+    result = update_model_with_saved_checkpoint(checkpoint, model, optimizer)
+    start_epoch = None
 
     if result:
         logger.info("Found a saved model. will continue from the saved checkpoint")
-        model, optimizer, start_epoch = result
-        logger.info(f"Start_epoch of saved checkpoint {start_epoch}")
-        if num_epochs < start_epoch:
+        model, optimizer, saved_model_epochs = result
+        logger.info(f"Start epoch of saved checkpoint {saved_model_epochs}")
+        if num_epochs < saved_model_epochs:
             logger.error(
-                f"Saved start_epoch={start_epoch} is bigger than given number of epochs={num_epochs}"
+                f"Saved start epoch {saved_model_epochs} is bigger than given number of epochs {num_epochs}"
             )
             exit(1)
+        else:
+            start_epoch = saved_model_epochs
     else:
+        start_epoch = -1
         logger.info(
             "No saved checkpoint found. will start training from the beginning..."
         )
