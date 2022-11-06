@@ -1,0 +1,106 @@
+{
+  "artifacts": [],
+  "command": "main",
+  "experiment": {
+    "base_dir": "/data/amrmetwally/greek-letter-detection",
+    "dependencies": [
+      "munch==2.5.0",
+      "numpy==1.21.6",
+      "opencv-python==4.6.0.66",
+      "Pillow==9.2.0",
+      "sacred==0.8.2",
+      "torch==1.12.1",
+      "torchvision==0.13.1"
+    ],
+    "mainfile": "test_classification.py",
+    "name": "Test Classification",
+    "repositories": [
+      {
+        "commit": "0dfe178ab5c7a99a705d1ebaf3d1b491e3d3d966",
+        "dirty": true,
+        "url": "git@github.com:magdyamr542/greek-letter-detection.git"
+      },
+      {
+        "commit": "0dfe178ab5c7a99a705d1ebaf3d1b491e3d3d966",
+        "dirty": true,
+        "url": "git@github.com:magdyamr542/greek-letter-detection.git"
+      }
+    ],
+    "sources": [
+      [
+        "constants.py",
+        "_sources/constants_64c0f0d0ee260dd26ab8698be6d1f022.py"
+      ],
+      [
+        "test_classification.py",
+        "_sources/test_classification_c106c7133fc2b6ebaf3e6e48981a880f.py"
+      ]
+    ]
+  },
+  "heartbeat": "2022-11-06T15:06:39.317204",
+  "host": {
+    "ENV": {},
+    "cpu": "Intel(R) Core(TM) i7-5820K CPU @ 3.30GHz",
+    "gpus": {
+      "driver_version": "470.94",
+      "gpus": [
+        {
+          "model": "NVIDIA GeForce GTX 1080",
+          "persistence_mode": false,
+          "total_memory": 8119
+        },
+        {
+          "model": "NVIDIA GeForce GTX 1080",
+          "persistence_mode": false,
+          "total_memory": 8119
+        },
+        {
+          "model": "NVIDIA GeForce GTX 1080",
+          "persistence_mode": false,
+          "total_memory": 8119
+        }
+      ]
+    },
+    "hostname": "rhea",
+    "os": [
+      "Linux",
+      "Linux-4.19.0-17-amd64-x86_64-with-debian-10.10"
+    ],
+    "python_version": "3.7.3"
+  },
+  "meta": {
+    "command": "main",
+    "options": {
+      "--beat-interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": null,
+      "--force": false,
+      "--help": false,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print-config": false,
+      "--priority": null,
+      "--queue": false,
+      "--s3": null,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [
+        "checkpoint=data/training/saved_checkpoints/25_test_images/classification_model_check_point_epoch_100.pt"
+      ],
+      "help": false,
+      "with": true
+    }
+  },
+  "resources": [],
+  "result": null,
+  "start_time": "2022-11-06T15:04:13.051914",
+  "status": "COMPLETED",
+  "stop_time": "2022-11-06T15:06:39.316895"
+}
