@@ -280,21 +280,10 @@ def main(checkpoint: str):
     epoch_num = checkpoint[
         checkpoint.find("epoch_") + len("epoch_") : checkpoint.find(".pt")
     ]
-    logfile = ""
     try:
         epoch_num = int(epoch_num)
-        logfile = os.path.join(
-            "logs", "classification", "testing", f"{epoch_num}_epochs.txt"
-        )
-        print(
-            f"the given checkpoint has {epoch_num} epochs. will log testing output to file {logfile}"
-        )
     except:
         print("could not parse the epoch number from the check point")
-
-    if os.path.exists(logfile):
-        print(f"the file {logfile} exists. you did this experiment already. exiting")
-        exit(1)
 
     # prepare data for testing
     data_dir = "data/testing"
