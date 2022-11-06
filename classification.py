@@ -11,8 +11,6 @@ Validation: Loss 0.6916 and Accuracy 0.81
 
 from __future__ import print_function
 from __future__ import division
-from argparse import ArgumentParser
-from logging import Logger
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -22,10 +20,16 @@ from PIL import Image
 import json
 import os, glob, pickle
 from sklearn.model_selection import train_test_split
-from logger_utils import getLogger
 from PIL import ImageFile
 from pathlib import Path
+from sacred import Experiment
+from sacred.observers import FileStorageObserver
+from sacred import SETTINGS
 
+# Sacred init
+SETTINGS["CAPTURE_MODE"] = "sys"
+ex = Experiment("Train Classification")
+ex.observers.append(FileStorageObserver("sacred_train_classification"))
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 from constants import model_input_size
@@ -44,32 +48,32 @@ def update_model_with_saved_checkpoint(checkpoint_fpath, model, optimizer):
 
 
 def train_model(
-    logger: Logger,
     model,
     dataloaders,
     criterion,
     optimizer,
     scheduler,
     check_point_name: str,
+    device=None,
     num_epochs=25,
     start_epoch=-1,
 ):
     since = time.time()
 
-    logger.info(f"Start training at {since}")
+    print(f"Start training at {since}")
 
     for epoch in range(start_epoch + 1, num_epochs):
-        logger.info("Epoch {}/{}".format(epoch, num_epochs - 1))
-        logger.info("-" * 10)
+        print("Epoch {}/{}".format(epoch, num_epochs - 1))
+        print("-" * 10)
 
         # Each epoch has a training and validation phase
         for phase in ["train", "val"]:
             if phase == "train":
                 model.train()  # Set model to training mode
-                logger.info("Training...")
+                print("Training...")
             else:
                 model.eval()  # Set model to evaluate mode
-                logger.info("Evaluating...")
+                print("Evaluating...")
 
             running_loss = 0.0
             running_corrects = 0
@@ -100,11 +104,9 @@ def train_model(
             epoch_acc = running_corrects.double() / len(dataloaders[phase].dataset)
             if phase == "val" and scheduler is not None:
                 scheduler.step()
-            logger.info(
-                "{} Loss: {:.4f} Acc: {:.4f}".format(phase, epoch_loss, epoch_acc)
-            )
+            print("{} Loss: {:.4f} Acc: {:.4f}".format(phase, epoch_loss, epoch_acc))
 
-        logger.info(f"Saving checkpoint for epoch {epoch}")
+        print(f"Saving checkpoint for epoch {epoch}")
         torch.save(
             {
                 "epoch": epoch,
@@ -115,7 +117,7 @@ def train_model(
         )
 
     time_elapsed = time.time() - since
-    logger.info(
+    print(
         "Training complete in {:.0f}m {:.0f}s".format(
             time_elapsed // 60, time_elapsed % 60
         )
@@ -157,7 +159,7 @@ def create_data(data_dir: str):
     try:
         f = open(glob.glob(os.path.join(data_dir, "*.json"))[0])
     except:
-        logger.info("No json file was found!")
+        print("No json file was found!")
     data = json.load(f)
     f.close()
     l = []
@@ -182,7 +184,7 @@ def create_data(data_dir: str):
         try:
             im = Image.open(fname).convert("RGB")
         except:
-            logger.info(f"File not found {fname}")
+            print(f"File not found {fname}")
             continue
         if image_id in val:
             split = "val"
@@ -210,47 +212,49 @@ def create_data(data_dir: str):
                 crop1.save(path, "JPEG", quality=85)
 
 
-if __name__ == "__main__":
+@ex.config
+def my_config():
+    checkpoint = ""
+    epochs = None
+
+
+@ex.automain
+def main(checkpoint: str, epochs: int):
     Path(os.path.join("logs", "classification")).mkdir(parents=True, exist_ok=True)
 
     data_dir = "data/training"
     num_classes = 25
     batch_size = 40
 
-    parser = ArgumentParser()
-    parser.add_argument(
-        "-c",
-        "--checkpoint",
-        required=False,
-        help="path to the checkpoint file",
-        default="./data/training/classification_model_check_point.pt",
-    )
-    parser.add_argument(
-        "-e", "--epochs", required=False, help="the num of epochs file", default=50
-    )
-    args = parser.parse_args()
-    num_epochs = int(args.epochs)
-    checkpoint: str = args.checkpoint
+    if not epochs:
+        print(
+            "epochs not given. use `with epochs='<number>'` to provide the num of epochs used while training"
+        )
+        exit(1)
 
-    logger = getLogger(f"logs/classification/{num_epochs}_epochs.txt")
-    logger.info(f"Num of epochs given {num_epochs}")
-    logger.info(f"Checkpoint given {checkpoint}")
+    num_epochs = int(epochs)
+
+    print(f"Num of epochs given {num_epochs}")
+    if not checkpoint:
+        print("No checkpoint given")
+    else:
+        print(f"Checkpoint given {checkpoint}")
 
     if not crops_folder_exist(data_dir):
-        logger.info(f"No crops found. will create them ...")
+        print(f"No crops found. will create them ...")
         create_data(data_dir)
-        logger.info(f"Crops were created")
+        print(f"Crops were created")
 
     # validate checkpoint
-    if not os.path.exists(checkpoint):
+    if checkpoint and not os.path.exists(checkpoint):
         print("Check point path does not exists.")
         exit(1)
 
-    if not os.path.isfile(checkpoint):
+    if checkpoint and not os.path.isfile(checkpoint):
         print("Check point path is not a file")
         exit(1)
 
-    if not checkpoint.endswith(".pt"):
+    if checkpoint and not checkpoint.endswith(".pt"):
         print("Check point path is not a model check point file")
         exit(1)
 
@@ -300,7 +304,7 @@ if __name__ == "__main__":
 
     # Detect if we have a GPU available
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    logger.info(f"Using device {str(device)}")
+    print(f"Using device {str(device)}")
 
     # Send the model to GPU
     model = model.to(device)
@@ -310,25 +314,23 @@ if __name__ == "__main__":
         model.parameters(), lr=0.01, weight_decay=0.0004, momentum=0.8
     )
 
-    result = update_model_with_saved_checkpoint(checkpoint, model, optimizer)
-    start_epoch = None
+    start_epoch = -1
+    if checkpoint:
+        result = update_model_with_saved_checkpoint(checkpoint, model, optimizer)
 
-    if result:
-        logger.info("Found a saved model. will continue from the saved checkpoint")
-        model, optimizer, saved_model_epochs = result
-        logger.info(f"Start epoch of saved checkpoint {saved_model_epochs}")
-        if num_epochs < saved_model_epochs:
-            logger.error(
-                f"Saved start epoch {saved_model_epochs} is bigger than given number of epochs {num_epochs}"
-            )
-            exit(1)
-        else:
-            start_epoch = saved_model_epochs
+        if result:
+            print("Found a saved model. will continue from the saved checkpoint")
+            model, optimizer, saved_model_epochs = result
+            print(f"Start epoch of saved checkpoint {saved_model_epochs}")
+            if num_epochs < saved_model_epochs:
+                print(
+                    f"Saved start epoch {saved_model_epochs} is bigger than given number of epochs {num_epochs}"
+                )
+                exit(1)
+            else:
+                start_epoch = saved_model_epochs
     else:
-        start_epoch = -1
-        logger.info(
-            "No saved checkpoint found. will start training from the beginning..."
-        )
+        print("No saved checkpoint found. will start training from the beginning...")
 
     # Setup the loss function
     criterion = nn.CrossEntropyLoss()
@@ -336,12 +338,12 @@ if __name__ == "__main__":
 
     # Train and evaluate
     model = train_model(
-        logger,
         model,
         dataloaders_dict,
         criterion,
         optimizer,
         scheduler,
+        device=device,
         check_point_name=check_point_name,
         num_epochs=num_epochs,
         start_epoch=start_epoch,
