@@ -255,10 +255,6 @@ def my_config():
 
 @ex.automain
 def main(checkpoint: str):
-    Path(os.path.join("logs", "classification", "testing")).mkdir(
-        parents=True, exist_ok=True
-    )
-
     if not checkpoint:
         print(
             "check point not given. use `with checkpoint='<path>'` to provide the used checkpoint"

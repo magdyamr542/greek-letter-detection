@@ -217,16 +217,35 @@ def create_data(data_dir: str):
                 crop1.save(path, "JPEG", quality=85)
 
 
+def get_num_test_images():
+    coco = open(os.path.join("data", "testing", "coco.json"))
+    data = json.load(coco)
+    return len(data["images"])
+
+
 @ex.config
 def my_config():
     checkpoint = ""
     epochs = None
     useWeights = True
+    numTestImages = get_num_test_images()
+    trainedModelName = (
+        "classification_model_checkpoint_{noWeightPrefix}epoch_{numEpochs}.pt".format(
+            noWeightPrefix="no_weights_" if not useWeights else "", numEpochs=epochs
+        )
+    )
+    trainedModelSavePath = os.path.join(
+        "data",
+        "training",
+        "saved_checkpoints",
+        f"{numTestImages}_test_images",
+        trainedModelName,
+    )
 
 
 @ex.automain
-def main(checkpoint: str, epochs: int):
-    Path(os.path.join("logs", "classification")).mkdir(parents=True, exist_ok=True)
+def main(checkpoint: str, epochs: int, numTestImages: int, trainedModelSavePath: str):
+    Path(trainedModelSavePath).mkdir(parents=True, exist_ok=True)
 
     data_dir = "data/training"
     num_classes = 25
@@ -241,10 +260,12 @@ def main(checkpoint: str, epochs: int):
     num_epochs = int(epochs)
 
     print(f"Num of epochs given {num_epochs}")
+    print(f"Num of test images {numTestImages}")
     if not checkpoint:
         print("No checkpoint given")
     else:
         print(f"Checkpoint given {checkpoint}")
+    print(f"Will save the trained model to {trainedModelSavePath}")
 
     if not crops_folder_exist(data_dir):
         print(f"No crops found. will create them ...")
@@ -350,7 +371,7 @@ def main(checkpoint: str, epochs: int):
         optimizer,
         scheduler,
         device=device,
-        check_point_name=check_point_name,
+        check_point_name=trainedModelSavePath,
         num_epochs=num_epochs,
         start_epoch=start_epoch,
     )
