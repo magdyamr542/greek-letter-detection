@@ -27,6 +27,14 @@
    - `source venv/bin/activate`
    - `pip install -r requirements.txt`
 
+
+### Classification
+
+1. the metric and logs are saved under `./logs/classification` directory
+1. Every directory there represents the log files for the number of test images used while training
+1. Under `testing` directory we save the accuracy of the model
+1. While training, the log files are saved with this format. `[num epochs]_epochs.txt` which means that these logs are the result when we trained the model with `[num epochs]` epochs
+
 ### Sample commands
 
 1. Testing classification model
