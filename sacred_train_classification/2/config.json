@@ -1,0 +1,5 @@
+{
+  "checkpoint": "data/training/saved_checkpoints/31_test_images/classification_model_check_point_epoch_150.pt",
+  "epochs": 150,
+  "seed": 598427763
+}
