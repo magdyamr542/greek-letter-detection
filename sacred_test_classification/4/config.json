@@ -1,0 +1,5 @@
+{
+  "checkpoint": "data/training/saved_checkpoints/25_test_images/classification_model_check_point_no_weights_epoch_40.pt",
+  "seed": 881901117,
+  "useWeights": false
+}
