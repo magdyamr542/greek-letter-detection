@@ -50,6 +50,7 @@ def train_model(
     criterion,
     optimizer,
     scheduler,
+    check_point_name: str,
     num_epochs=25,
     start_epoch=-1,
 ):
@@ -341,6 +342,7 @@ if __name__ == "__main__":
         criterion,
         optimizer,
         scheduler,
+        check_point_name=check_point_name,
         num_epochs=num_epochs,
         start_epoch=start_epoch,
     )
