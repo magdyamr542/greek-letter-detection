@@ -23,12 +23,17 @@ from torchvision.datasets.dtd import PIL
 from torchvision.transforms import transforms
 from torchvision import models
 from pathlib import Path
-
-
 from constants import categories, get_data_by_category, model_input_size
 from logger_utils import getLogger
+from sacred import Experiment
+from sacred.observers import FileStorageObserver
+from sacred import SETTINGS
 
+# Sacred init
+SETTINGS["CAPTURE_MODE"] = "sys"
 logger: Logger = getLogger()
+ex = Experiment("Test Classification")
+ex.observers.append(FileStorageObserver("sacred_test_classification"))
 
 
 class CategoryEvaluationResult:
@@ -247,17 +252,22 @@ def get_evaluation_for_category(
     )
 
 
-def main():
+@ex.config
+def my_config():
+    checkpoint = ""
+
+
+@ex.automain
+def main(checkpoint: str):
     Path(os.path.join("logs", "classification", "testing")).mkdir(
         parents=True, exist_ok=True
     )
-    # args
-    parser = ArgumentParser()
-    parser.add_argument(
-        "-c", "--checkpoint", required=True, help="path to the checkpoint file"
-    )
-    args = parser.parse_args()
-    checkpoint: str = args.checkpoint
+
+    if not checkpoint:
+        print(
+            "check point not given. use `with checkpoint='<path>'` to provide the used checkpoint"
+        )
+        exit(1)
 
     # validate checkpoint and generate logfile
     if not os.path.exists(checkpoint):
@@ -309,7 +319,3 @@ def main():
     logger.info("Start evaluating classifier...")
     model = load_model(checkpoint)
     evaluate_model(model, logger)
-
-
-if __name__ == "__main__":
-    main()
