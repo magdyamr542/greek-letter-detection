@@ -1,5 +1,5 @@
 numberOfTestImages,numberOfEpochs,useImageNetWeights,trainLoss,trainAccuracy,validationLoss,validationAccuracy,trainTimeInMinutes
 25,40,True,0.3847,0.8869,0.7322,0.7912,44m
 31,150,True,0.3768,0.8887,0.8534,0.7672,147m
-,40,False,0.7853,0.7650,0.7307,0.7743,44m
+25,40,False,0.7853,0.7650,0.7307,0.7743,44m
 ,,,,,,,
