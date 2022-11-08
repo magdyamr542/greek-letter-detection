@@ -234,6 +234,10 @@ def main(
         print("No saved checkpoint found. will start training from the beginning...")
 
     print(f"Will be saving the trained model to {trainedModelSavePath}")
+    if os.path.exists(trainedModelSavePath):
+        print("a model already exists")
+        exit(1)
+
     for epoch in range(start_epoch + 1, epochs):
         train_one_epoch(
             model,
