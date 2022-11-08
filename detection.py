@@ -235,7 +235,7 @@ def main(
 
     print(f"Will be saving the trained model to {trainedModelSavePath}")
     if os.path.exists(trainedModelSavePath):
-        print("a model already exists")
+        print(f"a model already exists at {trainedModelSavePath}")
         exit(1)
 
     for epoch in range(start_epoch + 1, epochs):
