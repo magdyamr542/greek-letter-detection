@@ -26,6 +26,8 @@ from sacred import Experiment
 from sacred.observers import FileStorageObserver
 from sacred import SETTINGS
 
+from utils.get_num_test_images import get_num_test_images
+
 # Sacred init
 SETTINGS["CAPTURE_MODE"] = "sys"
 ex = Experiment("Train Classification")
@@ -53,7 +55,7 @@ def train_model(
     criterion,
     optimizer,
     scheduler,
-    check_point_name: str,
+    check_point_save_path: str,
     device=None,
     num_epochs=25,
     start_epoch=-1,
@@ -113,7 +115,7 @@ def train_model(
                 "model_state_dict": model.state_dict(),
                 "optimizer_state_dict": optimizer.state_dict(),
             },
-            check_point_name,
+            check_point_save_path,
         )
 
     time_elapsed = time.time() - since
@@ -217,12 +219,6 @@ def create_data(data_dir: str):
                 crop1.save(path, "JPEG", quality=85)
 
 
-def get_num_test_images():
-    coco = open(os.path.join("data", "testing", "coco.json"))
-    data = json.load(coco)
-    return len(data["images"])
-
-
 @ex.config
 def my_config():
     checkpoint = ""
@@ -234,18 +230,27 @@ def my_config():
             noWeightPrefix="no_weights_" if not useWeights else "", numEpochs=epochs
         )
     )
-    trainedModelSavePath = os.path.join(
+    trainedModelSaveBasePath = os.path.join(
         "data",
         "training",
         "saved_checkpoints",
         f"{numTestImages}_test_images",
+    )
+    trainedModelSavePath = os.path.join(
+        trainedModelSaveBasePath,
         trainedModelName,
     )
 
 
 @ex.automain
-def main(checkpoint: str, epochs: int, numTestImages: int, trainedModelSavePath: str):
-    Path(trainedModelSavePath).mkdir(parents=True, exist_ok=True)
+def main(
+    checkpoint: str,
+    epochs: int,
+    numTestImages: int,
+    trainedModelSavePath: str,
+    trainedModelSaveBasePath: str,
+):
+    Path(trainedModelSaveBasePath).mkdir(parents=True, exist_ok=True)
 
     data_dir = "data/training"
     num_classes = 25
@@ -371,7 +376,7 @@ def main(checkpoint: str, epochs: int, numTestImages: int, trainedModelSavePath:
         optimizer,
         scheduler,
         device=device,
-        check_point_name=trainedModelSavePath,
+        check_point_save_path=trainedModelSavePath,
         num_epochs=num_epochs,
         start_epoch=start_epoch,
     )

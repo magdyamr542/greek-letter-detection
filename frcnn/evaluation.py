@@ -1,8 +1,8 @@
 from myData import datasetA_fold, datasetB_fold, get_transform
-from engine import train_one_epoch, evaluate, get_detections_on_image
+from engine import get_detections_on_image
 import utils
-from my_backbone_utils import resnet_fpn_backbone18, LinearC, resnet_fpn_backbone
-from torchvision.models.detection import MaskRCNN, FasterRCNN
+from my_backbone_utils import resnet_fpn_backbone18, resnet_fpn_backbone
+from torchvision.models.detection import MaskRCNN
 
 # from my_fast_rcnn import FasterRCNN
 import torch

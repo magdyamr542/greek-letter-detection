@@ -1,6 +1,5 @@
 import datetime
 import errno
-from logging import Logger
 import os
 import time
 from collections import defaultdict, deque
@@ -116,10 +115,9 @@ def reduce_dict(input_dict, average=True):
 
 
 class MetricLogger:
-    def __init__(self, logger: Logger, delimiter="\t"):
+    def __init__(self, delimiter="\t"):
         self.meters = defaultdict(SmoothedValue)
         self.delimiter = delimiter
-        self.logger = logger
 
     def update(self, **kwargs):
         for k, v in kwargs.items():
@@ -191,7 +189,7 @@ class MetricLogger:
                 eta_seconds = iter_time.global_avg * (len(iterable) - i)
                 eta_string = str(datetime.timedelta(seconds=int(eta_seconds)))
                 if torch.cuda.is_available():
-                    self.logger.info(
+                    print(
                         log_msg.format(
                             i,
                             len(iterable),
@@ -203,7 +201,7 @@ class MetricLogger:
                         )
                     )
                 else:
-                    self.logger.info(
+                    print(
                         log_msg.format(
                             i,
                             len(iterable),
@@ -217,7 +215,7 @@ class MetricLogger:
             end = time.time()
         total_time = time.time() - start_time
         total_time_str = str(datetime.timedelta(seconds=int(total_time)))
-        self.logger.info(
+        print(
             f"{header} Total time: {total_time_str} ({total_time / len(iterable):.4f} s / it)"
         )
 

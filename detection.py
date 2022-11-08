@@ -5,15 +5,17 @@ https://pytorch.org/tutorials/intermediate/torchvision_tutorial.html
 A Resnet18 was trained during 60 epochs.
 The mean average precision at 0.5 IOU was 0.16
 """
-from argparse import ArgumentParser
 import os
+from pathlib import Path
+from typing import Optional
 import torch
 from PIL import Image
 from sklearn.model_selection import train_test_split
 import json
 from PIL import ImageFile
 
-from logger_utils import getLogger
+from utils.get_num_test_images import get_num_test_images
+
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 import torchvision
@@ -23,9 +25,14 @@ from frcnn.engine import train_one_epoch, evaluate
 import frcnn.utils as utils
 from constants import category_to_label
 from torchvision.models.detection import FasterRCNN_ResNet50_FPN_Weights
+from sacred import Experiment
+from sacred.observers import FileStorageObserver
+from sacred import SETTINGS
 
-
-model_name = "model_detection.pt"
+# Sacred init
+SETTINGS["CAPTURE_MODE"] = "sys"
+ex = Experiment("Train Detection")
+ex.observers.append(FileStorageObserver("sacred_train_detection"))
 
 
 def update_model_with_saved_checkpoint(checkpoint_fpath, model, optimizer):
@@ -104,7 +111,8 @@ class Dataset(torch.utils.data.Dataset):
         fname = os.path.join(src_folder, image_folder, image_file)
         img = Image.open(fname).convert("RGB")
         img.resize(
-            (1000, round(img.size[1] * 1000.0 / float(img.size[0]))), Image.BILINEAR
+            (1000, round(img.size[1] * 1000.0 / float(img.size[0]))),
+            Image.Resampling.BILINEAR,
         )
         if self.transforms is not None:
             img, target = self.transforms(img, target)
@@ -125,20 +133,57 @@ def get_transform(train):
     return T.Compose(transforms)
 
 
-def main():
-
-    num_epochs = 50
-    parser = ArgumentParser()
-    parser.add_argument(
-        "-e", "--epochs", required=False, help="the num of epochs file", default=50
+@ex.config
+def my_config():
+    checkpoint = ""
+    epochs = None
+    useWeights = True
+    numTestImages = get_num_test_images()
+    trainedModelName = (
+        "detection_model_checkpoint_{noWeightPrefix}epoch_{numEpochs}.pt".format(
+            noWeightPrefix="no_weights_" if not useWeights else "", numEpochs=epochs
+        )
     )
-    args = parser.parse_args()
-    num_epochs = int(args.epochs)
-    logger = getLogger(f"logs/detection/{num_epochs}_epochs.txt")
-    logger.info(f"num of epochs given {num_epochs}")
+    trainedModelSaveBasePath = os.path.join(
+        "data",
+        "training",
+        "saved_detection_checkpoints",
+        f"{numTestImages}_test_images",
+    )
+
+    trainedModelSavePath = os.path.join(
+        trainedModelSaveBasePath,
+        trainedModelName,
+    )
+
+
+@ex.automain
+def main(
+    checkpoint: str,
+    epochs: Optional[int],
+    numTestImages: int,
+    useWeights: bool,
+    trainedModelSavePath: str,
+    trainedModelSaveBasePath: str,
+):
+
+    Path(trainedModelSaveBasePath).mkdir(parents=True, exist_ok=True)
+
+    if not epochs:
+        print(
+            "epochs not given. use `with epochs='<number>'` to provide the num of epochs used while training"
+        )
+        exit(1)
+
+    if checkpoint:
+        print(f"Checkpoint given {checkpoint}")
+
+    print(f"Num of epochs given {epochs}")
+    print(f"Num of test images {numTestImages}")
 
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-    logger.info(f"using device {str(device)}")
+
+    print(f"Using device {str(device)}")
 
     num_classes = len(category_to_label) + 1
     dataset = Dataset(transforms=get_transform(True), isTrain=True)
@@ -156,9 +201,11 @@ def main():
         collate_fn=utils.collate_fn,
     )
 
-    model = torchvision.models.detection.fasterrcnn_resnet50_fpn(
-        weights=FasterRCNN_ResNet50_FPN_Weights.DEFAULT
-    )
+    if not useWeights:
+        print("Using the model without the weights FasterRCNN_ResNet50_FPN_Weights")
+
+    weights = FasterRCNN_ResNet50_FPN_Weights.DEFAULT if useWeights else None
+    model = torchvision.models.detection.fasterrcnn_resnet50_fpn(weights=weights)
     in_features = model.roi_heads.box_predictor.cls_score.in_features
     model.roi_heads.box_predictor = FastRCNNPredictor(in_features, num_classes)
     model.to(device)
@@ -168,20 +215,26 @@ def main():
     lr_scheduler1 = torch.optim.lr_scheduler.StepLR(optimizer, step_size=1, gamma=2)
     lr_scheduler2 = torch.optim.lr_scheduler.StepLR(optimizer, step_size=3, gamma=0.85)
 
-    result = update_model_with_saved_checkpoint(model_name, model, optimizer)
     start_epoch = -1
+    if checkpoint:
+        result = update_model_with_saved_checkpoint(checkpoint, model, optimizer)
 
-    if result:
-        logger.info("found a saved model. will continue from the saved checkpoint")
-        model, optimizer, start_epoch = result
-        logger.info(f"start_epoch of saved checkpoint {start_epoch}")
-        if num_epochs < start_epoch:
-            logger.error(
-                f"saved start_epoch={start_epoch} is bigger than given number of epochs={num_epochs}"
-            )
-            exit(1)
+        if result:
+            print("Found a saved model. will continue from the saved checkpoint")
+            model, optimizer, saved_model_epochs = result
+            print(f"Start epoch of saved checkpoint {saved_model_epochs}")
+            if epochs < saved_model_epochs:
+                print(
+                    f"Saved start epoch {saved_model_epochs} is bigger than given number of epochs {num_epochs}"
+                )
+                exit(1)
+            else:
+                start_epoch = saved_model_epochs
+    else:
+        print("No saved checkpoint found. will start training from the beginning...")
 
-    for epoch in range(start_epoch + 1, num_epochs):
+    print(f"Will be saving the trained model to {trainedModelSavePath}")
+    for epoch in range(start_epoch + 1, epochs):
         train_one_epoch(
             model,
             optimizer,
@@ -189,24 +242,23 @@ def main():
             device,
             epoch,
             print_freq=10,
-            logger=logger,
         )
         if epoch < 4:
             lr_scheduler1.step()
         elif epoch > 40 and epoch < 48:
             lr_scheduler2.step()
-        evaluate(model, data_loader_test, device=device, logger=logger)
-        logger.info(f"saving check point for {epoch}")
+        evaluate(model, data_loader_test, device=device)
+        print(f"Saving check point for epoch {epoch}")
         torch.save(
             {
                 "epoch": epoch,
                 "model_state_dict": model.state_dict(),
                 "optimizer_state_dict": optimizer.state_dict(),
             },
-            model_name,
+            trainedModelSavePath,
         )
 
-    logger.info("That's it!")
+    print("That's it!")
 
 
 if __name__ == "__main__":

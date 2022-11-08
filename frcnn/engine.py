@@ -1,6 +1,4 @@
-from logging import Logger
 import math
-import sys
 import time
 
 import torch
@@ -17,11 +15,10 @@ def train_one_epoch(
     device,
     epoch,
     print_freq,
-    logger: Logger,
     scaler=None,
 ):
     model.train()
-    metric_logger = utils.MetricLogger(logger=logger, delimiter="  ")
+    metric_logger = utils.MetricLogger(delimiter="  ")
     metric_logger.add_meter("lr", utils.SmoothedValue(window_size=1, fmt="{value:.6f}"))
     header = f"Epoch: [{epoch}]"
 
@@ -39,9 +36,9 @@ def train_one_epoch(
         loss_value = losses_reduced.item()
 
         if not math.isfinite(loss_value):
-            logger.info(f"Loss is {loss_value}, stopping training")
-            logger.info(loss_dict_reduced)
-            sys.exit(1)
+            print(f"Loss is {loss_value}, stopping training")
+            print(loss_dict_reduced)
+            exit(1)
 
         optimizer.zero_grad()
         if scaler is not None:
@@ -70,18 +67,19 @@ def _get_iou_types(model):
     return iou_types
 
 
-def evaluate(model, data_loader, device, logger: Logger):
+def evaluate(model, data_loader, device):
+    print("Evaluating the model ...")
     n_threads = torch.get_num_threads()
     # FIXME remove this and make paste_masks_in_image run on the GPU
     torch.set_num_threads(1)
     cpu_device = torch.device("cpu")
     model.eval()
-    metric_logger = utils.MetricLogger(logger=logger, delimiter="  ")
+    metric_logger = utils.MetricLogger(delimiter="  ")
     header = "Test:"
 
     coco = get_coco_api_from_dataset(data_loader.dataset)
     iou_types = _get_iou_types(model)
-    coco_evaluator = CocoEvaluator(logger, coco, iou_types)
+    coco_evaluator = CocoEvaluator(coco, iou_types)
 
     for images, targets in metric_logger.log_every(data_loader, 100, header):
         images = list(img.to(device) for img in images)
@@ -105,7 +103,7 @@ def evaluate(model, data_loader, device, logger: Logger):
 
     # gather the stats from all processes
     metric_logger.synchronize_between_processes()
-    logger.info(f"Averaged stats: {metric_logger}")
+    print(f"Averaged stats: {metric_logger}")
     coco_evaluator.synchronize_between_processes()
 
     # accumulate predictions from all images
