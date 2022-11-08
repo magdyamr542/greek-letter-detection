@@ -25,16 +25,31 @@ from argparse import ArgumentParser
 from constants import label_to_char
 from constants import model_input_size
 import numpy as np
+from utils.get_num_test_images import get_num_test_images
+
+from sacred import Experiment
+from sacred.observers import FileStorageObserver
+from sacred import SETTINGS
+
+# Sacred init
+SETTINGS["CAPTURE_MODE"] = "sys"
+ex = Experiment("Test Detection")
+ex.observers.append(FileStorageObserver("sacred_test_detection"))
 
 
-model_name = "model_detection.pt"
-
-
-def load_saved_model(checkpoint_fpath, model, optimizer):
+def load_saved_model(checkpoint_fpath: str, useWeights: bool):
+    num_classes = 25
+    weights = FasterRCNN_ResNet50_FPN_Weights.COCO_V1 if useWeights else None
+    model = torchvision.models.detection.fasterrcnn_resnet50_fpn(weights=weights)
+    in_features = model.roi_heads.box_predictor.cls_score.in_features
+    model.roi_heads.box_predictor = FastRCNNPredictor(in_features, num_classes)
+    params = [p for p in model.parameters() if p.requires_grad]
+    optimizer = torch.optim.SGD(params, lr=0.001, momentum=0.8, weight_decay=0.0004)
     checkpoint = torch.load(checkpoint_fpath, map_location=torch.device("cpu"))
     model.load_state_dict(checkpoint["model_state_dict"])
     optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
-    return model, optimizer, checkpoint["epoch"]
+    model.eval()
+    return model
 
 
 def get_transform(train):
@@ -115,28 +130,54 @@ def put_asci_text(letter: str, cv2_image, position):
     return image
 
 
-def main():
+@ex.config
+def my_config():
+    checkpoint = ""
+    useWeights = True
+    imagePath = ""
 
-    parser = ArgumentParser()
-    parser.add_argument("-f", "--file", required=True, help="the image file")
-    args = parser.parse_args()
 
-    num_classes = 25
-    model = torchvision.models.detection.fasterrcnn_resnet50_fpn(
-        weights=FasterRCNN_ResNet50_FPN_Weights.COCO_V1
-    )
-    in_features = model.roi_heads.box_predictor.cls_score.in_features
-    model.roi_heads.box_predictor = FastRCNNPredictor(in_features, num_classes)
-    params = [p for p in model.parameters() if p.requires_grad]
-    optimizer = torch.optim.SGD(params, lr=0.001, momentum=0.8, weight_decay=0.0004)
+@ex.automain
+def main(checkpoint: str, useWeights: bool, imagePath: str):
+    if not checkpoint:
+        print(
+            "Check point not given. use `with checkpoint='<path>'` to provide the used checkpoint"
+        )
+        exit(1)
 
-    model, optimizer, start_epoch = load_saved_model(model_name, model, optimizer)
-    model.eval()
+    if not imagePath:
+        print(
+            "No image was provided. use `with imagePath=<path>` to provide the used image"
+        )
+        exit(1)
 
-    path = args.file
+    # validate checkpoint and generate logfile
+    if not os.path.exists(checkpoint):
+        print("Check point path does not exists.")
+        exit(1)
+
+    if not os.path.isfile(checkpoint):
+        print("Check point path is not a file")
+        exit(1)
+
+    if not checkpoint.endswith(".pt"):
+        print("Check point path is not a model check point file")
+        exit(1)
+
+    if not "epoch_" in checkpoint:
+        print("Check point path does not contain the epoch number")
+        exit(1)
+
+    print(f"Given checkpoint {checkpoint}")
+    if not useWeights:
+        print(
+            "Using the model without the weights FasterRCNN_ResNet50_FPN_Weights.COCO_V1"
+        )
+
+    model = load_saved_model(checkpoint, useWeights)
 
     size = (900, 900)
-    image = Image.open(path).convert("RGB").resize(size)
+    image = Image.open(imagePath).convert("RGB").resize(size)
     t = get_transform(False)
     image = t(image)
 
@@ -145,11 +186,7 @@ def main():
     labels: torch.Tensor = result[0]["labels"]
     scores: torch.Tensor = result[0]["scores"]
 
-    cv2_image = draw_boxes(path, boxes, scores, labels, size)
+    cv2_image = draw_boxes(imagePath, boxes, scores, labels, size)
     show_image_cv2(cv2_image)
     cv2.waitKey()
     cv2.waitKeyEx()
-
-
-if __name__ == "__main__":
-    main()
