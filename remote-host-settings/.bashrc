@@ -20,4 +20,5 @@ alias glg='git log --stat'
 alias gco='git checkout' 
 alias gb='git branch' 
 alias gst='git status' 
+alias gp='git push' 
 
