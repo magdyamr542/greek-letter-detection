@@ -1,0 +1,3 @@
+numberOfTestImages,numberOfEpochs,useImageNetWeights,AP_s,AP_m,AP_l,AP_0.50:0.95,AP_0.50,AP_0.75
+25,250,True,0.007,0.0.25,0.088,0.036,0.076,0.029
+25,400,True,0.006,0.0.25,0.079,0.034,0.072,0.026
