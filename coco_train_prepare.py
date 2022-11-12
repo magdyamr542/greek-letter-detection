@@ -49,10 +49,10 @@ def main():
     create_labels(coco_file_path, labels_dir)
 
     # cp the dataset.yml file
-    dataset_yaml_file = os.path.join("yolo", "dataset.yaml")
-    dataset_yaml_new_file = os.path.join(training_dir, "dataset.yaml")
-    print(f"Copying {dataset_yaml_file} to {training_dir}")
-    shutil.copyfile(dataset_yaml_file, dataset_yaml_new_file)
+    # dataset_yaml_file = os.path.join("yolo", "dataset.yaml")
+    # dataset_yaml_new_file = os.path.join(training_dir, "dataset.yaml")
+    # print(f"Copying {dataset_yaml_file} to {training_dir}")
+    # shutil.copyfile(dataset_yaml_file, dataset_yaml_new_file)
 
 
 def create_coco_file(cocoJson, filePath):
