@@ -1,0 +1,10 @@
+{
+  "checkpoint": "data/training/saved_detection_checkpoints/10_test_images/detection_model_checkpoint_epoch_150.pt",
+  "epochs": 300,
+  "numTestImages": 10,
+  "seed": 131409688,
+  "trainedModelName": "detection_model_checkpoint_epoch_300.pt",
+  "trainedModelSaveBasePath": "data/training/saved_detection_checkpoints/10_test_images",
+  "trainedModelSavePath": "data/training/saved_detection_checkpoints/10_test_images/detection_model_checkpoint_epoch_300.pt",
+  "useWeights": true
+}
