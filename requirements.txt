@@ -7,3 +7,4 @@ opencv-python==4.6.0.66
 matplotlib==3.5.0
 black==22.10.0
 sacred==0.8.2
+pylabel==0.1.41
