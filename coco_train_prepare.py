@@ -6,6 +6,34 @@ import os
 from pathlib import Path
 import shutil
 
+# maps a category number to an index char
+coco_map = {
+    7: 0,
+    8: 1,
+    9: 2,
+    14: 3,
+    17: 4,
+    23: 5,
+    33: 6,
+    45: 7,
+    59: 8,
+    77: 9,
+    100: 10,
+    107: 11,
+    111: 12,
+    119: 13,
+    120: 14,
+    144: 15,
+    150: 16,
+    161: 17,
+    169: 18,
+    177: 19,
+    186: 20,
+    201: 21,
+    212: 22,
+    225: 23,
+}
+
 
 def main():
     parser = ArgumentParser()
@@ -79,6 +107,22 @@ def create_labels(coco_file_path, label_dir_path, images_dir_path=""):
     )
     print(f"Creating the labels in {label_dir_path}")
     dataset.export.ExportToYoloV5(label_dir_path)[0]
+
+    # post process the dataset
+    print(f"Updating the created labels in {label_dir_path}")
+    labelsFiles = glob.glob(os.path.join(label_dir_path, "*.txt"))
+    for labelFile in labelsFiles:
+        with open(labelFile, "r+") as f:
+            new_file_lines = []
+            for line in f:
+                nums = line.split(" ")
+                if coco_map.get(int(nums[0]), None) is not None:
+                    nums[0] = str(coco_map[int(nums[0])])
+                    new_file_lines.append(" ".join(nums))
+
+        with open(labelFile, "w+") as f:
+            for line in new_file_lines:
+                f.write(line)
 
 
 def get_coco():
