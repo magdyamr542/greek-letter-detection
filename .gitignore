@@ -19,3 +19,5 @@ dejavu-fonts-ttf-2.37
 yolo/images
 yolo/training
 yolo/labels
+yolo/**/*.pt
+
