@@ -1,6 +1,8 @@
 from argparse import ArgumentParser
 import json
 import os
+from pathlib import Path
+import shutil
 from sklearn.model_selection import train_test_split
 
 
@@ -1570,14 +1572,49 @@ def main():
         os.mkdir(cocoDir)
 
         cocoJson = json.load(f)
-        trainPath =os.path.join(cocoDir, "coco_train.json")
-        testPath =os.path.join(cocoDir, "coco_test.json")
+        trainPath = os.path.join(cocoDir, "coco_train.json")
+        testPath = os.path.join(cocoDir, "coco_test.json")
 
         create_coco_file(cocoJson, train_and_validation, trainPath)
         create_coco_file(cocoJson, test, testPath)
         print(f"created {trainPath}")
         print(f"created {testPath}")
 
+        # create train and test images
+        train_images_path = os.path.join(cocoDir, "training")
+        test_images_path = os.path.join(cocoDir, "testing")
+
+        print("copying training images ...")
+        for img in train_and_validation:
+            path = img["file_name"][:-1]
+            dir = "/".join(path.split("/")[:-1])
+            # make the dir
+            Path(os.path.join(train_images_path, dir)).mkdir(
+                parents=True, exist_ok=True
+            )
+            # copy the image
+            src = os.path.join(
+                "data",
+                "training",
+                img["file_name"].replace("images/", "allImages/"),
+            )
+            dst = os.path.join(train_images_path, img["file_name"])
+            shutil.copyfile(src, dst)
+
+        print("copying testing images ...")
+        for img in test:
+            path = img["file_name"][:-1]
+            dir = "/".join(path.split("/")[:-1])
+            # make the dir
+            Path(os.path.join(test_images_path, dir)).mkdir(parents=True, exist_ok=True)
+            # copy the image
+            src = os.path.join(
+                "data",
+                "training",
+                img["file_name"].replace("images/", "allImages/"),
+            )
+            dst = os.path.join(test_images_path, img["file_name"])
+            shutil.copyfile(src, dst)
 
 
 if __name__ == "__main__":
