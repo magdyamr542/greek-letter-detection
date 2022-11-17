@@ -1,5 +1,5 @@
-numberOfTestImages,numberOfEpochs,useImageNetWeights,numberOfCropsClassified,accuracy
-25,100,True,6461,0.597457627118644
-25,100,True,6461,0.597457627118644
-25,40,False,6461,0.5466101694915254
-31,150,True,6461,0.614406779661017
+numberOfTestImages,numberOfEpochs,useImageNetWeights,accuracy
+25,100,True,0.597457627118644
+25,100,True,0.597457627118644
+25,40,False,0.5466101694915254
+31,150,True,0.614406779661017
