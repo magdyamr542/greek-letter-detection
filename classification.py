@@ -25,6 +25,7 @@ from pathlib import Path
 from sacred import Experiment
 from sacred.observers import FileStorageObserver
 from sacred import SETTINGS
+import shutil
 
 from utils.get_num_test_images import get_num_test_images
 
@@ -129,15 +130,12 @@ def train_model(
 
 
 @ex.capture
-def initialize_model(num_classes, feature_extract=False, useWeights: bool = True):
+def initialize_model(num_classes, feature_extract=False):
     """
     - initializes the resnet18 model replacing the last fully connected layer (fc) with a linear layer that maps to the 24 chars we have.
     """
-    if not useWeights:
-        print("using the model without the weights ResNet18_Weights.IMAGENET1K_V1")
 
-    weights = models.ResNet18_Weights.IMAGENET1K_V1 if useWeights else None
-    model = models.resnet18(weights=weights)
+    model = models.resnet18()
     if feature_extract:
         for param in model.parameters():
             param.requires_grad = False  # it's pretrained.
@@ -163,60 +161,31 @@ def create_data(data_dir: str):
     os.mkdir(os.path.join(data_dir, "crops"))
     os.mkdir(os.path.join(data_dir, "crops", "train"))
     os.mkdir(os.path.join(data_dir, "crops", "val"))
-    try:
-        f = open(glob.glob(os.path.join(data_dir, "*.json"))[0])
-    except:
-        print("No json file was found!")
-    data = json.load(f)
-    f.close()
-    l = []
-    for i, image in enumerate(data["images"]):
-        img_url = image["img_url"][2:]
-        fname = os.path.join(data_dir, img_url)
-        image_id = image["bln_id"]
-        try:
-            Image.open(fname).convert("RGB")
-            l.append(image_id)
-        except:
-            continue
-    with open(os.path.join(data_dir, "image_list.bin"), "wb") as fp:  # Pickling
-        pickle.dump(l, fp)
 
-    train, val = train_test_split(l, random_state=8)
+    allTrainImages = glob.glob(os.path.join(data_dir, "images", "training", "**/*.png"))
+    print("all images", len(allTrainImages))
+    train, val = train_test_split(allTrainImages, random_state=4)
+    print("training images", len(train))
+    print("validation images", len(val))
+    for trainImg in val:
+        imgDir = trainImg.split("/")[-2]
+        imgName = trainImg.split("/")[-1]
+        if not os.path.exists(os.path.join(data_dir, "crops", "val", imgDir)):
+            os.makedirs(os.path.join(data_dir, "crops", "val", imgDir))
 
-    for i, image in enumerate(data["images"]):
-        img_url = image["img_url"][2:]
-        image_id = image["bln_id"]
-        fname = os.path.join(data_dir, img_url)
-        try:
-            im = Image.open(fname).convert("RGB")
-        except:
-            print(f"File not found {fname}")
-            continue
-        if image_id in val:
-            split = "val"
-        else:
-            split = "train"
-        for annotation in data["annotations"]:
-            if annotation["image_id"] == image_id:
-                crop_id = annotation["id"]
-                crop_filename = str(image_id) + "_" + str(crop_id) + ".jpg"
-                x, y, w, h = annotation["bbox"]
+        shutil.copyfile(
+            trainImg, os.path.join(data_dir, "crops", "val", imgDir, imgName)
+        )
 
-                crop_directory = annotation["category_id"]
-                if crop_directory in [108, 208, 31, 76, 176]:
-                    continue
-                crop_directory = os.path.join(
-                    data_dir, "crops", split, str(crop_directory)
-                )
-                if not os.path.exists(crop_directory):
-                    os.mkdir(crop_directory)
-                path = os.path.join(crop_directory, crop_filename)
-                crop1 = im.crop((x, y, x + w, y + h))
-                crop1 = crop1.resize(
-                    (model_input_size, model_input_size), Image.Resampling.BILINEAR
-                )
-                crop1.save(path, "JPEG", quality=85)
+    for trainImg in train:
+        imgDir = trainImg.split("/")[-2]
+        imgName = trainImg.split("/")[-1]
+        if not os.path.exists(os.path.join(data_dir, "crops", "train", imgDir)):
+            os.makedirs(os.path.join(data_dir, "crops", "train", imgDir))
+
+        shutil.copyfile(
+            trainImg, os.path.join(data_dir, "crops", "train", imgDir, imgName)
+        )
 
 
 @ex.config
@@ -224,17 +193,14 @@ def my_config():
     checkpoint = ""
     epochs = None
     useWeights = True
-    numTestImages = get_num_test_images()
     trainedModelName = (
         "classification_model_checkpoint_{noWeightPrefix}epoch_{numEpochs}.pt".format(
             noWeightPrefix="no_weights_" if not useWeights else "", numEpochs=epochs
         )
     )
     trainedModelSaveBasePath = os.path.join(
-        "data",
-        "training",
+        "chinese-data",
         "saved_checkpoints",
-        f"{numTestImages}_test_images",
     )
     trainedModelSavePath = os.path.join(
         trainedModelSaveBasePath,
@@ -246,14 +212,14 @@ def my_config():
 def main(
     checkpoint: str,
     epochs: int,
-    numTestImages: int,
     trainedModelSavePath: str,
     trainedModelSaveBasePath: str,
 ):
     Path(trainedModelSaveBasePath).mkdir(parents=True, exist_ok=True)
 
-    data_dir = "data/training"
-    num_classes = 25
+    data_dir = "chinese-data"
+    num_classes = len(os.listdir(os.path.join(data_dir, "images", "training")))
+    print("number of classes is ", num_classes)
     batch_size = 40
 
     if not epochs:
@@ -265,7 +231,6 @@ def main(
     num_epochs = int(epochs)
 
     print(f"Num of epochs given {num_epochs}")
-    print(f"Num of test images {numTestImages}")
     if not checkpoint:
         print("No checkpoint given")
     else:

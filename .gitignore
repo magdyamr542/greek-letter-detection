@@ -21,3 +21,5 @@ yolo/training
 yolo/labels
 yolo/**/*.pt
 
+
+chinese-data
