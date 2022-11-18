@@ -179,7 +179,8 @@ def create_data(data_dir: str):
             im = im.resize((model_input_size, model_input_size))
             im.save(os.path.join(data_dir, "crops", "val", imgDir, imgName))
             valLeft -= 1
-            print("val left", valLeft)
+            if valLeft % 10 == 0:
+                print("val left", valLeft)
         except:
             print("error while saving image", valImg)
 
@@ -193,9 +194,9 @@ def create_data(data_dir: str):
         try:
             im = Image.open(trainImg).convert("RGB")
             im = im.resize((model_input_size, model_input_size))
-            im.save(os.path.join(data_dir, "crops", "val", imgDir, imgName))
-            trainLeft -= 1
-            print("train left", trainLeft)
+            im.save(os.path.join(data_dir, "crops", "train", imgDir, imgName))
+            if trainLeft % 10 == 0:
+                print("train left", trainLeft)
         except:
             print("error while saving image", trainImg)
 
