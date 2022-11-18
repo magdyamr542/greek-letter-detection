@@ -195,6 +195,7 @@ def create_data(data_dir: str):
             im = Image.open(trainImg).convert("RGB")
             im = im.resize((model_input_size, model_input_size))
             im.save(os.path.join(data_dir, "crops", "train", imgDir, imgName))
+            trainLeft = -1
             if trainLeft % 10 == 0:
                 print("train left", trainLeft)
         except:
