@@ -17,17 +17,14 @@ import torch.optim as optim
 from torchvision import datasets, models, transforms
 import time
 from PIL import Image
-import json
-import os, glob, pickle
+import os, glob
 from sklearn.model_selection import train_test_split
 from PIL import ImageFile
 from pathlib import Path
 from sacred import Experiment
 from sacred.observers import FileStorageObserver
 from sacred import SETTINGS
-import shutil
 
-from utils.get_num_test_images import get_num_test_images
 
 # Sacred init
 SETTINGS["CAPTURE_MODE"] = "sys"
