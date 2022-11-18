@@ -167,15 +167,15 @@ def create_data(data_dir: str):
     train, val = train_test_split(allTrainImages, random_state=4)
     print("training images", len(train))
     print("validation images", len(val))
-    for trainImg in val:
-        imgDir = trainImg.split("/")[-2]
-        imgName = trainImg.split("/")[-1]
+    for valImg in val:
+        imgDir = valImg.split("/")[-2]
+        imgName = valImg.split("/")[-1]
         if not os.path.exists(os.path.join(data_dir, "crops", "val", imgDir)):
             os.makedirs(os.path.join(data_dir, "crops", "val", imgDir))
 
-        shutil.copyfile(
-            trainImg, os.path.join(data_dir, "crops", "val", imgDir, imgName)
-        )
+        im = Image.open(valImg).convert("RGB")
+        im = im.resize((model_input_size, model_input_size))
+        im.save(os.path.join(data_dir, "crops", "val", imgDir, imgName))
 
     for trainImg in train:
         imgDir = trainImg.split("/")[-2]
@@ -183,9 +183,9 @@ def create_data(data_dir: str):
         if not os.path.exists(os.path.join(data_dir, "crops", "train", imgDir)):
             os.makedirs(os.path.join(data_dir, "crops", "train", imgDir))
 
-        shutil.copyfile(
-            trainImg, os.path.join(data_dir, "crops", "train", imgDir, imgName)
-        )
+        im = Image.open(trainImg).convert("RGB")
+        im = im.resize((model_input_size, model_input_size))
+        im.save(os.path.join(data_dir, "crops", "val", imgDir, imgName))
 
 
 @ex.config
