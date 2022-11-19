@@ -9,12 +9,16 @@ Validation: Loss 0.6916 and Accuracy 0.81
 """
 
 
+from functools import partial
 from __future__ import print_function
 from __future__ import division
 import torch
 import torch.nn as nn
 import torch.optim as optim
 from torchvision import datasets, models, transforms
+from torchvision.models._api import WeightsEnum, Weights
+from torchvision.models.resnet import _COMMON_META
+from torchvision.transforms._presets import ImageClassification
 import time
 from PIL import Image
 import json
@@ -130,6 +134,26 @@ def train_model(
     return model
 
 
+class ChineseDataWeights(WeightsEnum):
+    w = Weights(
+        url="https://download.pytorch.org/models/classification_model_state_dict_epoch_50.pth",
+        transforms=partial(ImageClassification, crop_size=224),
+        meta={
+            **_COMMON_META,
+            "num_params": 21797672,
+            "recipe": "https://github.com/pytorch/vision/tree/main/references/classification#resnet",
+            "_metrics": {
+                "ImageNet-1K": {
+                    "acc@1": 73.314,
+                    "acc@5": 91.420,
+                }
+            },
+            "_docs": """These weights reproduce closely the results of the paper using a simple training recipe.""",
+        },
+    )
+    DEFAULT = w
+
+
 @ex.capture
 def initialize_model(num_classes, feature_extract=False, useWeights: bool = True):
     """
@@ -138,7 +162,7 @@ def initialize_model(num_classes, feature_extract=False, useWeights: bool = True
     if not useWeights:
         print("using the model without the weights ResNet18_Weights.IMAGENET1K_V1")
 
-    weights = models.ResNet18_Weights.IMAGENET1K_V1 if useWeights else None
+    weights = ChineseDataWeights if useWeights else None
     model = models.resnet18(weights=weights)
     if feature_extract:
         for param in model.parameters():
