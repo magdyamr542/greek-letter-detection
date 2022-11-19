@@ -113,7 +113,8 @@ def cv2_image_to_pil_image(cv2_image: cv2.Mat) -> PIL.Image:
     return Image.fromarray(cv2_image)
 
 
-def do_classify(image_path: str, model) -> str:
+@ex.capture
+def do_classify(image_path: str, model, all_categories: List[str] = []) -> str:
     """
     classify gets an image path and a model. it returns the classified label
     """
@@ -124,8 +125,7 @@ def do_classify(image_path: str, model) -> str:
 
     result: torch.Tensor = model(input_batch)
     max_index = result.argmax().item()
-    categories = os.listdir(os.path.join("chinese-data", "crops", "test"))
-    return categories[max_index]
+    return all_categories[max_index]
 
 
 def evaluate_model(model) -> int:
@@ -183,7 +183,7 @@ def get_evaluation_for_category(
     dir_total_num_classifications = 0
     dir_correct_num_classifications = 0
 
-    _, __, char = get_data_by_category(int(category_dir))
+    char = category_dir
 
     print(f"Classifying Category={category_dir} Crops={len(crops)}")
 
@@ -207,6 +207,7 @@ def get_evaluation_for_category(
 def my_config():
     checkpoint = ""
     useWeights = True
+    all_categories = os.listdir(os.path.join("chinese-data", "images", "training"))
 
 
 @ex.automain
