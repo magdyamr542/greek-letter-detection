@@ -9,9 +9,9 @@ Validation: Loss 0.6916 and Accuracy 0.81
 """
 
 
-from functools import partial
 from __future__ import print_function
 from __future__ import division
+from functools import partial
 import torch
 import torch.nn as nn
 import torch.optim as optim
