@@ -1,0 +1,2405 @@
+Check if crop folder exists...
+Start evaluating classifier...
+num classes 800
+Will classify 83972 crops
+Classifying Category=хиЙ Crops=60Classifying Category=хк╕ Crops=59
+
+Classifying Category=щВм Crops=59
+Classifying Category=чР░ Crops=60
+Classifying Category=щ║Я Crops=59Classifying Category=щЭ╝ Crops=58Classifying Category=щЪ░ Crops=59Classifying Category=цШЭ Crops=60
+Classifying Category=щЕб Crops=60
+
+Classifying Category=хЧЦ Crops=60Classifying Category=шЪ║ Crops=60
+Classifying Category=шБ┐ Crops=60
+Classifying Category=х░Х Crops=59
+
+
+
+Classifying Category=щ╕╡ Crops=140
+Classifying Category=хЮн Crops=60
+Classifying Category=цп╡ Crops=60Classifying Category=хАУ Crops=60Classifying Category=чГШ Crops=141Classifying Category=чмд Crops=83Classifying Category=чХ┐ Crops=60Classifying Category=хАй Crops=60
+Classifying Category=щХе Crops=60
+
+Classifying Category=хФг Crops=59
+Classifying Category=шАЖ Crops=60
+Classifying Category=цЦЧ Crops=141Classifying Category=щХа Crops=60
+
+Classifying Category=шИЕ Crops=144
+Classifying Category=ч╜и Crops=60
+Classifying Category=ц╣Ы Crops=143Classifying Category=ф║ж Crops=143Classifying Category=цеа Crops=60Classifying Category=х╝П Crops=141
+Classifying Category=шДП Crops=143Classifying Category=хПН Crops=142Classifying Category=ш░▓ Crops=59
+
+
+
+
+Classifying Category=чЙ┐ Crops=60
+Classifying Category=хИО Crops=60
+Classifying Category=ч▓в Crops=60Classifying Category=ш╡Ж Crops=60Classifying Category=щй░ Crops=141
+Classifying Category=щ╕ж Crops=143Classifying Category=ф╕И Crops=145Classifying Category=ф╣Р Crops=142
+
+Classifying Category=щнЕ Crops=58Classifying Category=хР▒ Crops=145Classifying Category=ш╣И Crops=142
+Classifying Category=ш╜л Crops=60Classifying Category=хЩН Crops=60
+Classifying Category=цКФ Crops=59
+Classifying Category=ш┐З Crops=142Classifying Category=цгЛ Crops=144Classifying Category=х║╕ Crops=142Classifying Category=шКП Crops=59Classifying Category=ф║н Crops=142Classifying Category=щЖг Crops=60Classifying Category=хАЩ Crops=142
+Classifying Category=цЧн Crops=144
+Classifying Category=ш╡З Crops=60Classifying Category=шК╕ Crops=59
+
+
+Classifying Category=щФй Crops=60Classifying Category=щ╗╗ Crops=60
+Classifying Category=цЭМ Crops=59Classifying Category=шоз Crops=59
+
+Classifying Category=хФ│ Crops=60Classifying Category=тВз Crops=202Classifying Category=швл Crops=142
+Classifying Category=цг╡ Crops=143Classifying Category=ф┐Я Crops=60Classifying Category=чЙ║ Crops=143
+
+Classifying Category=чЭР Crops=60
+Classifying Category=чЭж Crops=142Classifying Category=щВп Crops=142Classifying Category=чР│ Crops=143
+Classifying Category=чЮЕ Crops=142Classifying Category=чШЩ Crops=60Classifying Category=чРР Crops=139Classifying Category=цзБ Crops=60
+Classifying Category=шДШ Crops=60Classifying Category=цНМ Crops=142Classifying Category=цФо Crops=60Classifying Category=цЧГ Crops=60Classifying Category=хЩм Crops=144
+Classifying Category=ц│М Crops=142Classifying Category=шМС Crops=58Classifying Category=хЕЪ Crops=141
+Classifying Category=щЩз Crops=59
+Classifying Category=щЪ╝ Crops=60Classifying Category=чвб Crops=60
+Classifying Category=ще╜ Crops=60
+Classifying Category=цеж Crops=60
+Classifying Category=цМЫ Crops=143Classifying Category=хоГ Crops=143Classifying Category=хЮж Crops=143
+
+
+Classifying Category=х╣Ф Crops=84Classifying Category=шИВ Crops=60Classifying Category=ш╡а Crops=141
+Classifying Category=щЖЙ Crops=144
+Classifying Category=цЙ╝ Crops=142Classifying Category=х░в Crops=59
+
+Classifying Category=шЭд Crops=60Classifying Category=чкм Crops=59
+Classifying Category=ш╛╢ Crops=60Classifying Category=чиО Crops=142Classifying Category=ч▓о Crops=140
+Classifying Category=ч║╖ Crops=142Classifying Category=цИЧ Crops=60
+
+Classifying Category=цРн Crops=142
+Classifying Category=х╖╖ Crops=143Classifying Category=щУТ Crops=60Classifying Category=щ▒┐ Crops=60Classifying Category=чеУ Crops=60
+Classifying Category=цги Crops=60Classifying Category=щТЕ Crops=60Classifying Category=щ╣г Crops=60Classifying Category=чЙп Crops=60Classifying Category=ш░н Crops=143
+
+Classifying Category=хиЗ Crops=143Classifying Category=щЬ╛ Crops=60Classifying Category=цжШ Crops=60Classifying Category=чеБ Crops=142Classifying Category=шдб Crops=60Classifying Category=х║н Crops=142
+
+Classifying Category=цгЪ Crops=144
+
+Classifying Category=чИЖ Crops=142Classifying Category=шпУ Crops=59
+
+Classifying Category=щТе Crops=144Classifying Category=шДЮ Crops=59Classifying Category=цИ╛ Crops=59
+
+
+Classifying Category=ц╕Э Crops=144Classifying Category=ф╝╛ Crops=60
+
+Classifying Category=х╝н Crops=60
+Classifying Category=хЖ╢ Crops=141
+Classifying Category=ц│а Crops=60
+
+
+Classifying Category=х░┤ Crops=59Classifying Category=ц╝╢ Crops=60Classifying Category=шУУ Crops=60Classifying Category=хУБ Crops=144Classifying Category=цНЕ Crops=142Classifying Category=шо╜ Crops=141Classifying Category=цРЬ Crops=142
+
+Classifying Category=цйж Crops=60Classifying Category=ш╢╛ Crops=143
+Classifying Category=цГм Crops=60
+Classifying Category=` Crops=201Classifying Category=шИД Crops=60
+Classifying Category=хДЖ Crops=58Classifying Category=шЫ╛ Crops=142
+Classifying Category=х│з Crops=59Classifying Category=ш▒Ъ Crops=60Classifying Category=щ╕д Crops=59
+Classifying Category=щлж Crops=60
+Classifying Category=чкЕ Crops=60Classifying Category=цЬн Crops=144Classifying Category=ц┤л Crops=60Classifying Category=цГз Crops=141Classifying Category=чОЗ Crops=143Classifying Category=ш░З Crops=59Classifying Category=цЗ╡ Crops=60
+Classifying Category=цвЕ Crops=144
+Classifying Category=чРв Crops=142Classifying Category=щХд Crops=59Classifying Category=щЖ╡ Crops=60Classifying Category=шПЗ Crops=141Classifying Category=ц┤▒ Crops=142Classifying Category=тИ┤ Crops=202Classifying Category=шЖА Crops=142Classifying Category=хвЯ Crops=144
+Classifying Category=ш░о Crops=59Classifying Category=чеЧ Crops=60Classifying Category=х┤о Crops=60Classifying Category=щвЗ Crops=143
+
+Classifying Category=щй╗ Crops=144Classifying Category=шЮ╡ Crops=60Classifying Category=цЛг Crops=142
+Classifying Category=чЛЧ Crops=142Classifying Category=ц┐С Crops=60Classifying Category=щЧ╛ Crops=60
+
+Classifying Category=щк╝ Crops=60
+Classifying Category=щ╕╖ Crops=60
+Classifying Category=- Crops=202Classifying Category=шЬе Crops=60Classifying Category=ш┤┤ Crops=142
+
+Classifying Category=щ╣И Crops=59Classifying Category=щнБ Crops=144Classifying Category=цГ╢ Crops=141Classifying Category=шСЧ Crops=142
+Classifying Category=щАЛ Crops=60Classifying Category=хЪ╖ Crops=144
+
+Classifying Category=чМУ Crops=60Classifying Category=чТЬ Crops=59Classifying Category=шИА Crops=144Classifying Category=щЭв Crops=142Classifying Category=щАЖ Crops=144
+Classifying Category=ц╗е Crops=143Classifying Category=ш┤к Crops=141Classifying Category=х▒║ Crops=60Classifying Category=х╣Ю Crops=60Classifying Category=шП╝ Crops=59
+
+Classifying Category=х▓м Crops=58
+
+Classifying Category=ш░е Crops=59Classifying Category=ш┐Ш Crops=141Classifying Category=хЙХ Crops=60
+Classifying Category=хЙй Crops=143
+Classifying Category=цЯе Crops=143
+
+Classifying Category=хТ┐ Crops=60
+Classifying Category=шЬЮ Crops=60
+Classifying Category=хШ▒ Crops=144Classifying Category=хЬп Crops=60
+
+Classifying Category=ф╗З Crops=140
+Classifying Category=чЧк Crops=142
+Classifying Category=ч╗д Crops=60
+
+
+Classifying Category=щ▓Л Crops=60Classifying Category=щ▓Х Crops=58
+Classifying Category=шзИ Crops=143
+Classifying Category=чВЬ Crops=60
+Classifying Category=хЦП Crops=59Classifying Category=щ╝╜ Crops=60
+Classifying Category=хгм Crops=144
+Classifying Category=шдУ Crops=60
+Classifying Category=ш╛Б Crops=60Classifying Category=чОЯ Crops=60Classifying Category=ц▓Б Crops=141
+Classifying Category=щЕН Crops=144Classifying Category=хНО Crops=142
+Classifying Category=ш╢Е Crops=142Classifying Category=шЖИ Crops=60
+Classifying Category=щвА Crops=60Classifying Category=щФи Crops=144Classifying Category=шМА Crops=60
+
+
+Classifying Category=чФН Crops=60Classifying Category=щУи Crops=60Classifying Category=хНГ Crops=143
+Classifying Category=хий Crops=144
+Classifying Category=ш╣В Crops=83
+Classifying Category=щЧ┐ Crops=60
+Classifying Category=шМ╝ Crops=59Classifying Category=цЧТ Crops=60Classifying Category=х▒П Crops=143
+Classifying Category=хЮЖ Crops=60Classifying Category=чпК Crops=60Classifying Category=шбо Crops=58Classifying Category=хзЮ Crops=59
+Classifying Category=ц▒Ф Crops=60Classifying Category=щЕ╢ Crops=144
+Classifying Category=щ╕╜ Crops=142
+
+Classifying Category=шРО Crops=143Classifying Category=ц│б Crops=143
+Classifying Category=чмк Crops=60
+Classifying Category=хСФ Crops=59Classifying Category=ф╝▓ Crops=60
+Classifying Category=щй╣ Crops=143Classifying Category=чПа Crops=143Classifying Category=ш░У Crops=143Classifying Category=щШМ Crops=60
+Classifying Category=цТД Crops=60Classifying Category=чХж Crops=143Classifying Category=х╖и Crops=143
+Classifying Category=цРа Crops=60Classifying Category=щШ╝ Crops=60Classifying Category=хТА Crops=142Classifying Category=чЦП Crops=144Classifying Category=хЗ╡ Crops=59
+Classifying Category=щЧ╝ Crops=59Classifying Category=ч╝И Crops=59Classifying Category=щАЫ Crops=141
+
+Classifying Category=шЮп Crops=60Classifying Category=цНЯ Crops=141
+Classifying Category=ш░п Crops=59Classifying Category=щФЪ Crops=143
+Classifying Category=цЛИ Crops=144Classifying Category=ч╝┤ Crops=143Classifying Category=щХА Crops=140Classifying Category=щмп Crops=59Classifying Category=ч╕╗ Crops=60Classifying Category=щУ░ Crops=142Classifying Category=хЭЬ Crops=60
+Classifying Category=цЧо Crops=60Classifying Category=ч╛▓ Crops=59Classifying Category=цЕО Crops=144Classifying Category=хШЮ Crops=59Classifying Category=шЛд Crops=59Classifying Category=ч╝О Crops=139Classifying Category=цбО Crops=60Classifying Category=шН╖ Crops=143Classifying Category=хиШ Crops=143Classifying Category=чЖК Crops=143Classifying Category=х▓▒ Crops=60Classifying Category=хпМ Crops=141Classifying Category=шЙ│ Crops=140Classifying Category=шФ╕ Crops=60
+Classifying Category=чФ▓ Crops=140Classifying Category=цЩж Crops=143Classifying Category=шПб Crops=60Classifying Category=ф╝д Crops=144Classifying Category=чоН Crops=141Classifying Category=щ╕╢ Crops=60Classifying Category=чЖЯ Crops=144Classifying Category=0 Crops=202Classifying Category=шГБ Crops=141
+Classifying Category=цЛВ Crops=142
+Classifying Category=ф╕║ Crops=142Classifying Category=х╖й Crops=141Classifying Category=ц╗Ю Crops=142Classifying Category=хЖ▒ Crops=59
+Classifying Category=ц┤Ю Crops=142Classifying Category=шЬГ Crops=60Classifying Category=хФ╝ Crops=60Classifying Category=щТ▒ Crops=144Classifying Category=чЛЮ Crops=143Classifying Category=шпй Crops=59Classifying Category=шг╕ Crops=142
+Classifying Category=чПР Crops=119
+Classifying Category=ц╕К Crops=145Classifying Category=шкК Crops=140Classifying Category=шЫЖ Crops=144
+Classifying Category=х╝Д Crops=142Classifying Category=цНВ Crops=141Classifying Category=цЙй Crops=143Classifying Category=шИЫ Crops=60Classifying Category=шЫД Crops=59Classifying Category=чпЖ Crops=143Classifying Category=х┐╡ Crops=144
+
+
+Classifying Category=шЕФ Crops=143Classifying Category=щШФ Crops=144Classifying Category=шДм Crops=60
+Classifying Category=хвЕ Crops=142Classifying Category=хЦЩ Crops=59Classifying Category=ч▓е Crops=140Classifying Category=цДЙ Crops=142Classifying Category=ф╝Ю Crops=143Classifying Category=цаЗ Crops=140Classifying Category=ф┐П Crops=143
+Classifying Category=J Crops=404
+Classifying Category=щХ░ Crops=142
+
+Classifying Category=ч╗╣ Crops=60Classifying Category=че║ Crops=60Classifying Category=шЮа Crops=59
+
+Classifying Category=цРР Crops=140Classifying Category=чвЫ Crops=60
+Classifying Category=чЙВ Crops=60Classifying Category=чПЩ Crops=60Classifying Category=хЦК Crops=141
+Classifying Category=ц▓з Crops=141Classifying Category=чЕд Crops=144Classifying Category=шРж Crops=60
+
+
+
+
+
+Classifying Category=шТЯ Crops=59Classifying Category=цоЦ Crops=145Classifying Category=щ│Р Crops=60Classifying Category=хйк Crops=143Classifying Category=шИЯ Crops=143Classifying Category=цЛ╜ Crops=137Classifying Category=чмЫ Crops=142Classifying Category=щШЛ Crops=60
+Classifying Category=ш╛В Crops=60
+Classifying Category=хОН Crops=60
+Classifying Category=чШБ Crops=141
+
+Classifying Category=ч╝▒ Crops=60Classifying Category=шкЙ Crops=144Classifying Category=H Crops=403Classifying Category=чД▒ Crops=60Classifying Category=цЦУ Crops=60Classifying Category=цХХ Crops=60
+Classifying Category=щЫк Crops=144Classifying Category=щ│б Crops=60Classifying Category=цЕи Crops=142Classifying Category=хак Crops=143Classifying Category=цнЖ Crops=60Classifying Category=хЮЕ Crops=60Classifying Category=шЛа Crops=59Classifying Category=хШЯ Crops=60
+
+
+Classifying Category=шТЧ Crops=60
+Classifying Category=цЛ╝ Crops=144Classifying Category=чЭ╜ Crops=59Classifying Category=хХЦ Crops=60Classifying Category=ч│К Crops=143Classifying Category=чЫЖ Crops=143Classifying Category=щФ╖ Crops=60
+
+
+
+Classifying Category=чЫ▒ Crops=60
+
+Classifying Category=ч║┤ Crops=60
+Classifying Category=ц░┤ Crops=143Classifying Category=ц▓д Crops=142Classifying Category=х▒г Crops=59Classifying Category=щй╖ Crops=59Classifying Category=це╣ Crops=60Classifying Category=чаЭ Crops=60Classifying Category=шРГ Crops=61Classifying Category=ч░┐ Crops=142Classifying Category=цА╗ Crops=142Classifying Category=щУЦ Crops=60
+Classifying Category=хпУ Crops=144Classifying Category=щлМ Crops=59
+
+
+Classifying Category=чК╣ Crops=142Classifying Category=шЫЗ Crops=144
+
+Classifying Category=шНЫ Crops=59
+
+Classifying Category=х╜Ш Crops=59Classifying Category=ч╗Э Crops=142
+Classifying Category=ц╕й Crops=144
+Classifying Category=шЫА Crops=144Classifying Category=цжЙ Crops=60
+
+Classifying Category=ф║Т Crops=142Classifying Category=шФ╣ Crops=60Classifying Category=хжВ Crops=144Classifying Category=чзн Crops=60Classifying Category=цпФ Crops=143Classifying Category=чАг Crops=60
+
+Classifying Category=шОЖ Crops=144Classifying Category=чЬ╡ Crops=60Classifying Category=щГИ Crops=60
+Classifying Category=чЫ╝ Crops=143Classifying Category=цЫЫ Crops=60Classifying Category=цвж Crops=144Classifying Category=ш╢Д Crops=60Classifying Category=ш╜з Crops=143Classifying Category=цЭз Crops=60Classifying Category=} Crops=202
+Classifying Category=шЬг Crops=60
+
+Classifying Category=чЩ╗ Crops=142
+Classifying Category=щУА Crops=143Classifying Category=цП╢ Crops=60
+
+Classifying Category=хУА Crops=141Classifying Category=чА╡ Crops=60Classifying Category=шзД Crops=142Classifying Category=ц▓П Crops=144Classifying Category=ч╗╝ Crops=144Classifying Category=чЮН Crops=59
+Classifying Category=х╖╛ Crops=144
+
+Classifying Category=чФ▒ Crops=143Classifying Category=щУШ Crops=60Classifying Category=хЦЭ Crops=143
+Classifying Category=ш╜┤ Crops=144Classifying Category=ч╗П Crops=143
+
+
+
+
+Classifying Category=щХи Crops=60Classifying Category=щ╣Ч Crops=60
+Classifying Category=хЙН Crops=142
+Classifying Category=цЭб Crops=142Classifying Category=хК▓ Crops=144
+Classifying Category=шНГ Crops=59Classifying Category=хТй Crops=60Classifying Category=цп│ Crops=60Classifying Category=х╝У Crops=141Classifying Category=чМ╕ Crops=59
+
+Classifying Category=ц░Н Crops=60Classifying Category=шзе Crops=59
+Classifying Category=шЫй Crops=60Classifying Category=чЫ▓ Crops=142
+Classifying Category=щ╝м Crops=60Classifying Category=хЙЕ Crops=60Classifying Category=ч╛Ю Crops=143
+Classifying Category=хЕл Crops=143Classifying Category=ш╕Е Crops=60Classifying Category=щФв Crops=60Classifying Category=чРГ Crops=144
+
+Classifying Category=ц╕а Crops=143Classifying Category=ц╕Ъ Crops=62Classifying Category=чиЖ Crops=60Classifying Category=шУЙ Crops=144Classifying Category=хЦБ Crops=60Classifying Category=шЖг Crops=60Classifying Category=цЮЬ Crops=140
+Classifying Category=ц║╖ Crops=60Classifying Category=щФО Crops=60Classifying Category=х║Ф Crops=143
+Classifying Category=хКЭ Crops=142Classifying Category=чСХ Crops=60
+Classifying Category=цГ┤ Crops=59Classifying Category=ш╡л Crops=143
+Classifying Category=чп╝ Crops=60
+Classifying Category=чЦд Crops=142Classifying Category=х┤з Crops=60Classifying Category=щЩД Crops=142Classifying Category=х╛╡ Crops=60Classifying Category=ц╖М Crops=143
+Classifying Category=чн╖ Crops=143Classifying Category=шУ┐ Crops=60Classifying Category=щА╡ Crops=60
+Classifying Category=щХЙ Crops=59Classifying Category=щФз Crops=60Classifying Category=ц┐а Crops=60
+
+Classifying Category=шМБ Crops=143Classifying Category=ч╝║ Crops=143Classifying Category=щЫБ Crops=143Classifying Category=шТО Crops=59
+Classifying Category=цН╗ Crops=144
+
+Classifying Category=ц╝п Crops=60Classifying Category=чЦГ Crops=60Classifying Category=щЪ╢ Crops=142
+Classifying Category=че╝ Crops=60Classifying Category=ф╣▒ Crops=142Classifying Category=щкС Crops=143Classifying Category=чХФ Crops=144
+
+Classifying Category=ш░й Crops=143Classifying Category=шЩ║ Crops=59Classifying Category=хРн Crops=139Classifying Category=шп╖ Crops=143Classifying Category=ч╗Х Crops=144
+Classifying Category=чЭЫ Crops=144Classifying Category=colon Crops=200
+Classifying Category=щУй Crops=59Classifying Category=шГД Crops=60
+Classifying Category=чФЬ Crops=142Classifying Category=шЭО Crops=144Classifying Category=хж▓ Crops=60
+Classifying Category=шп╛ Crops=144Classifying Category=щНк Crops=59
+Classifying Category=цЪЕ Crops=57Classifying Category=щжР Crops=60Classifying Category=ш┤п Crops=142Classifying Category=чн╡ Crops=60
+Classifying Category=хЫд Crops=141Classifying Category=цпп Crops=143
+Classifying Category=х▓С Crops=59
+Classifying Category=чЪЛ Crops=139Classifying Category=хГ│ Crops=117
+Classifying Category=х┐С Crops=60Classifying Category=щлШ Crops=142Classifying Category=ч╛з Crops=59
+Classifying Category=ц╡Е Crops=144Classifying Category=чХИ Crops=60
+Classifying Category=цКа Crops=144Classifying Category=чЫЧ Crops=142
+Classifying Category=щ╕п Crops=141Classifying Category=чЭг Crops=141
+
+Classifying Category=цЮБ Crops=141Classifying Category=щ▓╝ Crops=60
+Classifying Category=хП╢ Crops=143Classifying Category=ще╢ Crops=144
+
+
+
+
+
+Classifying Category=щЪ│ Crops=60Classifying Category=цЗИ Crops=141Classifying Category=ц▓Р Crops=83Classifying Category=ч║л Crops=143
+
+Classifying Category=чкТ Crops=143Classifying Category=хЗ░ Crops=143Classifying Category=чЯз Crops=60Classifying Category=цЛЖ Crops=143Classifying Category=чШЧ Crops=60
+Classifying Category=хнд Crops=141Classifying Category=цзЪ Crops=60Classifying Category=чГн Crops=145Classifying Category=хйз Crops=59
+Classifying Category=х╜У Crops=142Classifying Category=шГЮ Crops=142Classifying Category=циЯ Crops=145Classifying Category=щ│Ь Crops=60
+
+Classifying Category=шГи Crops=60
+Classifying Category=хЩА Crops=60Classifying Category=хи╝ Crops=60Classifying Category=цИР Crops=142
+Classifying Category=шНн Crops=59Classifying Category=хо┤ Crops=142Classifying Category=шЙ┐ Crops=59Classifying Category=хПЧ Crops=143
+Classifying Category=чХП Crops=140Classifying Category=чЙ▓ Crops=140Classifying Category=цЖЦ Crops=59
+Classifying Category=цФТ Crops=143
+
+Classifying Category=шУж Crops=60Classifying Category=шМЬ Crops=58Classifying Category=хе│ Crops=144Classifying Category=ф╗д Crops=143
+
+Classifying Category=шЛЬ Crops=59Classifying Category=ц░Ш Crops=60Classifying Category=щй║ Crops=58Classifying Category=хГЗ Crops=60Classifying Category=цЛК Crops=60Classifying Category=хИ┐ Crops=60
+
+
+Classifying Category=тА░ Crops=202Classifying Category=х║╢ Crops=141
+
+Classifying Category=ф║╗ Crops=60Classifying Category=шЬЬ Crops=144Classifying Category=шНЮ Crops=83Classifying Category=ч▒╗ Crops=143Classifying Category=цп╜ Crops=60
+
+
+
+Classifying Category=х▓╡ Crops=59
+Classifying Category=ц░Е Crops=60
+Classifying Category=щгФ Crops=60Classifying Category=х╣в Crops=142Classifying Category=шД╛ Crops=144Classifying Category=х┐л Crops=144
+
+
+
+
+
+Classifying Category=ч╝л Crops=60
+
+Classifying Category=хЪЖ Crops=60Classifying Category=цбз Crops=60Classifying Category=хдЗ Crops=143Classifying Category=ш╜▒ Crops=59Classifying Category=шКе Crops=143Classifying Category=ш┐Ь Crops=145Classifying Category=цкР Crops=84Classifying Category=х░К Crops=141
+
+
+Classifying Category=щ╕╝ Crops=60Classifying Category=ч╣Б Crops=141
+
+Classifying Category=ф╗О Crops=142Classifying Category=хВЕ Crops=142
+Classifying Category=шГЩ Crops=60Classifying Category=шГА Crops=144
+Classifying Category=чжА Crops=83Classifying Category=[ Crops=202
+
+Classifying Category=тИе Crops=200Classifying Category=члЯ Crops=144
+
+Classifying Category=щ║Л Crops=60Classifying Category=ц╝╣ Crops=60Classifying Category=чЗГ Crops=140Classifying Category=шЭИ Crops=60
+Classifying Category=ч╗║ Crops=59
+
+Classifying Category=х╣┐ Crops=141Classifying Category=ф╝л Crops=60Classifying Category=цЩ║ Crops=142Classifying Category=хФа Crops=84Classifying Category=хШО Crops=140Classifying Category=хАб Crops=141Classifying Category=щХб Crops=60Classifying Category=цо│ Crops=60Classifying Category=цй╣ Crops=60
+
+Classifying Category=чЧХ Crops=143Classifying Category=чвМ Crops=143Classifying Category=чЬН Crops=60Classifying Category=цДж Crops=60Classifying Category=щЫп Crops=60
+Classifying Category=хР╡ Crops=143
+Classifying Category=хжЖ Crops=142
+Classifying Category=чЭб Crops=143Classifying Category=цПй Crops=142Classifying Category=хоЕ Crops=145Classifying Category=шЫ▓ Crops=60Classifying Category=щЮН Crops=142Classifying Category=шВ┐ Crops=144
+
+Classifying Category=ф╛Ф Crops=60
+Classifying Category=х║Ц Crops=60Classifying Category=щФЛ Crops=139Classifying Category=цГп Crops=142Classifying Category=шЫК Crops=141
+Classifying Category=шЖК Crops=143
+Classifying Category=шЪм Crops=60Classifying Category=чОЙ Crops=142Classifying Category=чЩЮ Crops=83Classifying Category=ш░Л Crops=144
+Classifying Category=чЫ╕ Crops=143
+
+
+Classifying Category=ш╖г Crops=60Classifying Category=щкД Crops=142Classifying Category=щ╣и Crops=60
+
+Classifying Category=ч╝з Crops=60Classifying Category=х╕И Crops=145
+
+
+
+Classifying Category=чйД Crops=60
+Classifying Category=члЛ Crops=142
+Classifying Category=хеШ Crops=59Classifying Category=хЮа Crops=60Classifying Category=цОИ Crops=143
+
+Classifying Category=шаХ Crops=144
+Classifying Category=ш╛Ж Crops=142
+Classifying Category=че╕ Crops=142
+Classifying Category=х▒И Crops=143Classifying Category=чмП Crops=60
+Classifying Category=цЯГ Crops=60Classifying Category=ч╝В Crops=59Classifying Category=ф╕У Crops=143Classifying Category=чГл Crops=140
+
+Classifying Category=ч╗░ Crops=140Classifying Category=х╖Й Crops=60Classifying Category=хТМ Crops=143
+Classifying Category=vertical_bar Crops=202Classifying Category=щЩР Crops=143
+
+
+Classifying Category=шНТ Crops=143Classifying Category=хБе Crops=141Classifying Category=ц╕п Crops=141Classifying Category=хжп Crops=60Classifying Category=чХЪ Crops=60
+Classifying Category=ц╖▒ Crops=144Classifying Category=шГЖ Crops=142Classifying Category=хТВ Crops=59Classifying Category=уОЬ Crops=202
+
+
+
+
+
+
+Classifying Category=чЫР Crops=143Classifying Category=щ╝Н Crops=60Classifying Category=чРЫ Crops=60
+
+
+Classifying Category=цСз Crops=142
+Classifying Category=чПЮ Crops=60
+
+Classifying Category=хЕ╝ Crops=142Classifying Category=ш╛К Crops=120Classifying Category=чГИ Crops=142Classifying Category=щйм Crops=144Classifying Category=шЮИ Crops=59
+
+Classifying Category=чФн Crops=142Classifying Category=щ│У Crops=60Classifying Category=# Crops=202
+Classifying Category=ш╕в Crops=142Classifying Category=тЦ│ Crops=202
+
+Classifying Category=ш░Э Crops=58Classifying Category=хжд Crops=59
+
+
+Classifying Category=чРп Crops=60Classifying Category=чЧ▒ Crops=60Classifying Category=шЪг Crops=82Classifying Category=хЬй Crops=59
+
+
+
+Classifying Category=ц╛б Crops=143Classifying Category=чРЗ Crops=60
+Classifying Category=V Crops=404Classifying Category=шБЛ Crops=143Classifying Category=шТп Crops=60Classifying Category=хжК Crops=144Classifying Category=хи▒ Crops=142Classifying Category=ф╝Ъ Crops=141Classifying Category=х┐Т Crops=60Classifying Category=щвЕ Crops=143Classifying Category=хМ┐ Crops=143Classifying Category=щ╣Х Crops=60Classifying Category=щТг Crops=60
+Classifying Category=хВй Crops=59Classifying Category=ц│г Crops=143
+Classifying Category=цЧЖ Crops=60
+Classifying Category=шКи Crops=59Classifying Category=щЖн Crops=60
+Classifying Category=ч│Е Crops=60Classifying Category=чм║ Crops=141
+Classifying Category=хТм Crops=143
+Classifying Category=шЗ╗ Crops=145
+Classifying Category=хС╡ Crops=143
+
+
+
+Classifying Category=хЭЭ Crops=142
+Classifying Category=хп║ Crops=143
+
+
+
+Classifying Category=чзС Crops=144
+Classifying Category=хнж Crops=144
+
+
+
+
+
+
+
+Classifying Category=ф╗б Crops=59Classifying Category=ц░Щ Crops=61Classifying Category=щ▓н Crops=60
+
+Classifying Category=чЩ╛ Crops=141Classifying Category=хЙЬ Crops=60Classifying Category=чХ╕ Crops=142
+
+Classifying Category=щФ╝ Crops=60
+Classifying Category=цМб Crops=141
+Classifying Category=х┤Ы Crops=59Classifying Category=хг░ Crops=143Classifying Category=щ▓▓ Crops=60Classifying Category=шги Crops=59Classifying Category=шЭа Crops=83Classifying Category=щ╛Щ Crops=143Classifying Category=х╜й Crops=142Classifying Category=ц░▓ Crops=59
+Classifying Category=тИ╡ Crops=201Classifying Category=щТи Crops=142Classifying Category=чЪЗ Crops=143Classifying Category=цЧж Crops=142Classifying Category=хНЮ Crops=140Classifying Category=щлА Crops=60Classifying Category=ход Crops=144Classifying Category=шП▒ Crops=142
+Classifying Category=цЭО Crops=143
+
+Classifying Category=хУк Crops=142
+Classifying Category=хд╝ Crops=59Classifying Category=цСФ Crops=142
+Classifying Category=щ╝Т Crops=60Classifying Category=хЙб Crops=59
+
+Classifying Category=цОТ Crops=144
+Classifying Category=ф╕╢ Crops=59
+
+
+Classifying Category=хбН Crops=60Classifying Category=ш╕м Crops=60
+Classifying Category=ц▓Я Crops=140Classifying Category=хпЗ Crops=142Classifying Category=ч│Х Crops=140Classifying Category=х╕Ъ Crops=144
+Classifying Category=цоЪ Crops=60
+Classifying Category=щ╣ж Crops=83Classifying Category=ц▒Ь Crops=60Classifying Category=циК Crops=141Classifying Category=хЗА Crops=143Classifying Category=щЫ│ Crops=83Classifying Category=ш╡г Crops=141
+
+Classifying Category=шМ╕ Crops=143
+
+
+Classifying Category=хФ╛ Crops=141Classifying Category=шЩ╝ Crops=60
+
+Classifying Category=члп Crops=142
+Classifying Category=ч╛╝ Crops=59Classifying Category=хЧД Crops=60Classifying Category=уАБ Crops=202Classifying Category=ц╜Ж Crops=60Classifying Category=шЬ╖ Crops=60Classifying Category=щБВ Crops=142
+
+Classifying Category=хж╗ Crops=144
+
+Classifying Category=щЬ╣ Crops=143Classifying Category=ч│Щ Crops=142Classifying Category=цДЯ Crops=141
+Classifying Category=чСЫ Crops=60Classifying Category=цжЬ Crops=138
+Classifying Category=чШ┤ Crops=145Classifying Category=щвЭ Crops=142
+
+
+Classifying Category=ч▓Ч Crops=143Classifying Category=щ╝а Crops=143Classifying Category=щвЧ Crops=143
+Classifying Category=шФУ Crops=141Classifying Category=щнЙ Crops=59Classifying Category=х╝з Crops=143Classifying Category=чаЦ Crops=144
+
+
+Classifying Category=цЮД Crops=142
+Classifying Category=чЙТ Crops=60Classifying Category=ц╡П Crops=60Classifying Category=щ╕╣ Crops=60
+Classifying Category=цйЗ Crops=144Classifying Category=хЭО Crops=142Classifying Category=щТ╛ Crops=141Classifying Category=хЖ░ Crops=141Classifying Category=чЛД Crops=137
+
+
+Classifying Category=ш░г Crops=144
+Classifying Category=цАл Crops=60
+
+
+
+
+Classifying Category=щЧ╗ Crops=144
+Classifying Category=шо╛ Crops=141
+
+Classifying Category=тЧО Crops=202
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Done with Category=хк╕ Crops=59 Char=хк╕ ...
+Done with Category=щЭ╝ Crops=58 Char=щЭ╝ ...
+Done with Category=цйж Crops=60 Char=цйж ...
+Done with Category=чР░ Crops=60 Char=чР░ ...
+Done with Category=ш░о Crops=59 Char=ш░о ...
+Done with Category=щнЕ Crops=58 Char=щнЕ ...
+Done with Category=хЮн Crops=60 Char=хЮн ...
+Done with Category=цЭМ Crops=59 Char=цЭМ ...
+Done with Category=цп╡ Crops=60 Char=цп╡ ...
+Done with Category=чкм Crops=59 Char=чкм ...
+Done with Category=щ╗╗ Crops=60 Char=щ╗╗ ...
+Done with Category=цШЭ Crops=60 Char=цШЭ ...
+Done with Category=шБ┐ Crops=60 Char=шБ┐ ...Done with Category=цХХ Crops=60 Char=цХХ ...
+
+Done with Category=щВм Crops=59 Char=щВм ...
+Done with Category=щ▓Л Crops=60 Char=щ▓Л ...
+Done with Category=щЪ░ Crops=59 Char=щЪ░ ...
+Done with Category=шМС Crops=58 Char=шМС ...Done with Category=щ║Я Crops=59 Char=щ║Я ...Done with Category=ц┐С Crops=60 Char=ц┐С ...
+
+
+Done with Category=цФо Crops=60 Char=цФо ...
+Done with Category=чЙп Crops=60 Char=чЙп ...
+Done with Category=хЦП Crops=59 Char=хЦП ...
+Done with Category=ф╝▓ Crops=60 Char=ф╝▓ ...Done with Category=щЖ╡ Crops=60 Char=щЖ╡ ...
+
+Done with Category=шКП Crops=59 Char=шКП ...
+Done with Category=шДЮ Crops=59 Char=шДЮ ...
+Done with Category=ш░е Crops=59 Char=ш░е ...Done with Category=х░┤ Crops=59 Char=х░┤ ...
+
+Done with Category=щУТ Crops=60 Char=щУТ ...
+Done with Category=щХе Crops=60 Char=щХе ...
+Done with Category=хЦЩ Crops=59 Char=хЦЩ ...
+Done with Category=щ▒┐ Crops=60 Char=щ▒┐ ...
+Done with Category=цГм Crops=60 Char=цГм ...Done with Category=шЮ╡ Crops=60 Char=шЮ╡ ...
+
+Done with Category=щЕб Crops=60 Char=щЕб ...
+Done with Category=щЧ┐ Crops=60 Char=щЧ┐ ...
+Done with Category=ц▒Ф Crops=60 Char=ц▒Ф ...
+Done with Category=шпУ Crops=59 Char=шпУ ...
+Done with Category=шАЖ Crops=60 Char=шАЖ ...
+Done with Category=хИО Crops=60 Char=хИО ...Done with Category=х░Х Crops=59 Char=х░Х ...Done with Category=шдб Crops=60 Char=шдб ...
+
+
+Done with Category=цИ╛ Crops=59 Char=цИ╛ ...
+Done with Category=щЬ╛ Crops=60 Char=щЬ╛ ...Done with Category=шТЧ Crops=60 Char=шТЧ ...Done with Category=чШЩ Crops=60 Char=чШЩ ...Done with Category=чЙ┐ Crops=60 Char=чЙ┐ ...Done with Category=чеЧ Crops=60 Char=чеЧ ...
+
+
+Done with Category=хФг Crops=59 Char=хФг ...
+
+
+Done with Category=х░в Crops=59 Char=х░в ...
+Done with Category=цИЧ Crops=60 Char=цИЧ ...
+Done with Category=хФ│ Crops=60 Char=хФ│ ...
+Done with Category=ц┤л Crops=60 Char=ц┤л ...
+Done with Category=хзЮ Crops=59 Char=хзЮ ...
+Done with Category=х╜Ш Crops=59 Char=х╜Ш ...
+Done with Category=ч╜и Crops=60 Char=ч╜и ...
+Done with Category=ш░▓ Crops=59 Char=ш░▓ ...
+Done with Category=чФН Crops=60 Char=чФН ...
+Done with Category=щЪ╝ Crops=60 Char=щЪ╝ ...Done with Category=хАй Crops=60 Char=хАй ...
+
+Done with Category=ш╜л Crops=60 Char=ш╜л ...
+Done with Category=щЧ╛ Crops=60 Char=щЧ╛ ...
+Done with Category=хиЙ Crops=60 Char=хиЙ ...
+Done with Category=щЖг Crops=60 Char=щЖг ...Done with Category=шЬЮ Crops=60 Char=шЬЮ ...
+
+Done with Category=х│з Crops=59 Char=х│з ...
+Done with Category=щлж Crops=60 Char=щлж ...
+Done with Category=шЪ║ Crops=60 Char=шЪ║ ...
+Done with Category=щХа Crops=60 Char=щХа ...
+Done with Category=шИВ Crops=60 Char=шИВ ...
+Done with Category=ш╡З Crops=60 Char=ш╡З ...
+Done with Category=щФй Crops=60 Char=щФй ...
+Done with Category=х╝н Crops=60 Char=х╝н ...
+Done with Category=чЭР Crops=60 Char=чЭР ...Done with Category=шУУ Crops=60 Char=шУУ ...
+
+Done with Category=шбо Crops=58 Char=шбо ...
+Done with Category=хЬп Crops=60 Char=хЬп ...
+Done with Category=хЗ╡ Crops=59 Char=хЗ╡ ...
+Done with Category=чПЩ Crops=60 Char=чПЩ ...
+Done with Category=цги Crops=60 Char=цги ...
+Done with Category=хЩН Crops=60 Char=хЩН ...
+Done with Category=чЮН Crops=59 Char=чЮН ...Done with Category=х▓м Crops=58 Char=х▓м ...Done with Category=х┤о Crops=60 Char=х┤о ...
+
+Done with Category=шЭд Crops=60 Char=шЭд ...
+Done with Category=щ╕╢ Crops=60 Char=щ╕╢ ...
+
+Done with Category=цЧТ Crops=60 Char=цЧТ ...
+Done with Category=щЩз Crops=59 Char=щЩз ...
+Done with Category=чХ┐ Crops=60 Char=чХ┐ ...
+Done with Category=чпК Crops=60 Char=чпК ...
+Done with Category=шЮп Crops=60 Char=шЮп ...Done with Category=щ╣г Crops=60 Char=щ╣г ...
+
+Done with Category=цбО Crops=60 Char=цбО ...Done with Category=цЧГ Crops=60 Char=цЧГ ...
+
+Done with Category=чВЬ Crops=60 Char=чВЬ ...
+Done with Category=ф┐Я Crops=60 Char=ф┐Я ...
+Done with Category=шоз Crops=59 Char=шоз ...
+Done with Category=ш░З Crops=59 Char=ш░З ...
+Done with Category=хЧЦ Crops=60 Char=хЧЦ ...Done with Category=щ╕╖ Crops=60 Char=щ╕╖ ...Done with Category=ч╗д Crops=60 Char=ч╗д ...Done with Category=х╣Ю Crops=60 Char=х╣Ю ...Done with Category=ш╛╢ Crops=60 Char=ш╛╢ ...Done with Category=шЬГ Crops=60 Char=шЬГ ...
+
+Done with Category=чвб Crops=60 Char=чвб ...
+
+Done with Category=ц░Н Crops=60 Char=ц░Н ...
+Done with Category=цЗ╡ Crops=60 Char=цЗ╡ ...Done with Category=цеж Crops=60 Char=цеж ...
+
+
+
+
+Done with Category=шМА Crops=60 Char=шМА ...
+Done with Category=чкЕ Crops=60 Char=чкЕ ...
+Done with Category=хЖ▒ Crops=59 Char=хЖ▒ ...Done with Category=ф╝╛ Crops=60 Char=ф╝╛ ...
+
+Done with Category=цеа Crops=60 Char=цеа ...
+Done with Category=шИД Crops=60 Char=шИД ...
+Done with Category=чОЯ Crops=60 Char=чОЯ ...Done with Category=цзБ Crops=60 Char=цзБ ...
+
+Done with Category=щУи Crops=60 Char=щУи ...
+Done with Category=чТЬ Crops=59 Char=чТЬ ...
+Done with Category=щ▓Х Crops=58 Char=щ▓Х ...
+Done with Category=шЫД Crops=59 Char=шЫД ...
+Done with Category=цКФ Crops=59 Char=цКФ ...
+Done with Category=хЮЖ Crops=60 Char=хЮЖ ...Done with Category=шДШ Crops=60 Char=шДШ ...Done with Category=щТЕ Crops=60 Char=щТЕ ...Done with Category=цЧо Crops=60 Char=цЧо ...Done with Category=ч▓в Crops=60 Char=ч▓в ...Done with Category=хАУ Crops=60 Char=хАУ ...Done with Category=цЪЕ Crops=57 Char=цЪЕ ...
+
+
+Done with Category=щй╖ Crops=59 Char=щй╖ ...Done with Category=цжШ Crops=60 Char=цжШ ...
+
+
+
+
+Done with Category=щ╝╜ Crops=60 Char=щ╝╜ ...Done with Category=ш▒Ъ Crops=60 Char=ш▒Ъ ...Done with Category=щШ╝ Crops=60 Char=щШ╝ ...Done with Category=чеУ Crops=60 Char=чеУ ...Done with Category=х▓▒ Crops=60 Char=х▓▒ ...Done with Category=чЫ▒ Crops=60 Char=чЫ▒ ...
+Done with Category=хТ┐ Crops=60 Char=хТ┐ ...
+
+Done with Category=щк╝ Crops=60 Char=щк╝ ...Done with Category=щ╕д Crops=59 Char=щ╕д ...Done with Category=щмп Crops=59 Char=щмп ...Done with Category=ц│а Crops=60 Char=ц│а ...
+
+
+Done with Category=шпй Crops=59 Char=шпй ...Done with Category=хЙЕ Crops=60 Char=хЙЕ ...
+
+
+
+
+
+
+
+Done with Category=чаЭ Crops=60 Char=чаЭ ...
+Done with Category=шП╝ Crops=59 Char=шП╝ ...
+Done with Category=х▒║ Crops=60 Char=х▒║ ...
+Done with Category=че║ Crops=60 Char=че║ ...
+Done with Category=щ│Р Crops=60 Char=щ│Р ...
+Done with Category=хФ╝ Crops=60 Char=хФ╝ ...Done with Category=ш╡Ж Crops=60 Char=ш╡Ж ...
+
+Done with Category=цРа Crops=60 Char=цРа ...
+Done with Category=шМ╝ Crops=59 Char=шМ╝ ...
+Done with Category=ч╝▒ Crops=60 Char=ч╝▒ ...
+Done with Category=ш░п Crops=59 Char=ш░п ...
+Done with Category=ш╕Е Crops=60 Char=ш╕Е ...
+Done with Category=шФ╕ Crops=60 Char=шФ╕ ...Done with Category=хЙХ Crops=60 Char=хЙХ ...
+Done with Category=цжЙ Crops=60 Char=цжЙ ...Done with Category=ч╛▓ Crops=59 Char=ч╛▓ ...Done with Category=хШЮ Crops=59 Char=хШЮ ...
+
+
+
+Done with Category=ч╗║ Crops=59 Char=ч╗║ ...
+Done with Category=х┤з Crops=60 Char=х┤з ...
+Done with Category=шЬе Crops=60 Char=шЬе ...Done with Category=хСФ Crops=59 Char=хСФ ...
+
+Done with Category=щНк Crops=59 Char=щНк ...
+Done with Category=ч╗╣ Crops=60 Char=ч╗╣ ...
+Done with Category=шдУ Crops=60 Char=шдУ ...
+Done with Category=щФО Crops=60 Char=щФО ...
+Done with Category=цнЖ Crops=60 Char=цнЖ ...
+Done with Category=щвА Crops=60 Char=щвА ...
+Done with Category=щ╣И Crops=59 Char=щ╣И ...
+Done with Category=хйз Crops=59 Char=хйз ...
+Done with Category=щЪ│ Crops=60 Char=щЪ│ ...Done with Category=хЮЕ Crops=60 Char=хЮЕ ...
+
+Done with Category=ш╛В Crops=60 Char=ш╛В ...Done with Category=шК╕ Crops=59 Char=шК╕ ...
+
+Done with Category=шНГ Crops=59 Char=шНГ ...
+Done with Category=шЛд Crops=59 Char=шЛд ...
+Done with Category=цЭз Crops=60 Char=цЭз ...Done with Category=шЬг Crops=60 Char=шЬг ...
+Done with Category=щ│б Crops=60 Char=щ│б ...
+Done with Category=шНЫ Crops=59 Char=шНЫ ...Done with Category=шЩ║ Crops=59 Char=шЩ║ ...Done with Category=ш░Э Crops=58 Char=ш░Э ...
+Done with Category=хИ┐ Crops=60 Char=хИ┐ ...
+
+
+
+Done with Category=шЫй Crops=60 Char=шЫй ...
+Done with Category=щГИ Crops=60 Char=щГИ ...
+Done with Category=х▓╡ Crops=59 Char=х▓╡ ...
+Done with Category=цп╜ Crops=60 Char=цп╜ ...Done with Category=щФ╖ Crops=60 Char=щФ╖ ...
+
+Done with Category=щй║ Crops=58 Char=щй║ ...
+Done with Category=шзе Crops=59 Char=шзе ...
+Done with Category=хШЯ Crops=60 Char=хШЯ ...
+Done with Category=щУй Crops=59 Char=щУй ...
+Done with Category=щХЙ Crops=59 Char=щХЙ ...Done with Category=щ│Ь Crops=60 Char=щ│Ь ...
+
+Done with Category=ц▒Ь Crops=60 Char=ц▒Ь ...
+Done with Category=чЬ╡ Crops=60 Char=чЬ╡ ...
+Done with Category=шЭИ Crops=60 Char=шЭИ ...
+Done with Category=шЪм Crops=60 Char=шЪм ...Done with Category=хЩА Crops=60 Char=хЩА ...
+
+Done with Category=шЖИ Crops=60 Char=шЖИ ...Done with Category=цГ┤ Crops=59 Char=цГ┤ ...
+
+Done with Category=цЖЦ Crops=59 Char=цЖЦ ...
+Done with Category=х┤Ы Crops=59 Char=х┤Ы ...
+Done with Category=щ│У Crops=60 Char=щ│У ...
+Done with Category=щУЦ Crops=60 Char=щУЦ ...Done with Category=щлМ Crops=59 Char=щлМ ...
+
+Done with Category=чЦГ Crops=60 Char=чЦГ ...Done with Category=хДЖ Crops=58 Char=хДЖ ...
+
+Done with Category=хЦБ Crops=60 Char=хЦБ ...Done with Category=х╛╡ Crops=60 Char=х╛╡ ...
+
+Done with Category=щ╕╣ Crops=60 Char=щ╕╣ ...Done with Category=щ╝м Crops=60 Char=щ╝м ...Done with Category=цЛК Crops=60 Char=цЛК ...
+
+
+Done with Category=ч║┤ Crops=60 Char=ч║┤ ...
+Done with Category=шДм Crops=60 Char=шДм ...
+Done with Category=щ║Л Crops=60 Char=щ║Л ...
+Done with Category=ч╝И Crops=59 Char=ч╝И ...
+Done with Category=чСХ Crops=60 Char=чСХ ...
+Done with Category=цТД Crops=60 Char=цТД ...Done with Category=шЛЬ Crops=59 Char=шЛЬ ...Done with Category=ц┐а Crops=60 Char=ц┐а ...
+Done with Category=щШЛ Crops=60 Char=щШЛ ...Done with Category=щФв Crops=60 Char=щФв ...
+
+
+Done with Category=ц░▓ Crops=59 Char=ц░▓ ...
+Done with Category=цбз Crops=60 Char=цбз ...
+
+Done with Category=хХЦ Crops=60 Char=хХЦ ...
+Done with Category=хд╝ Crops=59 Char=хд╝ ...
+Done with Category=шЛа Crops=59 Char=шЛа ...
+Done with Category=хж▓ Crops=60 Char=хж▓ ...Done with Category=цДж Crops=60 Char=цДж ...
+
+Done with Category=щ▓▓ Crops=60 Char=щ▓▓ ...Done with Category=хЙЬ Crops=60 Char=хЙЬ ...
+
+Done with Category=ц╝╣ Crops=60 Char=ц╝╣ ...Done with Category=х┐Т Crops=60 Char=х┐Т ...
+
+Done with Category=хОН Crops=60 Char=хОН ...
+Done with Category=щХи Crops=60 Char=щХи ...
+Done with Category=чХИ Crops=60 Char=чХИ ...
+Done with Category=хЭЬ Crops=60 Char=хЭЬ ...
+Done with Category=ч╝В Crops=59 Char=ч╝В ...
+Done with Category=чзн Crops=60 Char=чзн ...
+Done with Category=цзЪ Crops=60 Char=цзЪ ...
+Done with Category=чвЫ Crops=60 Char=чвЫ ...
+Done with Category=щЧ╝ Crops=59 Char=щЧ╝ ...
+Done with Category=шЮа Crops=59 Char=шЮа ...
+Done with Category=ще╜ Crops=60 Char=ще╜ ...Done with Category=шФ╣ Crops=60 Char=шФ╣ ...Done with Category=цЦУ Crops=60 Char=цЦУ ...
+Done with Category=хЬй Crops=59 Char=хЬй ...
+
+
+Done with Category=хГЗ Crops=60 Char=хГЗ ...
+Done with Category=щ╣Х Crops=60 Char=щ╣Х ...Done with Category=щ╣Ч Crops=60 Char=щ╣Ч ...
+
+Done with Category=ф╝л Crops=60 Char=ф╝л ...
+Done with Category=ш╜▒ Crops=59 Char=ш╜▒ ...
+Done with Category=ч╕╗ Crops=60 Char=ч╕╗ ...Done with Category=ш╕м Crops=60 Char=ш╕м ...
+
+Done with Category=шЬ╖ Crops=60 Char=шЬ╖ ...
+Done with Category=чСЫ Crops=60 Char=чСЫ ...
+Done with Category=щжР Crops=60 Char=щжР ...
+Done with Category=чЯз Crops=60 Char=чЯз ...Done with Category=шги Crops=59 Char=шги ...
+Done with Category=чД▒ Crops=60 Char=чД▒ ...Done with Category=чн╡ Crops=60 Char=чн╡ ...
+Done with Category=ф╗б Crops=59 Char=ф╗б ...
+
+
+Done with Category=чМУ Crops=60 Char=чМУ ...Done with Category=шГД Crops=60 Char=шГД ...
+
+Done with Category=це╣ Crops=60 Char=це╣ ...Done with Category=ц░Ш Crops=60 Char=ц░Ш ...
+
+Done with Category=ш╢Д Crops=60 Char=ш╢Д ...
+Done with Category=ц╝╢ Crops=60 Char=ц╝╢ ...
+Done with Category=щАЛ Crops=60 Char=щАЛ ...
+Done with Category=ф║╗ Crops=60 Char=ф║╗ ...
+Done with Category=щШМ Crops=60 Char=щШМ ...Done with Category=шГЩ Crops=60 Char=шГЩ ...
+
+Done with Category=щУШ Crops=60 Char=щУШ ...
+Done with Category=хТй Crops=60 Char=хТй ...
+Done with Category=шУж Crops=60 Char=шУж ...
+Done with Category=чРЗ Crops=60 Char=чРЗ ...
+Done with Category=щнЙ Crops=59 Char=щнЙ ...
+Done with Category=щХб Crops=60 Char=щХб ...
+Done with Category=чп╝ Crops=60 Char=чп╝ ...
+Done with Category=ч╛з Crops=59 Char=ч╛з ...
+Done with Category=че╝ Crops=60 Char=че╝ ...
+Done with Category=хТВ Crops=59 Char=хТВ ...
+Done with Category=чмк Crops=60 Char=чмк ...
+Done with Category=ц░Щ Crops=61 Char=ц░Щ ...
+Done with Category=хи╝ Crops=60 Char=хи╝ ...Done with Category=щ╣и Crops=60 Char=щ╣и ...
+
+Done with Category=ч╛╝ Crops=59 Char=ч╛╝ ...
+Done with Category=шТО Crops=59 Char=шТО ...
+Done with Category=чА╡ Crops=60 Char=чА╡ ...
+Done with Category=шЖг Crops=60 Char=шЖг ...
+Done with Category=ц╜Ж Crops=60 Char=ц╜Ж ...Done with Category=щ╝Н Crops=60 Char=щ╝Н ...
+
+Done with Category=щХд Crops=59 Char=щХд ...Done with Category=шУ┐ Crops=60 Char=шУ┐ ...
+
+Done with Category=щ▓н Crops=60 Char=щ▓н ...
+Done with Category=хбН Crops=60 Char=хбН ...
+Done with Category=хВй Crops=59 Char=хВй ...
+Done with Category=цо│ Crops=60 Char=цо│ ...
+Done with Category=х▓С Crops=59 Char=х▓С ...
+Done with Category=шЫ▓ Crops=60 Char=шЫ▓ ...
+Done with Category=щ╝Т Crops=60 Char=щ╝Т ...
+Done with Category=чПЮ Crops=60 Char=чПЮ ...
+Done with Category=ч╝з Crops=60 Char=ч╝з ...
+Done with Category=хЮа Crops=60 Char=хЮа ...
+Done with Category=цАл Crops=60 Char=цАл ...
+Done with Category=шНн Crops=59 Char=шНн ...
+Done with Category=чЭ╜ Crops=59 Char=чЭ╜ ...
+Done with Category=шКи Crops=59 Char=шКи ...
+Done with Category=х╖Й Crops=60 Char=х╖Й ...
+Done with Category=чйД Crops=60 Char=чйД ...
+Done with Category=ф╛Ф Crops=60 Char=ф╛Ф ...
+Done with Category=чЙВ Crops=60 Char=чЙВ ...
+Done with Category=ц╕Ъ Crops=62 Char=ц╕Ъ ...
+Done with Category=чмП Crops=60 Char=чмП ...
+Done with Category=шРж Crops=60 Char=шРж ...
+Done with Category=щФз Crops=60 Char=щФз ...
+Done with Category=шЮИ Crops=59 Char=шЮИ ...
+Done with Category=ф╕╢ Crops=59 Char=ф╕╢ ...
+Done with Category=ц║╖ Crops=60 Char=ц║╖ ...
+Done with Category=щЖн Crops=60 Char=щЖн ...
+Done with Category=чРЫ Crops=60 Char=чРЫ ...
+Done with Category=чЧ▒ Crops=60 Char=чЧ▒ ...
+Done with Category=хеШ Crops=59 Char=хеШ ...
+Done with Category=ч╝л Crops=60 Char=ч╝л ...
+Done with Category=чХЪ Crops=60 Char=чХЪ ...
+Done with Category=хжд Crops=59 Char=хжд ...
+Done with Category=х┐С Crops=60 Char=х┐С ...
+Done with Category=шПб Crops=60 Char=шПб ...
+Done with Category=шТЯ Crops=59 Char=шТЯ ...
+Done with Category=цоЪ Crops=60 Char=цоЪ ...
+Done with Category=цЯГ Crops=60 Char=цЯГ ...
+Done with Category=х║Ц Crops=60 Char=х║Ц ...
+Done with Category=щгФ Crops=60 Char=щгФ ...
+Done with Category=щЫп Crops=60 Char=щЫп ...
+Done with Category=щ▓╝ Crops=60 Char=щ▓╝ ...Done with Category=шЙ┐ Crops=59 Char=шЙ┐ ...Done with Category=хжп Crops=60 Char=хжп ...Done with Category=цЧЖ Crops=60 Char=цЧЖ ...Done with Category=чШЧ Crops=60 Char=чШЧ ...
+
+
+
+
+Done with Category=ц╡П Crops=60 Char=ц╡П ...
+Done with Category=чМ╕ Crops=59 Char=чМ╕ ...
+Done with Category=ц░Е Crops=60 Char=ц░Е ...Done with Category=ш╖г Crops=60 Char=ш╖г ...
+
+Done with Category=хЪЖ Crops=60 Char=хЪЖ ...
+Done with Category=шМЬ Crops=58 Char=шМЬ ...
+Done with Category=щлА Crops=60 Char=щлА ...Done with Category=х▒г Crops=59 Char=х▒г ...Done with Category=щА╡ Crops=60 Char=щА╡ ...Done with Category=чЙТ Crops=60 Char=чЙТ ...
+
+
+
+Done with Category=цй╣ Crops=60 Char=цй╣ ...
+Done with Category=хЧД Crops=60 Char=хЧД ...
+Done with Category=хЙб Crops=59 Char=хЙб ...
+Done with Category=цП╢ Crops=60 Char=цП╢ ...
+Done with Category=щФ╝ Crops=60 Char=щФ╝ ...
+Done with Category=щ╕╝ Crops=60 Char=щ╕╝ ...
+Done with Category=ш╛Б Crops=60 Char=ш╛Б ...
+Done with Category=цЫЫ Crops=60 Char=цЫЫ ...
+Done with Category=шИЫ Crops=60 Char=шИЫ ...
+Done with Category=цп│ Crops=60 Char=цп│ ...Done with Category=чАг Crops=60 Char=чАг ...
+
+Done with Category=шГи Crops=60 Char=шГи ...
+Done with Category=шЩ╝ Crops=60 Char=шЩ╝ ...
+Done with Category=ч│Е Crops=60 Char=ч│Е ...
+Done with Category=шТп Crops=60 Char=шТп ...
+Done with Category=чиЖ Crops=60 Char=чиЖ ...
+Done with Category=щТг Crops=60 Char=щТг ...
+Done with Category=ц╝п Crops=60 Char=ц╝п ...
+Done with Category=чРп Crops=60 Char=чРп ...
+Done with Category=шРГ Crops=61 Char=шРГ ...
+Done with Category=чЬН Crops=60 Char=чЬН ...
+Done with Category=чмд Crops=83 Char=чмд ...
+Done with Category=х╣Ф Crops=84 Char=х╣Ф ...
+Done with Category=ш╣В Crops=83 Char=ш╣В ...
+Done with Category=шНЮ Crops=83 Char=шНЮ ...
+Done with Category=шЪг Crops=82 Char=шЪг ...
+Done with Category=шЭа Crops=83 Char=шЭа ...
+Done with Category=чЩЮ Crops=83 Char=чЩЮ ...
+Done with Category=цкР Crops=84 Char=цкР ...
+Done with Category=ц▓Р Crops=83 Char=ц▓Р ...
+Done with Category=чжА Crops=83 Char=чжА ...
+Done with Category=щЫ│ Crops=83 Char=щЫ│ ...
+Done with Category=щ╣ж Crops=83 Char=щ╣ж ...
+Done with Category=хФа Crops=84 Char=хФа ...
+Done with Category=чПР Crops=119 Char=чПР ...
+Done with Category=хГ│ Crops=117 Char=хГ│ ...
+Done with Category=ш╛К Crops=120 Char=ш╛К ...
+Done with Category=чГШ Crops=141 Char=чГШ ...
+Done with Category=чР│ Crops=143 Char=чР│ ...
+Done with Category=чРР Crops=139 Char=чРР ...
+Done with Category=ф╗З Crops=140 Char=ф╗З ...
+Done with Category=щ╕╡ Crops=140 Char=щ╕╡ ...
+Done with Category=цРЬ Crops=142 Char=цРЬ ...
+Done with Category=ш┐Ш Crops=141 Char=ш┐Ш ...
+Done with Category=щ╕╜ Crops=142 Char=щ╕╜ ...
+Done with Category=ш┤к Crops=141 Char=ш┤к ...
+Done with Category=ц│М Crops=142 Char=ц│М ...
+Done with Category=ч▓о Crops=140 Char=ч▓о ...
+Done with Category=чЛЧ Crops=142 Char=чЛЧ ...
+Done with Category=ч╝О Crops=139 Char=ч╝О ...
+Done with Category=цНМ Crops=142 Char=цНМ ...
+Done with Category=цЦЧ Crops=141 Char=цЦЧ ...
+Done with Category=чХж Crops=143 Char=чХж ...
+Done with Category=цЮЬ Crops=140 Char=цЮЬ ...
+Done with Category=цЙй Crops=143 Char=цЙй ...
+Done with Category=хУА Crops=141 Char=хУА ...
+Done with Category=шкК Crops=140 Char=шкК ...
+Done with Category=ф╕║ Crops=142 Char=ф╕║ ...
+Done with Category=чЭж Crops=142 Char=чЭж ...
+Done with Category=ш╡а Crops=141 Char=ш╡а ...
+Done with Category=щВп Crops=142 Char=щВп ...
+Done with Category=щФЪ Crops=143 Char=щФЪ ...
+Done with Category=цГ╢ Crops=141 Char=цГ╢ ...
+Done with Category=чЙ║ Crops=143 Char=чЙ║ ...
+Done with Category=хНО Crops=142 Char=хНО ...Done with Category=цРн Crops=142 Char=цРн ...
+Done with Category=хПН Crops=142 Char=хПН ...
+Done with Category=ш╣И Crops=142 Char=ш╣И ...Done with Category=ш┐З Crops=142 Char=ш┐З ...
+
+
+Done with Category=чеБ Crops=142 Char=чеБ ...
+Done with Category=х╝П Crops=141 Char=х╝П ...
+Done with Category=чК╣ Crops=142 Char=чК╣ ...
+Done with Category=щХ░ Crops=142 Char=щХ░ ...
+Done with Category=цНЕ Crops=142 Char=цНЕ ...Done with Category=чЙ▓ Crops=140 Char=чЙ▓ ...
+
+Done with Category=чпЖ Crops=143 Char=чпЖ ...
+Done with Category=чиО Crops=142 Char=чиО ...
+Done with Category=цЛг Crops=142 Char=цЛг ...
+Done with Category=ч║╖ Crops=142 Char=ч║╖ ...Done with Category=ч╝┤ Crops=143 Char=ч╝┤ ...
+Done with Category=шг╕ Crops=142 Char=шг╕ ...Done with Category=цЯе Crops=143 Char=цЯе ...Done with Category=хЙй Crops=143 Char=хЙй ...Done with Category=х║╕ Crops=142 Char=х║╕ ...Done with Category=чЪЛ Crops=139 Char=чЪЛ ...Done with Category=шЖА Crops=142 Char=шЖА ...
+
+
+
+
+
+Done with Category=ф╣Р Crops=142 Char=ф╣Р ...
+
+Done with Category=хгм Crops=144 Char=хгм ...
+Done with Category=шПЗ Crops=141 Char=шПЗ ...
+Done with Category=хЕЪ Crops=141 Char=хЕЪ ...Done with Category=чРв Crops=142 Char=чРв ...Done with Category=чЧк Crops=142 Char=чЧк ...
+
+
+Done with Category=ц▓д Crops=142 Char=ц▓д ...Done with Category=хУБ Crops=144 Char=хУБ ...Done with Category=цЛ╜ Crops=137 Char=цЛ╜ ...
+
+
+Done with Category=чИЖ Crops=142 Char=чИЖ ...Done with Category=хШ▒ Crops=144 Char=хШ▒ ...Done with Category=ф║ж Crops=143 Char=ф║ж ...
+
+Done with Category=цг╡ Crops=143 Char=цг╡ ...Done with Category=чЕд Crops=144 Char=чЕд ...
+
+
+Done with Category=хЪ╖ Crops=144 Char=хЪ╖ ...
+Done with Category=шЙ│ Crops=140 Char=шЙ│ ...
+Done with Category=щй╣ Crops=143 Char=щй╣ ...
+Done with Category=цаЗ Crops=140 Char=цаЗ ...
+Done with Category=ц┤▒ Crops=142 Char=ц┤▒ ...
+Done with Category=ч╗Э Crops=142 Char=ч╗Э ...
+Done with Category=ц│б Crops=143 Char=ц│б ...
+Done with Category=хий Crops=144 Char=хий ...Done with Category=щЭв Crops=142 Char=щЭв ...
+
+Done with Category=хиЗ Crops=143 Char=хиЗ ...
+Done with Category=цжЬ Crops=138 Char=цжЬ ...
+Done with Category=чЮЕ Crops=142 Char=чЮЕ ...
+Done with Category=цЧн Crops=144 Char=цЧн ...
+Done with Category=щ╕ж Crops=143 Char=щ╕ж ...
+Done with Category=ф╝д Crops=144 Char=ф╝д ...
+Done with Category=цРР Crops=140 Char=цРР ...
+Done with Category=цЙ╝ Crops=142 Char=цЙ╝ ...
+Done with Category=щАЖ Crops=144 Char=щАЖ ...
+Done with Category=ш╜з Crops=143 Char=ш╜з ...
+Done with Category=цА╗ Crops=142 Char=цА╗ ...
+Done with Category=цгЪ Crops=144 Char=цгЪ ...
+Done with Category=хЮж Crops=143 Char=хЮж ...
+Done with Category=чФ▒ Crops=143 Char=чФ▒ ...
+Done with Category=шЫ╛ Crops=142 Char=шЫ╛ ...
+Done with Category=х╖й Crops=141 Char=х╖й ...Done with Category=чОЗ Crops=143 Char=чОЗ ...Done with Category=хоГ Crops=143 Char=хоГ ...
+
+Done with Category=щвЗ Crops=143 Char=щвЗ ...Done with Category=щТе Crops=144 Char=щТе ...Done with Category=щй░ Crops=141 Char=щй░ ...
+
+Done with Category=х╜У Crops=142 Char=х╜У ...
+
+
+Done with Category=швл Crops=142 Char=швл ...
+Done with Category=шРО Crops=143 Char=шРО ...
+Done with Category=хЫд Crops=141 Char=хЫд ...
+Done with Category=ф║н Crops=142 Char=ф║н ...
+Done with Category=члЛ Crops=142 Char=члЛ ...
+Done with Category=хРн Crops=139 Char=хРн ...
+Done with Category=хНЮ Crops=140 Char=хНЮ ...
+Done with Category=шДП Crops=143 Char=шДП ...
+Done with Category=х╣┐ Crops=141 Char=х╣┐ ...
+Done with Category=хАЩ Crops=142 Char=хАЩ ...
+Done with Category=шИА Crops=144 Char=шИА ...
+Done with Category=ц▓Б Crops=141 Char=ц▓Б ...
+Done with Category=х╖╖ Crops=143 Char=х╖╖ ...
+Done with Category=ф╕И Crops=145 Char=ф╕И ...Done with Category=цЕО Crops=144 Char=цЕО ...Done with Category=ш╢╛ Crops=143 Char=ш╢╛ ...Done with Category=цЮБ Crops=141 Char=цЮБ ...
+Done with Category=щУ░ Crops=142 Char=щУ░ ...
+
+
+
+Done with Category=шН╖ Crops=143 Char=шН╖ ...
+Done with Category=ц╖М Crops=143 Char=ц╖М ...
+Done with Category=хФ╛ Crops=141 Char=хФ╛ ...Done with Category=чЖК Crops=143 Char=чЖК ...Done with Category=х╝У Crops=141 Char=х╝У ...
+
+
+Done with Category=чПа Crops=143 Char=чПа ...
+Done with Category=ц╗е Crops=143 Char=ц╗е ...
+Done with Category=щТ▒ Crops=144 Char=щТ▒ ...
+Done with Category=ц╕Э Crops=144 Char=ц╕Э ...
+Done with Category=шЫЖ Crops=144 Char=шЫЖ ...
+Done with Category=хйк Crops=143 Char=хйк ...
+Done with Category=хЖ░ Crops=141 Char=хЖ░ ...Done with Category=хнд Crops=141 Char=хнд ...Done with Category=хР▒ Crops=145 Char=хР▒ ...
+Done with Category=ч░┐ Crops=142 Char=ч░┐ ...
+
+
+Done with Category=ш╡г Crops=141 Char=ш╡г ...
+Done with Category=ш┤┤ Crops=142 Char=ш┤┤ ...Done with Category=хТА Crops=142 Char=хТА ...
+Done with Category=хБе Crops=141 Char=хБе ...
+
+Done with Category=цЩж Crops=143 Char=цЩж ...
+Done with Category=шЫК Crops=141 Char=шЫК ...
+Done with Category=ц▓з Crops=141 Char=ц▓з ...
+Done with Category=ф╗д Crops=143 Char=ф╗д ...
+Done with Category=хЦЭ Crops=143 Char=хЦЭ ...
+Done with Category=чЫ╝ Crops=143 Char=чЫ╝ ...
+Done with Category=хЖ╢ Crops=141 Char=хЖ╢ ...
+Done with Category=чЦд Crops=142 Char=чЦд ...
+Done with Category=цГз Crops=141 Char=цГз ...
+Done with Category=цЧж Crops=142 Char=цЧж ...
+Done with Category=х║н Crops=142 Char=х║н ...
+Done with Category=хК▓ Crops=144 Char=хК▓ ...Done with Category=щФЛ Crops=139 Char=щФЛ ...
+
+Done with Category=ш╡л Crops=143 Char=ш╡л ...
+Done with Category=чоН Crops=141 Char=чоН ...
+Done with Category=ш░У Crops=143 Char=ш░У ...
+Done with Category=шЕФ Crops=143 Char=шЕФ ...Done with Category=шЬЬ Crops=144 Char=шЬЬ ...
+Done with Category=ш╕в Crops=142 Char=ш╕в ...
+
+Done with Category=щТ╛ Crops=141 Char=щТ╛ ...
+Done with Category=хак Crops=143 Char=хак ...
+Done with Category=хпМ Crops=141 Char=хпМ ...Done with Category=чЦП Crops=144 Char=чЦП ...
+Done with Category=хТМ Crops=143 Char=хТМ ...Done with Category=хиШ Crops=143 Char=хиШ ...
+Done with Category=чХП Crops=140 Char=чХП ...
+
+
+Done with Category=щШФ Crops=144 Char=щШФ ...
+Done with Category=ц╕п Crops=141 Char=ц╕п ...
+Done with Category=ш░н Crops=143 Char=ш░н ...
+Done with Category=хЦК Crops=141 Char=хЦК ...
+Done with Category=хЩм Crops=144 Char=хЩм ...
+Done with Category=чГИ Crops=142 Char=чГИ ...
+Done with Category=шИЕ Crops=144 Char=шИЕ ...
+Done with Category=щЖЙ Crops=144 Char=щЖЙ ...
+Done with Category=чГл Crops=140 Char=чГл ...
+Done with Category=хВЕ Crops=142 Char=хВЕ ...
+Done with Category=цОИ Crops=143 Char=цОИ ...Done with Category=шзИ Crops=143 Char=шзИ ...
+
+Done with Category=цЕи Crops=142 Char=цЕи ...
+Done with Category=ц╣Ы Crops=143 Char=ц╣Ы ...
+Done with Category=чЛД Crops=137 Char=чЛД ...
+Done with Category=цМб Crops=141 Char=цМб ...
+Done with Category=че╕ Crops=142 Char=че╕ ...
+Done with Category=х╖и Crops=143 Char=х╖и ...
+Done with Category=хР╡ Crops=143 Char=хР╡ ...
+Done with Category=чн╖ Crops=143 Char=чн╖ ...
+Done with Category=х▒И Crops=143 Char=х▒И ...
+Done with Category=цМЫ Crops=143 Char=цМЫ ...
+Done with Category=ц╕а Crops=143 Char=ц╕а ...
+Done with Category=щЩД Crops=142 Char=щЩД ...
+Done with Category=щУА Crops=143 Char=щУА ...
+Done with Category=цЭб Crops=142 Char=цЭб ...Done with Category=ч│Щ Crops=142 Char=ч│Щ ...Done with Category=хо┤ Crops=142 Char=хо┤ ...Done with Category=ч╗░ Crops=140 Char=ч╗░ ...Done with Category=цОТ Crops=144 Char=цОТ ...
+Done with Category=ц╛б Crops=143 Char=ц╛б ...
+Done with Category=хЙН Crops=142 Char=хЙН ...
+
+Done with Category=щй╗ Crops=144 Char=щй╗ ...
+
+
+Done with Category=щХА Crops=140 Char=щХА ...Done with Category=цвЕ Crops=144 Char=цвЕ ...
+Done with Category=щЕ╢ Crops=144 Char=щЕ╢ ...
+Done with Category=хп║ Crops=143 Char=хп║ ...
+Done with Category=цДЙ Crops=142 Char=цДЙ ...Done with Category=хАб Crops=141 Char=хАб ...Done with Category=х┐╡ Crops=144 Char=х┐╡ ...Done with Category=щАЫ Crops=141 Char=щАЫ ...
+Done with Category=шо╜ Crops=141 Char=шо╜ ...Done with Category=чвМ Crops=143 Char=чвМ ...
+
+
+
+Done with Category=щкД Crops=142 Char=щкД ...
+
+
+
+Done with Category=щвЭ Crops=142 Char=щвЭ ...
+Done with Category=чШБ Crops=141 Char=чШБ ...
+Done with Category=хжВ Crops=144 Char=хжВ ...
+Done with Category=щЪ╢ Crops=142 Char=щЪ╢ ...Done with Category=чмЫ Crops=142 Char=чмЫ ...Done with Category=ш╢Е Crops=142 Char=ш╢Е ...
+Done with Category=хвЯ Crops=144 Char=хвЯ ...Done with Category=чЫ╕ Crops=143 Char=чЫ╕ ...Done with Category=хвЕ Crops=142 Char=хвЕ ...
+Done with Category=шГБ Crops=141 Char=шГБ ...Done with Category=цгЛ Crops=144 Char=цгЛ ...
+
+
+
+
+Done with Category=х║╢ Crops=141 Char=х║╢ ...
+Done with Category=хПЧ Crops=143 Char=хПЧ ...
+
+Done with Category=ч│К Crops=143 Char=ч│К ...
+Done with Category=чРГ Crops=144 Char=чРГ ...
+Done with Category=щнБ Crops=144 Char=щнБ ...
+Done with Category=шУЙ Crops=144 Char=шУЙ ...
+Done with Category=цН╗ Crops=144 Char=цН╗ ...
+Done with Category=цНЯ Crops=141 Char=цНЯ ...
+Done with Category=шИЯ Crops=143 Char=шИЯ ...
+Done with Category=щ╕п Crops=141 Char=щ╕п ...
+Done with Category=хШО Crops=140 Char=хШО ...
+Done with Category=цЛЖ Crops=143 Char=цЛЖ ...Done with Category=чЫ▓ Crops=142 Char=чЫ▓ ...
+Done with Category=цЛВ Crops=142 Char=цЛВ ...
+
+Done with Category=щЕН Crops=144 Char=щЕН ...Done with Category=шП▒ Crops=142 Char=шП▒ ...
+Done with Category=ш╜┤ Crops=144 Char=ш╜┤ ...Done with Category=хдЗ Crops=143 Char=хдЗ ...
+
+Done with Category=чЧХ Crops=143 Char=чЧХ ...
+Done with Category=чЗГ Crops=140 Char=чЗГ ...
+
+Done with Category=чЭг Crops=141 Char=чЭг ...Done with Category=цвж Crops=144 Char=цвж ...Done with Category=шЫЗ Crops=144 Char=шЫЗ ...
+Done with Category=х▒П Crops=143 Char=х▒П ...Done with Category=ч╛Ю Crops=143 Char=ч╛Ю ...
+
+Done with Category=хП╢ Crops=143 Char=хП╢ ...
+
+
+Done with Category=цпп Crops=143 Char=цпп ...
+Done with Category=чФн Crops=142 Char=чФн ...
+Done with Category=цНВ Crops=141 Char=цНВ ...Done with Category=шД╛ Crops=144 Char=шД╛ ...Done with Category=ф╗О Crops=142 Char=ф╗О ...Done with Category=чм║ Crops=141 Char=чм║ ...Done with Category=ф╕У Crops=143 Char=ф╕У ...Done with Category=чЫР Crops=143 Char=чЫР ...
+Done with Category=ц▓Я Crops=140 Char=ц▓Я ...
+Done with Category=х║Ф Crops=143 Char=х║Ф ...
+
+
+
+
+
+Done with Category=шаХ Crops=144 Char=шаХ ...
+Done with Category=ход Crops=144 Char=ход ...
+Done with Category=шзД Crops=142 Char=шзД ...
+Done with Category=щЫк Crops=144 Char=щЫк ...
+Done with Category=цЩ║ Crops=142 Char=цЩ║ ...
+Done with Category=ш░Л Crops=144 Char=ш░Л ...
+Done with Category=цЬн Crops=144 Char=цЬн ...
+Done with Category=ц╕й Crops=144 Char=ц╕й ...
+Done with Category=хж╗ Crops=144 Char=хж╗ ...
+Done with Category=хКЭ Crops=142 Char=хКЭ ...
+Done with Category=щФи Crops=144 Char=щФи ...
+Done with Category=щЩР Crops=143 Char=щЩР ...
+Done with Category=ц░┤ Crops=143 Char=ц░┤ ...
+Done with Category=чЫЧ Crops=142 Char=чЫЧ ...
+Done with Category=ф╝Ю Crops=143 Char=ф╝Ю ...Done with Category=члп Crops=142 Char=члп ...
+Done with Category=шФУ Crops=141 Char=шФУ ...
+Done with Category=хЕ╝ Crops=142 Char=хЕ╝ ...Done with Category=ч╗Х Crops=144 Char=ч╗Х ...
+Done with Category=чЭб Crops=143 Char=чЭб ...
+
+Done with Category=ц╖▒ Crops=144 Char=ц╖▒ ...
+
+Done with Category=хнж Crops=144 Char=хнж ...Done with Category=чЛЮ Crops=143 Char=чЛЮ ...
+
+Done with Category=ф╣▒ Crops=142 Char=ф╣▒ ...
+Done with Category=ч║л Crops=143 Char=ч║л ...Done with Category=чЩ╛ Crops=141 Char=чЩ╛ ...
+
+Done with Category=шВ┐ Crops=144 Char=шВ┐ ...
+Done with Category=х╝Д Crops=142 Char=х╝Д ...
+Done with Category=чЫЖ Crops=143 Char=чЫЖ ...Done with Category=ч╝║ Crops=143 Char=ч╝║ ...Done with Category=шНТ Crops=143 Char=шНТ ...
+Done with Category=шГЮ Crops=142 Char=шГЮ ...Done with Category=щ╛Щ Crops=143 Char=щ╛Щ ...Done with Category=хжК Crops=144 Char=хжК ...Done with Category=цДЯ Crops=141 Char=цДЯ ...
+
+
+Done with Category=чХФ Crops=144 Char=чХФ ...
+
+Done with Category=чХ╕ Crops=142 Char=чХ╕ ...Done with Category=ш┐Ь Crops=145 Char=ш┐Ь ...
+
+Done with Category=циК Crops=141 Char=циК ...Done with Category=ч╣Б Crops=141 Char=ч╣Б ...Done with Category=шЖК Crops=143 Char=шЖК ...Done with Category=щТи Crops=142 Char=щТи ...Done with Category=х╕Ъ Crops=144 Char=х╕Ъ ...Done with Category=чкТ Crops=143 Char=чкТ ...
+
+Done with Category=чЪЗ Crops=143 Char=чЪЗ ...
+Done with Category=цпФ Crops=143 Char=цпФ ...Done with Category=цСФ Crops=142 Char=цСФ ...
+
+Done with Category=хпЗ Crops=142 Char=хпЗ ...Done with Category=хЭЭ Crops=142 Char=хЭЭ ...Done with Category=ц╗Ю Crops=142 Char=ц╗Ю ...Done with Category=ч╗П Crops=143 Char=ч╗П ...
+
+
+Done with Category=ч▓е Crops=140 Char=ч▓е ...Done with Category=шСЧ Crops=142 Char=шСЧ ...
+
+Done with Category=чФЬ Crops=142 Char=чФЬ ...
+
+Done with Category=цЮД Crops=142 Char=цЮД ...
+
+Done with Category=шп╛ Crops=144 Char=шп╛ ...
+
+
+
+Done with Category=хе│ Crops=144 Char=хе│ ...
+
+
+Done with Category=ц▓П Crops=144 Char=ц▓П ...
+Done with Category=шМБ Crops=143 Char=шМБ ...
+Done with Category=цЗИ Crops=141 Char=цЗИ ...Done with Category=шЫА Crops=144 Char=шЫА ...Done with Category=хпУ Crops=144 Char=хпУ ...Done with Category=шп╖ Crops=143 Char=шп╖ ...
+
+Done with Category=шБЛ Crops=143 Char=шБЛ ...
+
+Done with Category=шОЖ Crops=144 Char=шОЖ ...Done with Category=щлШ Crops=142 Char=щлШ ...
+Done with Category=цПй Crops=142 Char=цПй ...
+Done with Category=ф║Т Crops=142 Char=ф║Т ...
+
+
+Done with Category=х╣в Crops=142 Char=х╣в ...Done with Category=ш░г Crops=144 Char=ш░г ...
+
+Done with Category=ш░й Crops=143 Char=ш░й ...Done with Category=цЭО Crops=143 Char=цЭО ...Done with Category=хМ┐ Crops=143 Char=хМ┐ ...Done with Category=чЖЯ Crops=144 Char=чЖЯ ...
+Done with Category=ц╡Е Crops=144 Char=ц╡Е ...
+
+Done with Category=ч▓Ч Crops=143 Char=ч▓Ч ...
+
+
+Done with Category=хТм Crops=143 Char=хТм ...
+Done with Category=чЩ╗ Crops=142 Char=чЩ╗ ...
+Done with Category=хЭО Crops=142 Char=хЭО ...Done with Category=ш╛Ж Crops=142 Char=ш╛Ж ...
+
+Done with Category=х╝з Crops=143 Char=х╝з ...
+Done with Category=хЕл Crops=143 Char=хЕл ...
+Done with Category=щЫБ Crops=143 Char=щЫБ ...
+Done with Category=хЗ░ Crops=143 Char=хЗ░ ...
+Done with Category=чЭЫ Crops=144 Char=чЭЫ ...
+Done with Category=хоЕ Crops=145 Char=хоЕ ...
+Done with Category=чОЙ Crops=142 Char=чОЙ ...
+Done with Category=цоЦ Crops=145 Char=цоЦ ...
+Done with Category=х░К Crops=141 Char=х░К ...
+Done with Category=щвЧ Crops=143 Char=щвЧ ...Done with Category=х╕И Crops=145 Char=х╕И ...
+
+Done with Category=шМ╕ Crops=143 Char=шМ╕ ...
+Done with Category=шкЙ Crops=144 Char=шкЙ ...
+Done with Category=цСз Crops=142 Char=цСз ...
+Done with Category=хНГ Crops=143 Char=хНГ ...
+Done with Category=х╜й Crops=142 Char=х╜й ...
+Done with Category=щвЕ Crops=143 Char=щвЕ ...
+Done with Category=шо╛ Crops=141 Char=шо╛ ...
+Done with Category=чФ▓ Crops=140 Char=чФ▓ ...
+Done with Category=ц┤Ю Crops=142 Char=ц┤Ю ...
+Done with Category=щ╝а Crops=143 Char=щ╝а ...
+Done with Category=щЬ╣ Crops=143 Char=щЬ╣ ...
+Done with Category=ч│Х Crops=140 Char=ч│Х ...
+Done with Category=щЮН Crops=142 Char=щЮН ...
+Done with Category=щйм Crops=144 Char=щйм ...Done with Category=шГЖ Crops=142 Char=шГЖ ...
+Done with Category=ч▒╗ Crops=143 Char=ч▒╗ ...
+
+Done with Category=х┐л Crops=144 Char=х┐л ...
+Done with Category=цИР Crops=142 Char=цИР ...
+Done with Category=хУк Crops=142 Char=хУк ...
+Done with Category=чаЦ Crops=144 Char=чаЦ ...
+Done with Category=щЧ╗ Crops=144 Char=щЧ╗ ...
+Done with Category=цКа Crops=144 Char=цКа ...
+Done with Category=цЛ╝ Crops=144 Char=цЛ╝ ...
+Done with Category=х╖╛ Crops=144 Char=х╖╛ ...
+Done with Category=цФТ Crops=143 Char=цФТ ...
+Done with Category=щБВ Crops=142 Char=щБВ ...
+Done with Category=хи▒ Crops=142 Char=хи▒ ...
+Done with Category=ш┤п Crops=142 Char=ш┤п ...
+Done with Category=щкС Crops=143 Char=щкС ...
+Done with Category=чзС Crops=144 Char=чзС ...
+Done with Category=ф╝Ъ Crops=141 Char=ф╝Ъ ...
+Done with Category=шЭО Crops=144 Char=шЭО ...
+Done with Category=хЗА Crops=143 Char=хЗА ...
+Done with Category=хжЖ Crops=142 Char=хжЖ ...
+Done with Category=хС╡ Crops=143 Char=хС╡ ...
+Done with Category=ц╕К Crops=145 Char=ц╕К ...
+Done with Category=циЯ Crops=145 Char=циЯ ...
+Done with Category=шГА Crops=144 Char=шГА ...
+Done with Category=чГн Crops=145 Char=чГн ...
+Done with Category=ще╢ Crops=144 Char=ще╢ ...
+Done with Category=ц│г Crops=143 Char=ц│г ...
+Done with Category=хг░ Crops=143 Char=хг░ ...
+Done with Category=цЛИ Crops=144 Char=цЛИ ...
+Done with Category=шКе Crops=143 Char=шКе ...
+Done with Category=ф┐П Crops=143 Char=ф┐П ...
+Done with Category=шЗ╗ Crops=145 Char=шЗ╗ ...
+Done with Category=цйЗ Crops=144 Char=цйЗ ...
+Done with Category=члЯ Crops=144 Char=члЯ ...
+Done with Category=чШ┤ Crops=145 Char=чШ┤ ...
+Done with Category=ч╗╝ Crops=144 Char=ч╗╝ ...
+Done with Category=цГп Crops=142 Char=цГп ...
+Done with Category=0 Crops=202 Char=0 ...
+Done with Category=тИ┤ Crops=202 Char=тИ┤ ...
+Done with Category=тВз Crops=202 Char=тВз ...
+Done with Category=` Crops=201 Char=` ...
+Done with Category=colon Crops=200 Char=colon ...
+Done with Category=уАБ Crops=202 Char=уАБ ...
+Done with Category=[ Crops=202 Char=[ ...
+Done with Category=} Crops=202 Char=} ...
+Done with Category=vertical_bar Crops=202 Char=vertical_bar ...
+Done with Category=- Crops=202 Char=- ...
+Done with Category=тЦ│ Crops=202 Char=тЦ│ ...
+Done with Category=тИ╡ Crops=201 Char=тИ╡ ...
+Done with Category=# Crops=202 Char=# ...
+Done with Category=тИе Crops=200 Char=тИе ...
+Done with Category=уОЬ Crops=202 Char=уОЬ ...
+Done with Category=тА░ Crops=202 Char=тА░ ...
+Done with Category=тЧО Crops=202 Char=тЧО ...
+Done with Category=H Crops=403 Char=H ...
+Done with Category=J Crops=404 Char=J ...
+Done with Category=V Crops=404 Char=V ...
+Accuracy for char шИЕ = 0.9722222222222222
+Accuracy for char щЪ░ = 1.0
+Accuracy for char ф║ж = 0.965034965034965
+Accuracy for char цЦЧ = 0.9858156028368794
+Accuracy for char щВм = 1.0
+Accuracy for char щ╕ж = 0.9790209790209791
+Accuracy for char хиЙ = 1.0
+Accuracy for char щ╕╡ = 0.9428571428571428
+Accuracy for char хк╕ = 1.0
+Accuracy for char цШЭ = 1.0
+Accuracy for char щЭ╝ = 0.9827586206896551
+Accuracy for char щ║Я = 1.0
+Accuracy for char чГШ = 0.9929078014184397
+Accuracy for char щЕб = 0.9833333333333333
+Accuracy for char х╝П = 0.9787234042553191
+Accuracy for char хЧЦ = 1.0
+Accuracy for char щй░ = 0.9432624113475178
+Accuracy for char х░Х = 1.0
+Accuracy for char чР░ = 0.9666666666666667
+Accuracy for char ф╕И = 0.993103448275862
+Accuracy for char шБ┐ = 1.0
+Accuracy for char чмд = 0.6867469879518072
+Accuracy for char ш╣И = 0.9859154929577465
+Accuracy for char шДП = 0.9790209790209791
+Accuracy for char цп╡ = 0.9833333333333333
+Accuracy for char хПН = 0.9859154929577465
+Accuracy for char ц╣Ы = 0.9790209790209791
+Accuracy for char цгЛ = 0.9791666666666666
+Accuracy for char швл = 0.9507042253521126
+Accuracy for char шЪ║ = 1.0
+Accuracy for char ф╣Р = 0.971830985915493
+Accuracy for char хАЩ = 0.9647887323943662
+Accuracy for char хЮн = 1.0
+Accuracy for char хАУ = 0.9333333333333333
+Accuracy for char тВз = 1.0
+Accuracy for char чХ┐ = 1.0
+Accuracy for char ш┐З = 0.9647887323943662
+Accuracy for char хАй = 0.95
+Accuracy for char ф║н = 0.9577464788732394
+Accuracy for char ч╜и = 1.0
+Accuracy for char цг╡ = 0.986013986013986
+Accuracy for char щХе = 0.9833333333333333
+Accuracy for char цЧн = 0.9722222222222222
+Accuracy for char цНМ = 1.0
+Accuracy for char цеа = 0.9833333333333333
+Accuracy for char чЮЕ = 0.9929577464788732
+Accuracy for char хФг = 1.0
+Accuracy for char щХа = 1.0
+Accuracy for char ш╡Ж = 0.9833333333333333
+Accuracy for char чЙ║ = 0.972027972027972
+Accuracy for char шАЖ = 0.9666666666666667
+Accuracy for char хЩм = 0.9861111111111112
+Accuracy for char ш░▓ = 0.9830508474576272
+Accuracy for char хР▒ = 0.9724137931034482
+Accuracy for char ч▓в = 0.9833333333333333
+Accuracy for char чЭж = 0.9577464788732394
+Accuracy for char щВп = 0.9647887323943662
+Accuracy for char х║╕ = 0.9788732394366197
+Accuracy for char чЙ┐ = 0.9833333333333333
+Accuracy for char хЕЪ = 0.9148936170212766
+Accuracy for char хИО = 1.0
+Accuracy for char хЩН = 0.95
+Accuracy for char чР│ = 0.986013986013986
+Accuracy for char чРР = 0.9640287769784173
+Accuracy for char щнЕ = 1.0
+Accuracy for char цКФ = 0.9830508474576272
+Accuracy for char ш╡а = 0.9858156028368794
+Accuracy for char щФй = 0.9833333333333333
+Accuracy for char щЖг = 0.9666666666666667
+Accuracy for char ш╜л = 0.9833333333333333
+Accuracy for char ц│М = 0.9225352112676056
+Accuracy for char хоГ = 0.965034965034965
+Accuracy for char шКП = 0.9830508474576272
+Accuracy for char ш╡З = 1.0
+Accuracy for char щ╗╗ = 1.0
+Accuracy for char щЖЙ = 0.9930555555555556
+Accuracy for char шК╕ = 0.9830508474576272
+Accuracy for char цЭМ = 0.9661016949152542
+Accuracy for char цМЫ = 0.972027972027972
+Accuracy for char хФ│ = 1.0
+Accuracy for char хЮж = 0.986013986013986
+Accuracy for char цзБ = 1.0
+Accuracy for char ч▓о = 0.9642857142857143
+Accuracy for char чиО = 0.9788732394366197
+Accuracy for char шДШ = 0.9666666666666667
+Accuracy for char шоз = 1.0
+Accuracy for char ф┐Я = 0.9833333333333333
+Accuracy for char чЭР = 0.9666666666666667
+Accuracy for char шМС = 0.9827586206896551
+Accuracy for char цеж = 0.9666666666666667
+Accuracy for char х╖╖ = 0.965034965034965
+Accuracy for char цЙ╝ = 1.0
+Accuracy for char цЧГ = 0.9833333333333333
+Accuracy for char ч║╖ = 0.9577464788732394
+Accuracy for char чеБ = 0.9859154929577465
+Accuracy for char чШЩ = 1.0
+Accuracy for char ш░н = 0.965034965034965
+Accuracy for char щТе = 0.9722222222222222
+Accuracy for char цРн = 0.9929577464788732
+Accuracy for char чвб = 1.0
+Accuracy for char хиЗ = 0.986013986013986
+Accuracy for char х║н = 0.9859154929577465
+Accuracy for char цФо = 1.0
+Accuracy for char ще╜ = 1.0
+Accuracy for char хЖ╢ = 0.9432624113475178
+Accuracy for char шо╜ = 0.9645390070921985
+Accuracy for char чИЖ = 0.9859154929577465
+Accuracy for char цНЕ = 0.9859154929577465
+Accuracy for char х░в = 0.9830508474576272
+Accuracy for char ` = 0.7711442786069652
+Accuracy for char х╣Ф = 0.9761904761904762
+Accuracy for char - = 0.995049504950495
+Accuracy for char ц╕Э = 0.9861111111111112
+Accuracy for char шИВ = 0.9833333333333333
+Accuracy for char щЪ╝ = 0.9833333333333333
+Accuracy for char щЩз = 1.0
+Accuracy for char цгЪ = 1.0
+Accuracy for char цРЬ = 0.9436619718309859
+Accuracy for char ш╢╛ = 0.965034965034965
+Accuracy for char шЭд = 0.9666666666666667
+Accuracy for char цжШ = 1.0
+Accuracy for char щУТ = 1.0
+Accuracy for char щ▒┐ = 0.9833333333333333
+Accuracy for char цИЧ = 0.9833333333333333
+Accuracy for char чкм = 1.0
+Accuracy for char шЫ╛ = 1.0
+Accuracy for char цГз = 0.9716312056737588
+Accuracy for char хУБ = 0.9583333333333334
+Accuracy for char щТЕ = 1.0
+Accuracy for char цги = 0.95
+Accuracy for char чеУ = 1.0
+Accuracy for char ш╛╢ = 0.9833333333333333
+Accuracy for char щ╣г = 0.95
+Accuracy for char тИ┤ = 0.8366336633663366
+Accuracy for char цЛг = 0.9859154929577465
+Accuracy for char цЬн = 0.9722222222222222
+Accuracy for char чЙп = 1.0
+Accuracy for char шдб = 1.0
+Accuracy for char щЬ╛ = 0.9666666666666667
+Accuracy for char шпУ = 0.9830508474576272
+Accuracy for char х╝н = 1.0
+Accuracy for char чРв = 0.9788732394366197
+Accuracy for char хвЯ = 0.9791666666666666
+Accuracy for char шПЗ = 0.9716312056737588
+Accuracy for char цИ╛ = 0.9830508474576272
+Accuracy for char шДЮ = 0.9661016949152542
+Accuracy for char шЖА = 0.971830985915493
+Accuracy for char ц│а = 0.9833333333333333
+Accuracy for char чОЗ = 0.965034965034965
+Accuracy for char цвЕ = 0.9513888888888888
+Accuracy for char щй╗ = 0.9444444444444444
+Accuracy for char щАЖ = 0.9583333333333334
+Accuracy for char чЛЧ = 0.9647887323943662
+Accuracy for char ш┤к = 0.9929078014184397
+Accuracy for char цГ╢ = 0.9645390070921985
+Accuracy for char ц┤▒ = 0.9859154929577465
+Accuracy for char ц╝╢ = 1.0
+Accuracy for char цйж = 0.9666666666666667
+Accuracy for char щЭв = 0.9647887323943662
+Accuracy for char ш┤┤ = 0.9647887323943662
+Accuracy for char хЙй = 0.993006993006993
+Accuracy for char ф╝╛ = 0.95
+Accuracy for char х░┤ = 0.9661016949152542
+Accuracy for char шСЧ = 0.9577464788732394
+Accuracy for char хДЖ = 1.0
+Accuracy for char чкЕ = 1.0
+Accuracy for char ц╗е = 0.986013986013986
+Accuracy for char щлж = 0.9833333333333333
+Accuracy for char шУУ = 1.0
+Accuracy for char ш▒Ъ = 1.0
+Accuracy for char хЪ╖ = 0.9791666666666666
+Accuracy for char щвЗ = 0.965034965034965
+Accuracy for char ц┤л = 1.0
+Accuracy for char цГм = 1.0
+Accuracy for char шИД = 1.0
+Accuracy for char х│з = 0.9830508474576272
+Accuracy for char ш░З = 1.0
+Accuracy for char шИА = 0.9513888888888888
+Accuracy for char цЯе = 1.0
+Accuracy for char щЖ╡ = 1.0
+Accuracy for char цЗ╡ = 1.0
+Accuracy for char щ╕д = 1.0
+Accuracy for char ш┐Ш = 0.950354609929078
+Accuracy for char щнБ = 0.9236111111111112
+Accuracy for char чЧк = 0.971830985915493
+Accuracy for char ш░о = 0.9830508474576272
+Accuracy for char ц┐С = 0.9833333333333333
+Accuracy for char хгм = 0.9791666666666666
+Accuracy for char хШ▒ = 0.9722222222222222
+Accuracy for char щ╕╖ = 1.0
+Accuracy for char щХд = 0.9830508474576272
+Accuracy for char ф╗З = 0.9714285714285714
+Accuracy for char х┤о = 1.0
+Accuracy for char шЮ╡ = 1.0
+Accuracy for char чеЧ = 1.0
+Accuracy for char щк╝ = 0.9833333333333333
+Accuracy for char шЬе = 1.0
+Accuracy for char ц▓Б = 0.900709219858156
+Accuracy for char щЧ╛ = 0.95
+Accuracy for char ш╢Е = 0.9788732394366197
+Accuracy for char щАЛ = 1.0
+Accuracy for char х▒║ = 1.0
+Accuracy for char хНО = 0.9577464788732394
+Accuracy for char х╣Ю = 1.0
+Accuracy for char щЕН = 0.9375
+Accuracy for char цНЯ = 0.9858156028368794
+Accuracy for char щ╣И = 1.0
+Accuracy for char хНГ = 1.0
+Accuracy for char чМУ = 0.9833333333333333
+Accuracy for char х▓м = 0.9655172413793104
+Accuracy for char чТЬ = 0.9661016949152542
+Accuracy for char шзИ = 0.986013986013986
+Accuracy for char хЬп = 0.9833333333333333
+Accuracy for char J = 0.9579207920792079
+Accuracy for char ш░е = 1.0
+Accuracy for char хЙХ = 1.0
+Accuracy for char хТ┐ = 0.9666666666666667
+Accuracy for char хий = 0.9652777777777778
+Accuracy for char щФи = 0.9930555555555556
+Accuracy for char х▒П = 0.986013986013986
+Accuracy for char чВЬ = 1.0
+Accuracy for char ц│б = 0.916083916083916
+Accuracy for char шЬЮ = 0.95
+Accuracy for char х╖и = 0.986013986013986
+Accuracy for char шП╝ = 0.9491525423728814
+Accuracy for char шдУ = 1.0
+Accuracy for char щ╕╜ = 0.9436619718309859
+Accuracy for char ч╗д = 1.0
+Accuracy for char щЕ╢ = 0.9861111111111112
+Accuracy for char щ╝╜ = 0.9833333333333333
+Accuracy for char щ▓Л = 1.0
+Accuracy for char 0 = 0.9900990099009901
+Accuracy for char хЦП = 0.9830508474576272
+Accuracy for char щ▓Х = 1.0
+Accuracy for char чОЯ = 1.0
+Accuracy for char ш╛Б = 0.9833333333333333
+Accuracy for char ш░У = 0.9790209790209791
+Accuracy for char шРО = 0.9790209790209791
+Accuracy for char щй╣ = 0.972027972027972
+Accuracy for char щУи = 1.0
+Accuracy for char чПа = 0.993006993006993
+Accuracy for char чпК = 0.9666666666666667
+Accuracy for char цТД = 0.9833333333333333
+Accuracy for char щвА = 1.0
+Accuracy for char хТА = 0.9929577464788732
+Accuracy for char щУ░ = 0.8802816901408451
+Accuracy for char щАЫ = 0.9929078014184397
+Accuracy for char щШМ = 0.9666666666666667
+Accuracy for char чХж = 0.965034965034965
+Accuracy for char шМА = 0.9833333333333333
+Accuracy for char хзЮ = 1.0
+Accuracy for char щФЪ = 0.965034965034965
+Accuracy for char ц▒Ф = 0.9833333333333333
+Accuracy for char ш╣В = 0.9156626506024096
+Accuracy for char хпМ = 0.9645390070921985
+Accuracy for char шМ╝ = 0.9830508474576272
+Accuracy for char шбо = 0.9827586206896551
+Accuracy for char цЧТ = 1.0
+Accuracy for char шЖИ = 1.0
+Accuracy for char цЛИ = 0.9583333333333334
+Accuracy for char чЦП = 0.9513888888888888
+Accuracy for char H = 1.0
+Accuracy for char щХА = 0.9714285714285714
+Accuracy for char ф╝▓ = 0.9666666666666667
+Accuracy for char щШ╝ = 1.0
+Accuracy for char хЮЖ = 0.9833333333333333
+Accuracy for char щЧ┐ = 0.9833333333333333
+Accuracy for char ч╝┤ = 0.972027972027972
+Accuracy for char чЛЮ = 0.993006993006993
+Accuracy for char хСФ = 0.9830508474576272
+Accuracy for char цЛВ = 0.9859154929577465
+Accuracy for char чФН = 1.0
+Accuracy for char чЖК = 0.993006993006993
+Accuracy for char ч╝О = 0.9496402877697842
+Accuracy for char шЙ│ = 0.9928571428571429
+Accuracy for char цРа = 1.0
+Accuracy for char хиШ = 0.9230769230769231
+Accuracy for char цЩж = 0.9300699300699301
+Accuracy for char ф╝д = 0.9722222222222222
+Accuracy for char шГБ = 0.9574468085106383
+Accuracy for char шН╖ = 0.9440559440559441
+Accuracy for char ц┤Ю = 0.9859154929577465
+Accuracy for char чЖЯ = 0.9652777777777778
+Accuracy for char хЗ╡ = 0.9661016949152542
+Accuracy for char цЙй = 0.9790209790209791
+Accuracy for char чФ▓ = 0.9642857142857143
+Accuracy for char чоН = 0.9716312056737588
+Accuracy for char шЮп = 1.0
+Accuracy for char ч╝И = 1.0
+Accuracy for char шЕФ = 0.9230769230769231
+Accuracy for char хвЕ = 0.971830985915493
+Accuracy for char чмк = 0.9833333333333333
+Accuracy for char щЧ╝ = 0.9661016949152542
+Accuracy for char цЕО = 0.9791666666666666
+Accuracy for char чПР = 1.0
+Accuracy for char хЭЬ = 1.0
+Accuracy for char цбО = 0.9833333333333333
+Accuracy for char х╝Д = 0.9647887323943662
+Accuracy for char шЫЖ = 0.9513888888888888
+Accuracy for char шкК = 0.9857142857142858
+Accuracy for char ч╛▓ = 0.9830508474576272
+Accuracy for char хШЮ = 1.0
+Accuracy for char шг╕ = 0.6056338028169014
+Accuracy for char шЛд = 0.9830508474576272
+Accuracy for char х▓▒ = 1.0
+Accuracy for char х╖й = 0.9787234042553191
+Accuracy for char щТ▒ = 0.9513888888888888
+Accuracy for char щмп = 0.9322033898305084
+Accuracy for char ш░п = 0.9830508474576272
+Accuracy for char ч╕╗ = 0.9833333333333333
+Accuracy for char цНВ = 0.9290780141843972
+Accuracy for char цЧо = 0.95
+Accuracy for char ч▓е = 1.0
+Accuracy for char шПб = 0.95
+Accuracy for char ц╗Ю = 0.9929577464788732
+Accuracy for char цоЦ = 0.9793103448275862
+Accuracy for char чпЖ = 0.965034965034965
+Accuracy for char ф╕║ = 0.971830985915493
+Accuracy for char щШФ = 0.9722222222222222
+Accuracy for char чШБ = 0.9645390070921985
+Accuracy for char цаЗ = 0.9571428571428572
+Accuracy for char ц╕К = 0.9862068965517241
+Accuracy for char хЖ▒ = 0.9830508474576272
+Accuracy for char шИЫ = 0.9666666666666667
+Accuracy for char хйк = 0.965034965034965
+Accuracy for char щХ░ = 0.9647887323943662
+Accuracy for char х┐╡ = 0.9513888888888888
+Accuracy for char шФ╕ = 1.0
+Accuracy for char цЛ╜ = 0.9927007299270073
+Accuracy for char щ╕╢ = 0.9833333333333333
+Accuracy for char хФ╝ = 1.0
+Accuracy for char шЬГ = 0.9833333333333333
+Accuracy for char щЫк = 0.9583333333333334
+Accuracy for char шкЙ = 0.9861111111111112
+Accuracy for char ф╝Ю = 0.993006993006993
+Accuracy for char шЫД = 0.9830508474576272
+Accuracy for char цРР = 0.9928571428571429
+Accuracy for char шпй = 0.9661016949152542
+Accuracy for char шДм = 0.9833333333333333
+Accuracy for char ц▓з = 0.9787234042553191
+Accuracy for char цДЙ = 0.9859154929577465
+Accuracy for char шИЯ = 1.0
+Accuracy for char чЕд = 0.9722222222222222
+Accuracy for char чмЫ = 0.9788732394366197
+Accuracy for char цЛ╝ = 0.9791666666666666
+Accuracy for char ч│К = 0.986013986013986
+Accuracy for char хЦЩ = 0.9830508474576272
+Accuracy for char хЦК = 0.9716312056737588
+Accuracy for char ч╗╣ = 1.0
+Accuracy for char ф┐П = 0.958041958041958
+Accuracy for char шТЯ = 0.9661016949152542
+Accuracy for char чЙВ = 1.0
+Accuracy for char цХХ = 0.9833333333333333
+Accuracy for char шЮа = 1.0
+Accuracy for char цЕи = 1.0
+Accuracy for char чПЩ = 0.9833333333333333
+Accuracy for char ч░┐ = 0.9507042253521126
+Accuracy for char че║ = 0.95
+Accuracy for char хак = 0.9790209790209791
+Accuracy for char щ│Р = 0.9833333333333333
+Accuracy for char хОН = 0.9833333333333333
+Accuracy for char чвЫ = 1.0
+Accuracy for char чЫЖ = 0.958041958041958
+Accuracy for char чЭ╜ = 1.0
+Accuracy for char цА╗ = 0.9788732394366197
+Accuracy for char ч╝▒ = 1.0
+Accuracy for char щШЛ = 1.0
+Accuracy for char цЦУ = 1.0
+Accuracy for char ц░┤ = 0.951048951048951
+Accuracy for char шЛа = 1.0
+Accuracy for char ш╛В = 1.0
+Accuracy for char шРж = 0.9833333333333333
+Accuracy for char хШЯ = 1.0
+Accuracy for char ц▓д = 0.9577464788732394
+Accuracy for char чД▒ = 0.9666666666666667
+Accuracy for char шЫЗ = 0.9513888888888888
+Accuracy for char шЫА = 0.9583333333333334
+Accuracy for char шТЧ = 0.9833333333333333
+Accuracy for char хХЦ = 0.9833333333333333
+Accuracy for char чЫ▒ = 0.9833333333333333
+Accuracy for char щй╖ = 1.0
+Accuracy for char хЮЕ = 1.0
+Accuracy for char чЫ╝ = 0.9790209790209791
+Accuracy for char чаЭ = 0.9833333333333333
+Accuracy for char це╣ = 0.9666666666666667
+Accuracy for char шРГ = 0.9836065573770492
+Accuracy for char х▒г = 1.0
+Accuracy for char хпУ = 0.9652777777777778
+Accuracy for char щ│б = 1.0
+Accuracy for char шОЖ = 0.9513888888888888
+Accuracy for char щФ╖ = 1.0
+Accuracy for char ч╗Э = 0.9788732394366197
+Accuracy for char ш╜з = 0.986013986013986
+Accuracy for char щУЦ = 0.9833333333333333
+Accuracy for char ч║┤ = 0.9833333333333333
+Accuracy for char чК╣ = 0.9647887323943662
+Accuracy for char цнЖ = 0.9666666666666667
+Accuracy for char цвж = 0.9583333333333334
+Accuracy for char } = 0.9801980198019802
+Accuracy for char цпФ = 0.9020979020979021
+Accuracy for char х╜Ш = 1.0
+Accuracy for char ф║Т = 0.9929577464788732
+Accuracy for char шНЫ = 1.0
+Accuracy for char щлМ = 0.9830508474576272
+Accuracy for char щУА = 0.916083916083916
+Accuracy for char щГИ = 0.9833333333333333
+Accuracy for char хжВ = 0.9097222222222222
+Accuracy for char шзД = 0.971830985915493
+Accuracy for char ц╕й = 0.9652777777777778
+Accuracy for char хУА = 1.0
+Accuracy for char чАг = 1.0
+Accuracy for char цжЙ = 0.9833333333333333
+Accuracy for char чЩ╗ = 0.9366197183098591
+Accuracy for char цЫЫ = 1.0
+Accuracy for char шЬг = 1.0
+Accuracy for char цП╢ = 0.9833333333333333
+Accuracy for char чЬ╡ = 1.0
+Accuracy for char шФ╣ = 0.9833333333333333
+Accuracy for char чзн = 1.0
+Accuracy for char чЮН = 1.0
+Accuracy for char чФ▒ = 0.972027972027972
+Accuracy for char чА╡ = 0.9833333333333333
+Accuracy for char х╖╛ = 1.0
+Accuracy for char ш╢Д = 0.9833333333333333
+Accuracy for char ц▓П = 0.9930555555555556
+Accuracy for char ш╜┤ = 0.9166666666666666
+Accuracy for char цЭз = 0.95
+Accuracy for char ч╗П = 0.958041958041958
+Accuracy for char хЦЭ = 0.951048951048951
+Accuracy for char ч╗╝ = 0.9444444444444444
+Accuracy for char щЫБ = 0.9440559440559441
+Accuracy for char цп│ = 1.0
+Accuracy for char щУШ = 0.9833333333333333
+Accuracy for char хЙН = 0.971830985915493
+Accuracy for char щ╣Ч = 0.9666666666666667
+Accuracy for char чМ╕ = 1.0
+Accuracy for char чЫ▓ = 0.9507042253521126
+Accuracy for char ч╛Ю = 0.986013986013986
+Accuracy for char х║Ф = 0.972027972027972
+Accuracy for char хК▓ = 0.9930555555555556
+Accuracy for char ш╡л = 0.9790209790209791
+Accuracy for char щХи = 0.9833333333333333
+Accuracy for char щ╝м = 1.0
+Accuracy for char шНГ = 1.0
+Accuracy for char хТй = 0.9833333333333333
+Accuracy for char ц░Н = 1.0
+Accuracy for char чРГ = 0.9930555555555556
+Accuracy for char чЦд = 1.0
+Accuracy for char ц╕а = 0.9370629370629371
+Accuracy for char шзе = 0.9661016949152542
+Accuracy for char х╝У = 0.9645390070921985
+Accuracy for char шУЙ = 0.9305555555555556
+Accuracy for char хЙЕ = 1.0
+Accuracy for char цЭб = 0.9507042253521126
+Accuracy for char шЫй = 1.0
+Accuracy for char ц╖М = 0.9370629370629371
+Accuracy for char хЕл = 0.9790209790209791
+Accuracy for char хКЭ = 0.9859154929577465
+Accuracy for char шЖг = 1.0
+Accuracy for char ц╕Ъ = 0.967741935483871
+Accuracy for char х┤з = 1.0
+Accuracy for char чиЖ = 0.9666666666666667
+Accuracy for char цЮЬ = 0.9857142857142858
+Accuracy for char ц║╖ = 1.0
+Accuracy for char шМБ = 0.965034965034965
+Accuracy for char ш╕Е = 1.0
+Accuracy for char щФО = 1.0
+Accuracy for char хЦБ = 0.9833333333333333
+Accuracy for char ч╝║ = 0.993006993006993
+Accuracy for char щЩД = 0.9507042253521126
+Accuracy for char хРн = 0.9784172661870504
+Accuracy for char щА╡ = 1.0
+Accuracy for char щХЙ = 1.0
+Accuracy for char чн╖ = 0.958041958041958
+Accuracy for char чСХ = 1.0
+Accuracy for char цГ┤ = 0.9830508474576272
+Accuracy for char чп╝ = 1.0
+Accuracy for char щФв = 1.0
+Accuracy for char цН╗ = 0.9722222222222222
+Accuracy for char х╛╡ = 0.9833333333333333
+Accuracy for char шп╖ = 0.916083916083916
+Accuracy for char щФз = 0.9666666666666667
+Accuracy for char щкС = 0.958041958041958
+Accuracy for char чЦГ = 1.0
+Accuracy for char ш░й = 0.972027972027972
+Accuracy for char щЪ╢ = 0.9647887323943662
+Accuracy for char ф╣▒ = 0.9929577464788732
+Accuracy for char шТО = 1.0
+Accuracy for char че╝ = 0.9333333333333333
+Accuracy for char ч╗Х = 0.9444444444444444
+Accuracy for char ц┐а = 0.9833333333333333
+Accuracy for char шУ┐ = 0.9666666666666667
+Accuracy for char шп╛ = 0.9375
+Accuracy for char щНк = 1.0
+Accuracy for char чХФ = 0.9861111111111112
+Accuracy for char ц╝п = 0.9333333333333333
+Accuracy for char щУй = 1.0
+Accuracy for char шЭО = 0.9652777777777778
+Accuracy for char шГД = 0.9666666666666667
+Accuracy for char ш┤п = 0.971830985915493
+Accuracy for char хЫд = 0.9787234042553191
+Accuracy for char чЭЫ = 0.9861111111111112
+Accuracy for char шЩ║ = 1.0
+Accuracy for char colon = 1.0
+Accuracy for char цпп = 0.972027972027972
+Accuracy for char хЗ░ = 0.9790209790209791
+Accuracy for char щжР = 1.0
+Accuracy for char хж▓ = 0.9666666666666667
+Accuracy for char чФЬ = 0.9507042253521126
+Accuracy for char цКа = 0.9861111111111112
+Accuracy for char ц╡Е = 0.9722222222222222
+Accuracy for char циЯ = 0.9724137931034482
+Accuracy for char хГ│ = 1.0
+Accuracy for char чЫЧ = 0.9577464788732394
+Accuracy for char щ╕п = 0.9432624113475178
+Accuracy for char цЛЖ = 0.9300699300699301
+Accuracy for char щ▓╝ = 0.9833333333333333
+Accuracy for char х┐С = 0.95
+Accuracy for char цЪЕ = 1.0
+Accuracy for char ще╢ = 0.8402777777777778
+Accuracy for char щлШ = 0.9859154929577465
+Accuracy for char чХИ = 1.0
+Accuracy for char чЭг = 0.9645390070921985
+Accuracy for char цИР = 0.9647887323943662
+Accuracy for char чн╡ = 0.9666666666666667
+Accuracy for char чкТ = 0.9790209790209791
+Accuracy for char цЮБ = 0.9716312056737588
+Accuracy for char х▓С = 0.9491525423728814
+Accuracy for char цЗИ = 0.9787234042553191
+Accuracy for char чЪЛ = 0.9856115107913669
+Accuracy for char [ = 0.9702970297029703
+Accuracy for char х╜У = 0.9577464788732394
+Accuracy for char хП╢ = 0.993006993006993
+Accuracy for char хнд = 0.8936170212765957
+Accuracy for char ч╛з = 0.9830508474576272
+Accuracy for char хо┤ = 0.9788732394366197
+Accuracy for char цзЪ = 0.9666666666666667
+Accuracy for char ч║л = 0.986013986013986
+Accuracy for char чЙ▓ = 0.9285714285714286
+Accuracy for char ц▓Р = 0.9759036144578314
+Accuracy for char щЪ│ = 0.9833333333333333
+Accuracy for char шГи = 0.9666666666666667
+Accuracy for char чГн = 0.9862068965517241
+Accuracy for char хи╝ = 0.9833333333333333
+Accuracy for char шГЮ = 0.9859154929577465
+Accuracy for char тА░ = 0.995049504950495
+Accuracy for char чШЧ = 1.0
+Accuracy for char щ│Ь = 1.0
+Accuracy for char чЯз = 1.0
+Accuracy for char цФТ = 0.972027972027972
+Accuracy for char х║╢ = 0.9716312056737588
+Accuracy for char хПЧ = 0.958041958041958
+Accuracy for char чХП = 0.9857142857142858
+Accuracy for char хйз = 1.0
+Accuracy for char хе│ = 0.9583333333333334
+Accuracy for char шНн = 0.9830508474576272
+Accuracy for char шЙ┐ = 0.9491525423728814
+Accuracy for char хЩА = 1.0
+Accuracy for char шМЬ = 1.0
+Accuracy for char ф╗д = 0.972027972027972
+Accuracy for char цЖЦ = 1.0
+Accuracy for char щй║ = 1.0
+Accuracy for char шУж = 1.0
+Accuracy for char цЛК = 1.0
+Accuracy for char ц░Ш = 1.0
+Accuracy for char х╣в = 0.971830985915493
+Accuracy for char ф║╗ = 0.9666666666666667
+Accuracy for char хИ┐ = 0.9833333333333333
+Accuracy for char шЬЬ = 0.9583333333333334
+Accuracy for char хГЗ = 1.0
+Accuracy for char шЛЬ = 0.9661016949152542
+Accuracy for char шД╛ = 0.9722222222222222
+Accuracy for char цп╜ = 1.0
+Accuracy for char шНЮ = 0.9518072289156626
+Accuracy for char шКе = 0.9440559440559441
+Accuracy for char ш┐Ь = 0.9448275862068966
+Accuracy for char ч▒╗ = 0.9790209790209791
+Accuracy for char х╣┐ = 0.9645390070921985
+Accuracy for char х▓╡ = 0.9661016949152542
+Accuracy for char ц░Е = 1.0
+Accuracy for char члЯ = 0.9861111111111112
+Accuracy for char чЗГ = 0.9857142857142858
+Accuracy for char хдЗ = 0.965034965034965
+Accuracy for char цЩ║ = 0.9295774647887324
+Accuracy for char х┐л = 0.9722222222222222
+Accuracy for char ч╣Б = 0.9858156028368794
+Accuracy for char хВЕ = 0.9929577464788732
+Accuracy for char ч╝л = 1.0
+Accuracy for char ш╜▒ = 0.9661016949152542
+Accuracy for char ф╗О = 0.9788732394366197
+Accuracy for char хШО = 0.9642857142857143
+Accuracy for char щгФ = 0.9833333333333333
+Accuracy for char тИе = 0.985
+Accuracy for char х░К = 0.9858156028368794
+Accuracy for char цкР = 0.9404761904761905
+Accuracy for char шГА = 0.9861111111111112
+Accuracy for char хАб = 1.0
+Accuracy for char шГЩ = 1.0
+Accuracy for char хЪЖ = 1.0
+Accuracy for char цбз = 1.0
+Accuracy for char щ╕╝ = 1.0
+Accuracy for char шЭИ = 0.9833333333333333
+Accuracy for char цГп = 0.9436619718309859
+Accuracy for char чЬН = 0.9833333333333333
+Accuracy for char щ║Л = 0.9833333333333333
+Accuracy for char цй╣ = 0.9833333333333333
+Accuracy for char чОЙ = 0.9436619718309859
+Accuracy for char чЭб = 0.9370629370629371
+Accuracy for char шЖК = 0.9790209790209791
+Accuracy for char хР╡ = 0.972027972027972
+Accuracy for char цПй = 0.9859154929577465
+Accuracy for char щкД = 0.9929577464788732
+Accuracy for char щХб = 0.9666666666666667
+Accuracy for char чжА = 0.927710843373494
+Accuracy for char шВ┐ = 0.9861111111111112
+Accuracy for char щФЛ = 0.9640287769784173
+Accuracy for char ц╝╣ = 0.9666666666666667
+Accuracy for char цо│ = 1.0
+Accuracy for char ч╗║ = 1.0
+Accuracy for char хФа = 0.8690476190476191
+Accuracy for char ш╛Ж = 0.9859154929577465
+Accuracy for char хоЕ = 0.9448275862068966
+Accuracy for char чвМ = 0.986013986013986
+Accuracy for char цДж = 0.9833333333333333
+Accuracy for char чЫ╕ = 0.972027972027972
+Accuracy for char щЮН = 0.9647887323943662
+Accuracy for char хжЖ = 0.971830985915493
+Accuracy for char чЧХ = 0.993006993006993
+Accuracy for char ф╝л = 1.0
+Accuracy for char щ╣и = 0.9666666666666667
+Accuracy for char ф╛Ф = 0.9833333333333333
+Accuracy for char шЫ▓ = 0.9666666666666667
+Accuracy for char щЫп = 1.0
+Accuracy for char х║Ц = 0.9833333333333333
+Accuracy for char ш╖г = 0.9666666666666667
+Accuracy for char шЪм = 1.0
+Accuracy for char члЛ = 0.9366197183098591
+Accuracy for char х╕И = 0.9793103448275862
+Accuracy for char чЩЮ = 0.963855421686747
+Accuracy for char х▒И = 0.9790209790209791
+Accuracy for char цЯГ = 0.9833333333333333
+Accuracy for char ш░Л = 0.9722222222222222
+Accuracy for char ч╝з = 0.9333333333333333
+Accuracy for char ц╕п = 0.9858156028368794
+Accuracy for char цОИ = 0.972027972027972
+Accuracy for char хТМ = 0.965034965034965
+Accuracy for char ч╗░ = 0.9428571428571428
+Accuracy for char шаХ = 0.9791666666666666
+Accuracy for char шЫК = 0.9929078014184397
+Accuracy for char чГл = 0.9571428571428572
+Accuracy for char чмП = 0.95
+Accuracy for char хЮа = 1.0
+Accuracy for char ф╕У = 0.972027972027972
+Accuracy for char vertical_bar = 0.995049504950495
+Accuracy for char чйД = 0.9666666666666667
+Accuracy for char хеШ = 1.0
+Accuracy for char ч╝В = 0.9661016949152542
+Accuracy for char че╕ = 0.9929577464788732
+Accuracy for char х╖Й = 1.0
+Accuracy for char щЩР = 0.965034965034965
+Accuracy for char шНТ = 0.972027972027972
+Accuracy for char хБе = 0.9787234042553191
+Accuracy for char шГЖ = 0.9788732394366197
+Accuracy for char ц╖▒ = 0.8958333333333334
+Accuracy for char хжп = 1.0
+Accuracy for char чХЪ = 1.0
+Accuracy for char щйм = 0.9583333333333334
+Accuracy for char уОЬ = 1.0
+Accuracy for char # = 0.995049504950495
+Accuracy for char ш╛К = 1.0
+Accuracy for char хТВ = 0.9830508474576272
+Accuracy for char чПЮ = 0.9666666666666667
+Accuracy for char щ╝Н = 1.0
+Accuracy for char хМ┐ = 0.993006993006993
+Accuracy for char чФн = 0.9929577464788732
+Accuracy for char хЕ╝ = 0.9859154929577465
+Accuracy for char чЫР = 0.958041958041958
+Accuracy for char чРЫ = 0.9833333333333333
+Accuracy for char шЮИ = 0.9491525423728814
+Accuracy for char тЦ│ = 0.995049504950495
+Accuracy for char щ│У = 1.0
+Accuracy for char ф╝Ъ = 0.9574468085106383
+Accuracy for char V = 1.0
+Accuracy for char хжд = 0.9830508474576272
+Accuracy for char цСз = 0.9859154929577465
+Accuracy for char ш░Э = 0.9827586206896551
+Accuracy for char чГИ = 0.9859154929577465
+Accuracy for char чм║ = 0.9432624113475178
+Accuracy for char ц│г = 0.9440559440559441
+Accuracy for char шЪг = 0.8170731707317073
+Accuracy for char чРЗ = 1.0
+Accuracy for char хЬй = 1.0
+Accuracy for char ш╕в = 0.9929577464788732
+Accuracy for char ц╛б = 0.9370629370629371
+Accuracy for char чРп = 1.0
+Accuracy for char чЧ▒ = 1.0
+Accuracy for char хжК = 0.9513888888888888
+Accuracy for char х┐Т = 1.0
+Accuracy for char хи▒ = 0.9577464788732394
+Accuracy for char щвЕ = 0.972027972027972
+Accuracy for char шБЛ = 0.986013986013986
+Accuracy for char шЗ╗ = 0.9862068965517241
+Accuracy for char хС╡ = 0.951048951048951
+Accuracy for char шТп = 1.0
+Accuracy for char хВй = 0.9830508474576272
+Accuracy for char чзС = 0.9930555555555556
+Accuracy for char чХ╕ = 0.9647887323943662
+Accuracy for char щ╣Х = 0.9666666666666667
+Accuracy for char щТг = 0.9833333333333333
+Accuracy for char хТм = 0.9020979020979021
+Accuracy for char шКи = 0.9661016949152542
+Accuracy for char цЧЖ = 1.0
+Accuracy for char щЖн = 0.9833333333333333
+Accuracy for char хп║ = 0.958041958041958
+Accuracy for char ч│Е = 0.9833333333333333
+Accuracy for char хнж = 0.9513888888888888
+Accuracy for char хЭЭ = 0.8943661971830986
+Accuracy for char щ▓н = 1.0
+Accuracy for char чЪЗ = 0.9790209790209791
+Accuracy for char ц░Щ = 0.9836065573770492
+Accuracy for char цМб = 0.9787234042553191
+Accuracy for char хг░ = 0.972027972027972
+Accuracy for char хУк = 0.9859154929577465
+Accuracy for char цЭО = 0.972027972027972
+Accuracy for char ф╗б = 0.9830508474576272
+Accuracy for char хЙЬ = 1.0
+Accuracy for char цСФ = 0.9929577464788732
+Accuracy for char ход = 0.9097222222222222
+Accuracy for char чЩ╛ = 0.9361702127659575
+Accuracy for char цОТ = 0.9861111111111112
+Accuracy for char щ╛Щ = 0.9230769230769231
+Accuracy for char ц░▓ = 1.0
+Accuracy for char цЧж = 0.971830985915493
+Accuracy for char хд╝ = 1.0
+Accuracy for char шги = 0.9661016949152542
+Accuracy for char шЭа = 0.9036144578313253
+Accuracy for char х╜й = 0.971830985915493
+Accuracy for char щФ╝ = 0.95
+Accuracy for char щ▓▓ = 0.9833333333333333
+Accuracy for char хНЮ = 0.9714285714285714
+Accuracy for char шП▒ = 0.9929577464788732
+Accuracy for char х┤Ы = 1.0
+Accuracy for char тИ╡ = 0.8557213930348259
+Accuracy for char щлА = 0.9833333333333333
+Accuracy for char хЗА = 0.986013986013986
+Accuracy for char ц▓Я = 0.9714285714285714
+Accuracy for char щТи = 0.9647887323943662
+Accuracy for char хбН = 1.0
+Accuracy for char ч│Х = 0.9714285714285714
+Accuracy for char щ╝Т = 1.0
+Accuracy for char хпЗ = 0.9788732394366197
+Accuracy for char хЙб = 0.9491525423728814
+Accuracy for char х╕Ъ = 0.9861111111111112
+Accuracy for char шМ╕ = 0.951048951048951
+Accuracy for char ф╕╢ = 0.13559322033898305
+Accuracy for char ш╡г = 1.0
+Accuracy for char хФ╛ = 0.9858156028368794
+Accuracy for char ш╕м = 0.9666666666666667
+Accuracy for char циК = 0.9929078014184397
+Accuracy for char ц▒Ь = 1.0
+Accuracy for char щ╣ж = 0.6626506024096386
+Accuracy for char щЫ│ = 0.9397590361445783
+Accuracy for char ч▓Ч = 0.9790209790209791
+Accuracy for char хж╗ = 0.9583333333333334
+Accuracy for char уАБ = 0.5693069306930693
+Accuracy for char щБВ = 0.9366197183098591
+Accuracy for char члп = 0.9859154929577465
+Accuracy for char цДЯ = 0.9432624113475178
+Accuracy for char цоЪ = 0.9833333333333333
+Accuracy for char шЩ╝ = 0.9833333333333333
+Accuracy for char шЬ╖ = 0.9833333333333333
+Accuracy for char цжЬ = 0.9855072463768116
+Accuracy for char хЧД = 0.9666666666666667
+Accuracy for char ч│Щ = 0.9929577464788732
+Accuracy for char щЬ╣ = 0.986013986013986
+Accuracy for char щвЧ = 0.986013986013986
+Accuracy for char ч╛╝ = 1.0
+Accuracy for char чСЫ = 1.0
+Accuracy for char чШ┤ = 0.9310344827586207
+Accuracy for char ц╜Ж = 0.95
+Accuracy for char шФУ = 0.9645390070921985
+Accuracy for char щвЭ = 0.9577464788732394
+Accuracy for char щ╕╣ = 1.0
+Accuracy for char чЛД = 0.9635036496350365
+Accuracy for char цйЗ = 0.9930555555555556
+Accuracy for char тЧО = 1.0
+Accuracy for char щ╝а = 0.958041958041958
+Accuracy for char ш░г = 0.9444444444444444
+Accuracy for char щнЙ = 0.9830508474576272
+Accuracy for char шо╛ = 0.9361702127659575
+Accuracy for char цЮД = 0.9507042253521126
+Accuracy for char х╝з = 0.9300699300699301
+Accuracy for char чаЦ = 0.9305555555555556
+Accuracy for char ц╡П = 0.9833333333333333
+Accuracy for char чЙТ = 0.9833333333333333
+Accuracy for char цАл = 0.9833333333333333
+Accuracy for char хЭО = 0.9366197183098591
+Accuracy for char хЖ░ = 0.9078014184397163
+Accuracy for char щЧ╗ = 0.9861111111111112
+Accuracy for char щТ╛ = 1.0
+Accuracy for model = 1.0
