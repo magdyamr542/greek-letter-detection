@@ -21,7 +21,7 @@ from torchvision.datasets.dtd import PIL
 from torchvision.transforms import transforms
 from torchvision import models
 from pathlib import Path
-from constants import categories, get_data_by_category, model_input_size
+from constants import class_to_index_chinese_data, model_input_size
 from sacred import Experiment
 from sacred.observers import FileStorageObserver
 from sacred import SETTINGS
@@ -113,8 +113,7 @@ def cv2_image_to_pil_image(cv2_image: cv2.Mat) -> PIL.Image:
     return Image.fromarray(cv2_image)
 
 
-@ex.capture
-def do_classify(image_path: str, model, all_categories: List[str] = []) -> str:
+def do_classify(image_path: str, model, category_index_to_category={}) -> str:
     """
     classify gets an image path and a model. it returns the classified label
     """
@@ -125,7 +124,7 @@ def do_classify(image_path: str, model, all_categories: List[str] = []) -> str:
 
     result: torch.Tensor = model(input_batch)
     max_index = result.argmax().item()
-    return all_categories[max_index]
+    return category_index_to_category[max_index]
 
 
 def evaluate_model(model) -> int:
@@ -185,11 +184,13 @@ def get_evaluation_for_category(
 
     char = category_dir
 
+    category_index_to_category = {v: k for k, v in class_to_index_chinese_data}
+
     print(f"Classifying Category={category_dir} Crops={len(crops)}")
 
     for crop in crops:
 
-        model_char = do_classify(crop, model)
+        model_char = do_classify(crop, model, category_index_to_category)
 
         if model_char == char:
             dir_correct_num_classifications += 1
