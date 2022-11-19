@@ -184,7 +184,7 @@ def get_evaluation_for_category(
 
     char = category_dir
 
-    category_index_to_category = {v: k for k, v in class_to_index_chinese_data}
+    category_index_to_category = {v: k for k, v in class_to_index_chinese_data.items()}
 
     print(f"Classifying Category={category_dir} Crops={len(crops)}")
 
