@@ -51,85 +51,41 @@ def crops_folder_exists(test_data_dir: str):
     assert os.path.exists(
         os.path.join(test_data_dir, "images")
     ), "Images directory does not exist!"
-    if os.path.exists(os.path.join(test_data_dir, "crops")):
+    if os.path.exists(os.path.join(test_data_dir, "crops", "test")):
         return True
     else:
         return False
 
 
 def create_data_for_testing(test_data_dir: str):
-    cwd = os.getcwd()
+    os.mkdir(os.path.join(test_data_dir, "crops", "test"))
 
-    os.chdir(test_data_dir)
-    os.mkdir(os.path.join("crops"))
-    os.mkdir(os.path.join("crops", "test"))
+    testImages = glob.glob(os.path.join(test_data_dir, "images", "testing", "**/*.png"))
+    print("test images", len(testImages))
+    imgLeft = len(testImages)
+    for img in testImages:
+        imgDir = img.split("/")[-2]
+        imgName = img.split("/")[-1]
+        if not os.path.exists(os.path.join(test_data_dir, "crops", "test", imgDir)):
+            os.makedirs(os.path.join(test_data_dir, "crops", "test", imgDir))
 
-    # get the coco.json file
-    try:
-        f = open(glob.glob("*.json")[0])
-    except:
-        print("No json file was found!")
-        os.chdir(cwd)
-        raise
-
-    data = json.load(f)
-    f.close()
-    l = []
-
-    print(f"Creating crops for {len(data['images'])} images...")
-
-    for i, image in enumerate(data["images"]):
-        img_url = image["img_url"][2:]
-        fname = os.path.join(img_url)
-        image_id = image["bln_id"]
         try:
-            Image.open(fname).convert("RGB")
-            l.append(image_id)
+            im = Image.open(img).convert("RGB")
+            im = im.resize((model_input_size, model_input_size))
+            im.save(os.path.join(test_data_dir, "crops", "test", imgDir, imgName))
+            imgLeft -= 1
+            if imgLeft % 10 == 0:
+                print("imgs left", imgLeft)
         except:
-            print(f"Could not open image with id {image_id}")
-            continue
-
-    with open(os.path.join("image_list.bin"), "wb") as fp:  # Pickling
-        pickle.dump(l, fp)
-
-    for i, image in enumerate(data["images"]):
-        img_url = image["img_url"][2:]
-        image_id = image["bln_id"]
-        fname = os.path.join(img_url)
-        try:
-            im = Image.open(fname).convert("RGB")
-        except:
-            print(f"Image {fname} does not exist")
-            continue
-
-        for annotation in data["annotations"]:
-            if annotation["image_id"] == image_id:
-                crop_id = annotation["id"]
-                crop_filename = str(image_id) + "_" + str(crop_id) + ".jpg"
-                x, y, w, h = annotation["bbox"]
-
-                crop_directory = annotation["category_id"]
-                crop_directory = os.path.join("crops", "test", str(crop_directory))
-                if not os.path.exists(crop_directory):
-                    os.mkdir(crop_directory)
-                path = os.path.join(crop_directory, crop_filename)
-                crop1 = im.crop((x, y, x + w, y + h))
-                crop1 = crop1.resize(
-                    (model_input_size, model_input_size), Image.Resampling.BILINEAR
-                )
-                crop1.save(path, "JPEG", quality=85)
-
-    os.chdir(cwd)
+            print("error while saving image", img)
 
 
 @ex.capture
-def load_model(model_path: str, useWeights: bool = True):
-    num_classes = 25
+def load_model(data_dir: str, model_path: str):
+    num_classes = len(os.listdir(os.path.join(data_dir, "images", "training")))
+    print("num classes", num_classes)
     checkpoint = torch.load(model_path, map_location=torch.device("cpu"))
-    weights = models.ResNet18_Weights.IMAGENET1K_V1 if useWeights else None
-    if not useWeights:
-        print("using the model without the weights ResNet18_Weights.IMAGENET1K_V1")
-    model = models.resnet18(weights=weights)
+    model = models.resnet18()
     num_ftrs = model.fc.in_features
     model.fc = nn.Linear(num_ftrs, num_classes)
     model.load_state_dict(checkpoint["model_state_dict"])
@@ -168,8 +124,8 @@ def do_classify(image_path: str, model) -> str:
 
     result: torch.Tensor = model(input_batch)
     max_index = result.argmax().item()
-    _, __, char = get_data_by_category(categories[max_index])
-    return char
+    categories = os.listdir(os.path.join("chinese-data", "crops", "test"))
+    return categories[max_index]
 
 
 def evaluate_model(model) -> int:
@@ -177,11 +133,11 @@ def evaluate_model(model) -> int:
     Returns:
         int: the model accuracy
     """
-    categories_dir_path = os.path.join("data", "testing", "crops", "test")
+    categories_dir_path = os.path.join("chinese-data", "crops", "test")
     categories_dirs = os.listdir(categories_dir_path)
 
     all_crops = len(
-        glob.glob(os.path.join(categories_dir_path, "**/*.jpg"), recursive=True)
+        glob.glob(os.path.join(categories_dir_path, "**/*.png"), recursive=True)
     )
 
     print(f"Will classify {all_crops} crops")
@@ -221,7 +177,7 @@ def get_evaluation_for_category(
 ) -> CategoryEvaluationResult:
     model, category_dir_base, category_dir = input
     crops = glob.glob(
-        os.path.join(category_dir_base, category_dir, "**/*.jpg"), recursive=True
+        os.path.join(category_dir_base, category_dir, "**/*.png"), recursive=True
     )
 
     dir_total_num_classifications = 0
@@ -229,7 +185,7 @@ def get_evaluation_for_category(
 
     _, __, char = get_data_by_category(int(category_dir))
 
-    print(f"Classifying Category={category_dir} Crops={len(crops)} Char={char} ...")
+    print(f"Classifying Category={category_dir} Crops={len(crops)}")
 
     for crop in crops:
 
@@ -287,7 +243,7 @@ def main(checkpoint: str):
         print("could not parse the epoch number from the check point")
 
     # prepare data for testing
-    data_dir = "data/testing"
+    data_dir = "chinese-data"
     print("Check if crop folder exists...")
     if not crops_folder_exists(data_dir):
         print("Crop folder does not exist. make crops...")
@@ -296,5 +252,5 @@ def main(checkpoint: str):
 
     # evaluate the model
     print("Start evaluating classifier...")
-    model = load_model(checkpoint)
+    model = load_model(data_dir, checkpoint)
     evaluate_model(model)
