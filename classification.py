@@ -46,6 +46,8 @@ def update_model_with_saved_checkpoint(checkpoint_fpath, model, optimizer):
         optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
         return model, optimizer, checkpoint["epoch"]
     except Exception as e:
+        print(f"error while loading model from {checkpoint_fpath}")
+        print(e)
         return None
 
 
