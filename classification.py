@@ -155,14 +155,27 @@ class ChineseDataWeights(WeightsEnum):
 
 
 @ex.capture
-def initialize_model(num_classes, feature_extract=False, useWeights: bool = True):
+def initialize_model(
+    num_classes,
+    feature_extract=False,
+    useWeights: bool = True,
+    useChineseWeights: bool = False,
+):
     """
     - initializes the resnet18 model replacing the last fully connected layer (fc) with a linear layer that maps to the 24 chars we have.
     """
     if not useWeights:
-        print("using the model without the weights ResNet18_Weights.IMAGENET1K_V1")
+        print("using the model without weights")
 
-    weights = ChineseDataWeights if useWeights else None
+    weights = None
+    if useWeights:
+        if useChineseWeights:
+            print("using ChineseDataWeights")
+            weights = ChineseDataWeights
+        else:
+            print("using models.ResNet18_Weights.IMAGENET1K_V1")
+            weights = models.ResNet18_Weights.IMAGENET1K_V1
+
     model = models.resnet18(weights=weights)
     if feature_extract:
         for param in model.parameters():
@@ -250,6 +263,7 @@ def my_config():
     checkpoint = ""
     epochs = None
     useWeights = True
+    useChineseWeights = False
     numTestImages = get_num_test_images()
     trainedModelName = (
         "classification_model_checkpoint_{noWeightPrefix}epoch_{numEpochs}.pt".format(
