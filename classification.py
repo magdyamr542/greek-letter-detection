@@ -171,7 +171,7 @@ def initialize_model(
     if useWeights:
         if useChineseWeights:
             print("using ChineseDataWeights")
-            weights = ChineseDataWeights
+            weights = ChineseDataWeights.DEFAULT
         else:
             print("using models.ResNet18_Weights.IMAGENET1K_V1")
             weights = models.ResNet18_Weights.IMAGENET1K_V1
