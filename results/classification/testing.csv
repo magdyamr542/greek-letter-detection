@@ -1,5 +1,6 @@
-numberOfTestImages,numberOfEpochs,useImageNetWeights,accuracy
-25,100,True,0.597457627118644
-25,100,True,0.597457627118644
-25,40,False,0.5466101694915254
-31,150,True,0.614406779661017
+weightsFrom,numberOfTestImages,numberOfEpochs,useWeights,accuracy
+imageNet,25,100,True,0.597457627118644
+imageNet,25,100,True,0.597457627118644
+imageNet,25,40,False,0.5466101694915254
+imageNet,31,150,True,0.614406779661017
+chineseData,31,100,True,0.5550847457627118
