@@ -171,7 +171,7 @@ def initialize_model(
     if useWeights:
         if useChineseWeights:
             print("using ChineseDataWeights")
-            weights = ChineseDataWeights.DEFAULT
+            models.ResNet18_Weights.DEFAULT.url = "https://download.pytorch.org/models/classification_model_state_dict_epoch_50.pth"
         else:
             print("using models.ResNet18_Weights.IMAGENET1K_V1")
             weights = models.ResNet18_Weights.IMAGENET1K_V1
