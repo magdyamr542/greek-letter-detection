@@ -138,6 +138,7 @@ def my_config():
     checkpoint = ""
     epochs = None
     useWeights = True
+    useChineseWeights = False
     numTestImages = get_num_test_images()
     trainedModelName = (
         "detection_model_checkpoint_{noWeightPrefix}epoch_{numEpochs}.pt".format(
@@ -163,6 +164,7 @@ def main(
     epochs: Optional[int],
     numTestImages: int,
     useWeights: bool,
+    useChineseWeights: bool,
     trainedModelSavePath: str,
     trainedModelSaveBasePath: str,
 ):
@@ -204,7 +206,14 @@ def main(
     if not useWeights:
         print("Using the model without the weights FasterRCNN_ResNet50_FPN_Weights")
 
-    weights = FasterRCNN_ResNet50_FPN_Weights.DEFAULT if useWeights else None
+    weights = None
+    if useWeights:
+        if useChineseWeights:
+            print("using ChineseDataWeights")
+            FasterRCNN_ResNet50_FPN_Weights.DEFAULT.url = "https://download.pytorch.org/models/classification_model_state_dict_epoch_50.pth"
+        else:
+            print("using models.ResNet18_Weights.IMAGENET1K_V1")
+            weights = FasterRCNN_ResNet50_FPN_Weights.DEFAULT
     model = torchvision.models.detection.fasterrcnn_resnet50_fpn(weights=weights)
     in_features = model.roi_heads.box_predictor.cls_score.in_features
     model.roi_heads.box_predictor = FastRCNNPredictor(in_features, num_classes)
