@@ -1,4 +1,5 @@
-numberOfTestImages,numberOfEpochs,useImageNetWeights,AP_s,AP_m,AP_l,AP_0.50:0.95,AP_0.50,AP_0.75
-25,250,True,0.007,0.0.25,0.088,0.036,0.076,0.029
-25,400,True,0.006,0.0.25,0.079,0.034,0.072,0.026
-10,150,True,0.000,0.033,0.093,0.051,0.105,0.042
+weightsFrom,numberOfTestImages,numberOfEpochs,useImageNetWeights,AP_s,AP_m,AP_l,AP_0.50:0.95,AP_0.50,AP_0.75
+imageNet,25,250,True,0.007,0.0.25,0.088,0.036,0.076,0.029
+imageNet,25,400,True,0.006,0.0.25,0.079,0.034,0.072,0.026
+imageNet,10,150,True,0.000,0.033,0.093,0.051,0.105,0.042
+chineseData,31,150,True,0.002,0.026,0.071,0.035,0.072,0.028
