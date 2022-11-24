@@ -37,4 +37,5 @@ if __name__ == "__main__":
     file = args.file
 
     with HTTPServer(('', 1234), handler) as server:
+        print("serving on port 1234 ...")
         server.serve_forever()
