@@ -1,24 +1,25 @@
 Given checkpoint data/training/saved_detection_checkpoints/10_test_images/detection_model_checkpoint_epoch_150.pt
-Loading dataset with 31 images
+Using coco file in coco_test_10/coco_test.json
+Loading dataset with 10 images
 Evaluating the model ...
 creating index...
 index created!
-Test:  [ 0/31]  eta: 0:00:14  model_time: 0.2386 (0.2386)  evaluator_time: 0.0165 (0.0165)  time: 0.4629  data: 0.2005  max mem: 840
-Test:  [30/31]  eta: 0:00:00  model_time: 0.0871 (0.0919)  evaluator_time: 0.0313 (0.0379)  time: 0.4660  data: 0.2991  max mem: 3711
-Test: Total time: 0:00:12 (0.3878 s / it)
-Averaged stats: model_time: 0.0871 (0.0919)  evaluator_time: 0.0313 (0.0379)
+Test:  [ 0/10]  eta: 0:00:04  model_time: 0.2303 (0.2303)  evaluator_time: 0.0168 (0.0168)  time: 0.4157  data: 0.1611  max mem: 840
+Test:  [ 9/10]  eta: 0:00:00  model_time: 0.0819 (0.0993)  evaluator_time: 0.0237 (0.0390)  time: 0.2375  data: 0.0849  max mem: 1690
+Test: Total time: 0:00:02 (0.2410 s / it)
+Averaged stats: model_time: 0.0819 (0.0993)  evaluator_time: 0.0237 (0.0390)
 Accumulating evaluation results...
-DONE (t=0.14s).
+DONE (t=0.08s).
 IoU metric: bbox
- Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.027
- Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.056
- Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.021
- Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.016
- Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.024
- Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.047
- Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.012
- Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.031
- Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.034
- Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.015
- Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.028
- Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.063
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.052
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.102
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.042
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.037
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.138
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.025
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.060
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.066
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.044
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.164
