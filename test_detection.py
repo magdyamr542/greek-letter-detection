@@ -61,11 +61,11 @@ def get_transform():
 
 
 class Dataset(torch.utils.data.Dataset):
-    def __init__(self, transforms=None):
+    def __init__(self, cocoJsonPath: str, transforms=None):
 
         self.transforms = transforms
 
-        jFile = open(os.path.join("data", "testing", "coco.json"))
+        jFile = open(cocoJsonPath)
         self.data = json.load(jFile)
         jFile.close()
 
@@ -136,10 +136,11 @@ class Dataset(torch.utils.data.Dataset):
 def my_config():
     checkpoint = ""
     useWeights = True
+    cocoJsonPath = "./data/training/coco.json"
 
 
 @ex.automain
-def main(checkpoint: str, useWeights: bool):
+def main(checkpoint: str, useWeights: bool, cocoJsonPath: str):
     if not checkpoint:
         print(
             "Check point not given. use `with checkpoint='<path>'` to provide the used checkpoint"
@@ -169,9 +170,10 @@ def main(checkpoint: str, useWeights: bool):
             "Using the model without the weights FasterRCNN_ResNet50_FPN_Weights.COCO_V1"
         )
 
+    print(f"Using coco file in {cocoJsonPath}")
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
     model = load_saved_model(checkpoint, useWeights, device)
-    dataset_test = Dataset(transforms=get_transform())
+    dataset_test = Dataset(cocoJsonPath, transforms=get_transform())
     data_loader_test = torch.utils.data.DataLoader(
         dataset_test,
         batch_size=1,
