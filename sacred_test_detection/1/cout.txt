@@ -1,0 +1,24 @@
+Given checkpoint data/training/saved_detection_checkpoints/31_test_images/detection_model_checkpoint_epoch_150.pt
+Loading dataset with 31 images
+Evaluating the model ...
+creating index...
+index created!
+Test:  [ 0/31]  eta: 0:00:12  model_time: 0.2380 (0.2380)  evaluator_time: 0.0161 (0.0161)  time: 0.4183  data: 0.1579  max mem: 840
+Test:  [30/31]  eta: 0:00:00  model_time: 0.0865 (0.0915)  evaluator_time: 0.0118 (0.0193)  time: 0.4512  data: 0.3060  max mem: 3713
+Test: Total time: 0:00:11 (0.3767 s / it)
+Averaged stats: model_time: 0.0865 (0.0915)  evaluator_time: 0.0118 (0.0193)
+Accumulating evaluation results...
+DONE (t=0.13s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.013
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.025
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.011
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.009
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.030
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.006
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.014
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.015
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.009
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.039
