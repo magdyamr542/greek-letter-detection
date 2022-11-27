@@ -1,0 +1,5 @@
+{
+  "checkpoint": "data/training/saved_detection_checkpoints/25_test_images/detection_model_checkpoint_epoch_400.pt",
+  "seed": 957125815,
+  "useWeights": true
+}
