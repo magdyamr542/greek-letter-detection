@@ -32,18 +32,24 @@ ex = Experiment("Test Detection")
 ex.observers.append(FileStorageObserver("sacred_test_detection"))
 
 
-def load_saved_model(checkpoint_fpath: str, useWeights: bool):
+def load_saved_model(
+    checkpoint_fpath: str, useWeights: bool, device=torch.device("cpu")
+):
     num_classes = 25
     weights = FasterRCNN_ResNet50_FPN_Weights.COCO_V1 if useWeights else None
+
     model = torchvision.models.detection.fasterrcnn_resnet50_fpn(weights=weights)
     in_features = model.roi_heads.box_predictor.cls_score.in_features
     model.roi_heads.box_predictor = FastRCNNPredictor(in_features, num_classes)
+    model.to(device)
+
     params = [p for p in model.parameters() if p.requires_grad]
     optimizer = torch.optim.SGD(params, lr=0.001, momentum=0.8, weight_decay=0.0004)
     checkpoint = torch.load(checkpoint_fpath, map_location=torch.device("cpu"))
     model.load_state_dict(checkpoint["model_state_dict"])
     optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
     model.eval()
+
     return model
 
 
@@ -163,7 +169,8 @@ def main(checkpoint: str, useWeights: bool):
             "Using the model without the weights FasterRCNN_ResNet50_FPN_Weights.COCO_V1"
         )
 
-    model = load_saved_model(checkpoint, useWeights)
+    device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+    model = load_saved_model(checkpoint, useWeights, device)
     dataset_test = Dataset(transforms=get_transform())
     data_loader_test = torch.utils.data.DataLoader(
         dataset_test,
@@ -173,5 +180,4 @@ def main(checkpoint: str, useWeights: bool):
         collate_fn=utils.collate_fn,
     )
 
-    device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
     evaluate(model, data_loader_test, device=device)
