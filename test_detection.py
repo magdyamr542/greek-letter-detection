@@ -8,25 +8,20 @@ The mean average precision at 0.5 IOU was 0.16
 import os
 
 import torch
-from PIL import Image, ImageFile, ImageDraw, ImageFont
+from PIL import Image, ImageFile
 
-from cv2_utils import read_image_cv2, resize_image_cv2, save_image_cv2, show_image_cv2
+import frcnn.utils as utils
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
-import cv2
-import numpy as np
 import torchvision
 from torchvision.models.detection.faster_rcnn import (
     FastRCNNPredictor,
     FasterRCNN_ResNet50_FPN_Weights,
 )
-from torchvision.transforms import transforms as T
-from argparse import ArgumentParser
-from constants import label_to_char
-from constants import model_input_size
-import numpy as np
-from utils.get_num_test_images import get_num_test_images
-
+import json
+import frcnn.transforms as T
+from frcnn.engine import evaluate
+from constants import category_to_label
 from sacred import Experiment
 from sacred.observers import FileStorageObserver
 from sacred import SETTINGS
@@ -52,102 +47,96 @@ def load_saved_model(checkpoint_fpath: str, useWeights: bool):
     return model
 
 
-def get_transform(train):
+def get_transform():
     transforms = []
     transforms.append(T.PILToTensor())
     transforms.append(T.ConvertImageDtype(torch.float))
-    if train:
-        transforms.append(T.RandomHorizontalFlip(0.5))
-        transforms.append(T.FixedSizeCrop((672, 672)))
-        transforms.append(T.RandomPhotometricDistort())
     return T.Compose(transforms)
 
 
-def get_image_from_bbox(
-    image: cv2.Mat, bbox: torch.Tensor, name: str, persist=False
-) -> cv2.Mat:
-    xmin, ymin, xmax, ymax = bbox
-    letter_image = image[int(ymin) : int(ymax), int(xmin) : int(xmax)]
-    letter_image = resize_image_cv2(letter_image, (model_input_size, model_input_size))
+class Dataset(torch.utils.data.Dataset):
+    def __init__(self, transforms=None):
 
-    # save if required
-    if persist:
-        fname = os.path.join("data", "cropped", f"{name}.png")
-        save_image_cv2(letter_image, fname)
+        self.transforms = transforms
 
-    return letter_image
+        jFile = open(os.path.join("data", "testing", "coco.json"))
+        self.data = json.load(jFile)
+        jFile.close()
 
+        print(f"Loading dataset with {len(self.data['images'])} images")
 
-def draw_boxes(
-    img_path: str,
-    boxes: torch.Tensor,
-    scores: torch.Tensor,
-    labels: torch.Tensor,
-    img_size,
-):
-    cv2_image = read_image_cv2(img_path)
-    cv2_image = resize_image_cv2(cv2_image, img_size)
+        ids = []
+        for i, _ in enumerate(self.data["images"]):
+            ids.append(i)
 
-    count = 0
-    for box_t, score, label_t in zip(boxes, scores, labels):
-        count += 1
-        predicted_letter_from_detection = label_to_char[label_t.item()]
-        print(
-            {
-                "letter": predicted_letter_from_detection,
-                "prediction_score": score.item(),
-            }
+        self.imgs = ids
+
+    def __getitem__(self, idx):
+        # load images and masks
+        image = self.data["images"][self.imgs[idx]]
+        img_url = image["img_url"].split("/")
+        image_file = img_url[-1]
+        image_folder = img_url[-2]
+        image_id = image["bln_id"]
+        annotations = self.data["annotations"]
+        boxes = []
+        labels = []
+        for annotation in annotations:
+            if image_id == annotation["image_id"]:
+                try:
+                    labels.append(category_to_label[int(annotation["category_id"])])
+                except:
+                    continue
+                x, y, w, h = annotation["bbox"]
+                xmin = x
+                xmax = x + w
+                ymin = y
+                ymax = y + h
+                boxes.append([xmin, ymin, xmax, ymax])
+        # convert everything into a torch.Tensor
+        boxes = torch.as_tensor(boxes, dtype=torch.float32)
+        # there is only one class
+        labels = torch.as_tensor(labels, dtype=torch.int64)
+
+        image_id = torch.tensor([idx])
+        area = (boxes[:, 3] - boxes[:, 1]) * (boxes[:, 2] - boxes[:, 0])
+        # suppose all instances are not crowd
+        num_objs = labels.shape[0]
+        iscrowd = torch.zeros((num_objs,), dtype=torch.int64)
+
+        target = {}
+        target["boxes"] = boxes
+        target["labels"] = labels
+        target["image_id"] = image_id
+        target["area"] = area
+        target["iscrowd"] = iscrowd
+
+        src_folder = os.path.join("data", "testing", "images", "homer2")
+        fname = os.path.join(src_folder, image_folder, image_file)
+        img = Image.open(fname).convert("RGB")
+        img.resize(
+            (1000, round(img.size[1] * 1000.0 / float(img.size[0]))),
+            Image.Resampling.BILINEAR,
         )
+        if self.transforms is not None:
+            img, target = self.transforms(img, target)
+        return img, target
 
-        # draw a bot in the input image to visualize it
-        xmin, ymin, xmax, ymax = box_t
-        start = (int(xmin.item()), int(ymin.item()))
-        end = (int(xmax.item()), int(ymax.item()))
-        cv2_image = cv2.rectangle(cv2_image, start, end, (255, 0, 0), 1)
-
-        cv2_image = put_asci_text(
-            predicted_letter_from_detection, cv2_image, (start[0] + 10, start[1] - 10)
-        )
-
-    return cv2_image
-
-
-def put_asci_text(letter: str, cv2_image, position):
-    """
-    adds the letter and the prediction score at the top of the bounding box
-    """
-    cv2_image = cv2.cvtColor(cv2_image, cv2.COLOR_BGR2RGB)
-    pil_image = Image.fromarray(cv2_image)
-
-    # Draw non-ascii text onto image
-    font = ImageFont.truetype("./assets/dejavu-fonts-ttf-2.37/ttf/DejaVuSerif.ttf", 10)
-    draw = ImageDraw.Draw(pil_image)
-    draw.text(position, letter, font=font)
-
-    # Convert back to Numpy array and switch back from RGB to BGR
-    image = np.asarray(pil_image)
-    image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
-    return image
+    def __len__(self):
+        return len(self.imgs)
 
 
 @ex.config
 def my_config():
     checkpoint = ""
     useWeights = True
-    imagePath = ""
 
 
 @ex.automain
-def main(checkpoint: str, useWeights: bool, imagePath: str):
+def main(checkpoint: str, useWeights: bool):
     if not checkpoint:
         print(
             "Check point not given. use `with checkpoint='<path>'` to provide the used checkpoint"
-        )
-        exit(1)
-
-    if not imagePath:
-        print(
-            "No image was provided. use `with imagePath=<path>` to provide the used image"
         )
         exit(1)
 
@@ -175,18 +164,14 @@ def main(checkpoint: str, useWeights: bool, imagePath: str):
         )
 
     model = load_saved_model(checkpoint, useWeights)
+    dataset_test = Dataset(transforms=get_transform())
+    data_loader_test = torch.utils.data.DataLoader(
+        dataset_test,
+        batch_size=1,
+        shuffle=False,
+        num_workers=1,
+        collate_fn=utils.collate_fn,
+    )
 
-    size = (900, 900)
-    image = Image.open(imagePath).convert("RGB").resize(size)
-    t = get_transform(False)
-    image = t(image)
-
-    result = model([image])
-    boxes: torch.Tensor = result[0]["boxes"]
-    labels: torch.Tensor = result[0]["labels"]
-    scores: torch.Tensor = result[0]["scores"]
-
-    cv2_image = draw_boxes(imagePath, boxes, scores, labels, size)
-    show_image_cv2(cv2_image)
-    cv2.waitKey()
-    cv2.waitKeyEx()
+    device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+    evaluate(model, data_loader_test, device=device)
