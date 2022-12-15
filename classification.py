@@ -276,8 +276,8 @@ def main(
                 ),
                 transforms.RandomAdjustSharpness(2),
                 transforms.RandomAutocontrast(),
-                transforms.RandomHorizontalFlip(),
-                transforms.RandomVerticalFlip(),
+                transforms.RandomRotation(10),
+                transforms.GaussianBlur(11, sigma=(0.1, 2.0)),
                 transforms.ToTensor(),
             ]
         ),
