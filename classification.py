@@ -134,26 +134,6 @@ def train_model(
     return model
 
 
-class ChineseDataWeights(WeightsEnum):
-    w = Weights(
-        url="https://download.pytorch.org/models/classification_model_state_dict.pth",
-        transforms=partial(ImageClassification, crop_size=224),
-        meta={
-            **_COMMON_META,
-            "num_params": 21797672,
-            "recipe": "https://github.com/pytorch/vision/tree/main/references/classification#resnet",
-            "_metrics": {
-                "ImageNet-1K": {
-                    "acc@1": 73.314,
-                    "acc@5": 91.420,
-                }
-            },
-            "_docs": """These weights reproduce closely the results of the paper using a simple training recipe.""",
-        },
-    )
-    DEFAULT = w
-
-
 @ex.capture
 def initialize_model(
     num_classes,
@@ -172,7 +152,7 @@ def initialize_model(
         weights = models.ResNet18_Weights.IMAGENET1K_V1
         if useChineseWeights:
             print("using ChineseDataWeights")
-            weights.url = "https://download.pytorch.org/models/classification_model_state_dict_epoch_50.pth"
+            weights.url = "https://download.pytorch.org/models/classification_model_state_dict.pth"
         else:
             print("using models.ResNet18_Weights.IMAGENET1K_V1")
             weights = models.ResNet18_Weights.IMAGENET1K_V1
