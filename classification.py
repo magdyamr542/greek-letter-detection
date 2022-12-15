@@ -136,7 +136,7 @@ def train_model(
 
 class ChineseDataWeights(WeightsEnum):
     w = Weights(
-        url="https://download.pytorch.org/models/classification_model_state_dict_epoch_50.pth",
+        url="https://download.pytorch.org/models/classification_model_state_dict.pth",
         transforms=partial(ImageClassification, crop_size=224),
         meta={
             **_COMMON_META,
@@ -340,8 +340,8 @@ def main(
                 ),
                 transforms.RandomAdjustSharpness(2),
                 transforms.RandomAutocontrast(),
-                transforms.RandomHorizontalFlip(),
-                transforms.RandomVerticalFlip(),
+                transforms.RandomRotation(10),
+                transforms.GaussianBlur(11, sigma=(0.1, 2.0)),
                 transforms.ToTensor(),
             ]
         ),
