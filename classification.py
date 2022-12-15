@@ -229,7 +229,7 @@ def main(
     Path(trainedModelSaveBasePath).mkdir(parents=True, exist_ok=True)
 
     data_dir = "chinese-data"
-    num_classes = len(os.listdir(os.path.join(data_dir, "images", "training")))
+    num_classes = len(os.listdir(os.path.join(data_dir, "crops", "train")))
     print("number of classes is ", num_classes)
     batch_size = 40
 
