@@ -1,0 +1,52 @@
+number of classes is  800
+Num of epochs given 50
+No checkpoint given
+Will save the trained model to chinese-data/saved_checkpoints/classification_model_checkpoint_epoch_50.pt
+Using device cuda:0
+No saved checkpoint found. will start training from the beginning...
+Start training at 1671122384.904653
+Epoch 0/49
+----------
+Training...
+train Loss: 2.4259 Acc: 0.5216
+Evaluating...
+val Loss: 0.3707 Acc: 0.9138
+Saving checkpoint for epoch 0
+Epoch 1/49
+----------
+Training...
+train Loss: 0.2965 Acc: 0.9328
+Evaluating...
+val Loss: 1.1609 Acc: 0.7281
+Saving checkpoint for epoch 1
+Epoch 2/49
+----------
+Training...
+train Loss: 0.1801 Acc: 0.9605
+Evaluating...
+val Loss: 0.1214 Acc: 0.9718
+Saving checkpoint for epoch 2
+Epoch 3/49
+----------
+Training...
+train Loss: 0.1377 Acc: 0.9718
+Evaluating...
+val Loss: 0.1079 Acc: 0.9767
+Saving checkpoint for epoch 3
+Epoch 4/49
+----------
+Training...
+train Loss: 0.1159 Acc: 0.9774
+Evaluating...
+val Loss: 0.0969 Acc: 0.9786
+Saving checkpoint for epoch 4
+Epoch 5/49
+----------
+Training...
+train Loss: 0.1021 Acc: 0.9808
+Evaluating...
+val Loss: 0.1297 Acc: 0.9732
+Saving checkpoint for epoch 5
+Epoch 6/49
+----------
+Training...

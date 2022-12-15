@@ -1,0 +1,97 @@
+{
+  "artifacts": [],
+  "command": "main",
+  "experiment": {
+    "base_dir": "/data/amrmetwally/greek-letter-detection",
+    "dependencies": [
+      "munch==2.5.0",
+      "numpy==1.21.6",
+      "Pillow==9.2.0",
+      "sacred==0.8.2",
+      "scikit-learn==1.0.2",
+      "torch==1.12.1",
+      "torchvision==0.13.1"
+    ],
+    "mainfile": "classification.py",
+    "name": "Train Classification",
+    "repositories": [
+      {
+        "commit": "fe3f7ca29af27a95704961279958a5120e11b23b",
+        "dirty": false,
+        "url": "git@github.com:magdyamr542/greek-letter-detection.git"
+      }
+    ],
+    "sources": [
+      [
+        "classification.py",
+        "_sources/classification_04a41d160f7838c7f3efe87c8ca900b2.py"
+      ]
+    ]
+  },
+  "heartbeat": "2022-12-15T19:58:13.040039",
+  "host": {
+    "ENV": {},
+    "cpu": "Intel(R) Core(TM) i7-5820K CPU @ 3.30GHz",
+    "gpus": {
+      "driver_version": "470.94",
+      "gpus": [
+        {
+          "model": "NVIDIA GeForce GTX 1080",
+          "persistence_mode": false,
+          "total_memory": 8119
+        },
+        {
+          "model": "NVIDIA GeForce GTX 1080",
+          "persistence_mode": false,
+          "total_memory": 8119
+        },
+        {
+          "model": "NVIDIA GeForce GTX 1080",
+          "persistence_mode": false,
+          "total_memory": 8119
+        }
+      ]
+    },
+    "hostname": "rhea",
+    "os": [
+      "Linux",
+      "Linux-4.19.0-17-amd64-x86_64-with-debian-10.10"
+    ],
+    "python_version": "3.7.3"
+  },
+  "meta": {
+    "command": "main",
+    "options": {
+      "--beat-interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": null,
+      "--force": false,
+      "--help": false,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print-config": false,
+      "--priority": null,
+      "--queue": false,
+      "--s3": null,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [
+        "epochs=50"
+      ],
+      "help": false,
+      "with": true
+    }
+  },
+  "resources": [],
+  "result": null,
+  "start_time": "2022-12-15T16:39:42.597425",
+  "status": "INTERRUPTED",
+  "stop_time": "2022-12-15T19:58:13.041642"
+}
