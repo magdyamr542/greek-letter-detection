@@ -1,0 +1,5 @@
+{
+  "checkpoint": "chinese-data/saved_checkpoints/classification_model_checkpoint_epoch_6.pt",
+  "seed": 528850298,
+  "useWeights": true
+}
