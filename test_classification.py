@@ -81,7 +81,7 @@ def create_data_for_testing(test_data_dir: str):
 
 @ex.capture
 def load_model(data_dir: str, model_path: str):
-    num_classes = len(os.listdir(os.path.join(data_dir, "images", "training")))
+    num_classes = 1000
     print("num classes", num_classes)
     checkpoint = torch.load(model_path, map_location=torch.device("cpu"))
     model = models.resnet18()
