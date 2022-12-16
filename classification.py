@@ -13,6 +13,7 @@ from __future__ import print_function
 from __future__ import division
 import torch
 import torch.nn as nn
+from random import choices
 import torch.optim as optim
 from torchvision import datasets, models, transforms
 import time
@@ -154,49 +155,61 @@ def crops_folder_exist(data_dir):
         return False
 
 
-def create_data(data_dir: str):
+def create_data(data_dir: str, num_classes: int):
     os.mkdir(os.path.join(data_dir, "crops"))
     os.mkdir(os.path.join(data_dir, "crops", "train"))
     os.mkdir(os.path.join(data_dir, "crops", "val"))
 
-    allTrainImages = glob.glob(os.path.join(data_dir, "images", "training", "**/*.png"))
-    print("all images", len(allTrainImages))
-    train, val = train_test_split(allTrainImages, random_state=4)
-    print("training images", len(train))
-    print("validation images", len(val))
-    valLeft = len(val)
-    for valImg in val:
-        imgDir = valImg.split("/")[-2]
-        imgName = valImg.split("/")[-1]
-        if not os.path.exists(os.path.join(data_dir, "crops", "val", imgDir)):
-            os.makedirs(os.path.join(data_dir, "crops", "val", imgDir))
+    allClasses = os.listdir(os.path.join(data_dir, "images", "training"))
+    print(f"creating crops for {num_classes} classes")
 
-        try:
-            im = Image.open(valImg).convert("RGB")
-            im = im.resize((model_input_size, model_input_size))
-            im.save(os.path.join(data_dir, "crops", "val", imgDir, imgName))
-            valLeft -= 1
-            if valLeft % 10 == 0:
-                print("val left", valLeft)
-        except:
-            print("error while saving image", valImg)
+    # pick num_classes labels (dirs)
+    usedClasses = choices(allClasses, k=num_classes)
 
-    trainLeft = len(val)
-    for trainImg in train:
-        imgDir = trainImg.split("/")[-2]
-        imgName = trainImg.split("/")[-1]
-        if not os.path.exists(os.path.join(data_dir, "crops", "train", imgDir)):
-            os.makedirs(os.path.join(data_dir, "crops", "train", imgDir))
+    for usedClass in usedClasses:
+        print(f"creating crops for {usedClass}")
 
-        try:
-            im = Image.open(trainImg).convert("RGB")
-            im = im.resize((model_input_size, model_input_size))
-            im.save(os.path.join(data_dir, "crops", "train", imgDir, imgName))
-            trainLeft = -1
-            if trainLeft % 10 == 0:
-                print("train left", trainLeft)
-        except:
-            print("error while saving image", trainImg)
+        allTrainImages = glob.glob(
+            os.path.join(data_dir, "images", "training", f"{usedClass}/*.png")
+        )
+        print(f"all images for {usedClass}", len(allTrainImages))
+        train, val = train_test_split(allTrainImages, random_state=4)
+        print(f"training images for {usedClass}", len(train))
+        print(f"validation images for {usedClass}", len(val))
+
+        valLeft = len(val)
+        for valImg in val:
+            imgDir = valImg.split("/")[-2]
+            imgName = valImg.split("/")[-1]
+            if not os.path.exists(os.path.join(data_dir, "crops", "val", imgDir)):
+                os.makedirs(os.path.join(data_dir, "crops", "val", imgDir))
+
+            try:
+                im = Image.open(valImg).convert("RGB")
+                im = im.resize((model_input_size, model_input_size))
+                im.save(os.path.join(data_dir, "crops", "val", imgDir, imgName))
+                valLeft -= 1
+                if valLeft % 10 == 0:
+                    print("val left", valLeft)
+            except:
+                print("error while saving image", valImg)
+
+        trainLeft = len(train)
+        for trainImg in train:
+            imgDir = trainImg.split("/")[-2]
+            imgName = trainImg.split("/")[-1]
+            if not os.path.exists(os.path.join(data_dir, "crops", "train", imgDir)):
+                os.makedirs(os.path.join(data_dir, "crops", "train", imgDir))
+
+            try:
+                im = Image.open(trainImg).convert("RGB")
+                im = im.resize((model_input_size, model_input_size))
+                im.save(os.path.join(data_dir, "crops", "train", imgDir, imgName))
+                trainLeft -= 1
+                if trainLeft % 10 == 0:
+                    print("train left", trainLeft)
+            except:
+                print("error while saving image", trainImg)
 
 
 @ex.config
@@ -229,7 +242,7 @@ def main(
     Path(trainedModelSaveBasePath).mkdir(parents=True, exist_ok=True)
 
     data_dir = "chinese-data"
-    num_classes = len(os.listdir(os.path.join(data_dir, "crops", "train")))
+    num_classes = 1000
     print("number of classes is ", num_classes)
     batch_size = 40
 
@@ -250,7 +263,7 @@ def main(
 
     if not crops_folder_exist(data_dir):
         print(f"No crops found. will create them ...")
-        create_data(data_dir)
+        create_data(data_dir, num_classes)
         print(f"Crops were created")
 
     # validate checkpoint
