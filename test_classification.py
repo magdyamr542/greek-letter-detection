@@ -214,7 +214,6 @@ def get_evaluation_for_category(
 def my_config():
     checkpoint = ""
     useWeights = True
-    all_categories = os.listdir(os.path.join("chinese-data", "images", "training"))
 
 
 @ex.automain
