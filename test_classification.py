@@ -142,6 +142,8 @@ def evaluate_model(model) -> int:
         os.path.join("chinese-data", "crops", "train")
     ).class_to_idx
 
+    print("Number of classes in the dataset is", len(class_to_index))
+
     print(f"Will classify {all_crops} crops")
     inputs = [
         (model, categories_dir_path, category_dir, class_to_index)
