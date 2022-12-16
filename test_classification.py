@@ -7,15 +7,14 @@ The mean average precision at 0.5 IOU was 0.16
 """
 
 import glob
-import json
 import os
-import pickle
 from multiprocessing.dummy import Pool
 
+from torchvision import datasets, models, transforms
 import cv2
 import torch
 from PIL import Image, ImageFile
-from typing import List, Tuple, Any
+from typing import Dict, List, Tuple, Any
 import torch.nn as nn
 from torchvision.datasets.dtd import PIL
 from torchvision.transforms import transforms
@@ -139,9 +138,14 @@ def evaluate_model(model) -> int:
         glob.glob(os.path.join(categories_dir_path, "**/*.png"), recursive=True)
     )
 
+    class_to_index = datasets.ImageFolder(
+        os.path.join("chinese-data", "crops", "train")
+    ).class_to_idx
+
     print(f"Will classify {all_crops} crops")
     inputs = [
-        (model, categories_dir_path, category_dir) for category_dir in categories_dirs
+        (model, categories_dir_path, category_dir, class_to_index)
+        for category_dir in categories_dirs
     ]
 
     p = Pool(len(inputs))
@@ -172,9 +176,9 @@ def summarize_evaluation_results(results: List[CategoryEvaluationResult]) -> int
 
 
 def get_evaluation_for_category(
-    input: Tuple[Any, str, str]
+    input: Tuple[Any, str, str, Dict[str, int]]
 ) -> CategoryEvaluationResult:
-    model, category_dir_base, category_dir = input
+    model, category_dir_base, category_dir, class_to_index_map = input
     crops = glob.glob(
         os.path.join(category_dir_base, category_dir, "**/*.png"), recursive=True
     )
@@ -184,13 +188,13 @@ def get_evaluation_for_category(
 
     char = category_dir
 
-    category_index_to_category = {v: k for k, v in class_to_index_chinese_data.items()}
+    index_to_class = {v: k for k, v in class_to_index_map.items()}
 
     print(f"Classifying Category={category_dir} Crops={len(crops)}")
 
     for crop in crops:
 
-        model_char = do_classify(crop, model, category_index_to_category)
+        model_char = do_classify(crop, model, index_to_class)
 
         if model_char == char:
             dir_correct_num_classifications += 1
