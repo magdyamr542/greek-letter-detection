@@ -1,0 +1,9 @@
+{
+  "checkpoint": "",
+  "epochs": 15,
+  "seed": 611379489,
+  "trainedModelName": "classification_model_checkpoint_epoch_15.pt",
+  "trainedModelSaveBasePath": "chinese-data/saved_checkpoints",
+  "trainedModelSavePath": "chinese-data/saved_checkpoints/classification_model_checkpoint_epoch_15.pt",
+  "useWeights": true
+}
