@@ -148,7 +148,7 @@ class Dataset(torch.utils.data.Dataset):
 def my_config():
     checkpoint = ""
     useWeights = True
-    cocoJsonPath = "./data/training/coco.json"
+    cocoJsonPath = "./data/testing/coco.json"
 
 
 @ex.automain
