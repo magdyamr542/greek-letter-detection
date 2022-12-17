@@ -130,6 +130,7 @@ def get_transform(train):
         transforms.append(T.RandomHorizontalFlip(0.5))
         transforms.append(T.FixedSizeCrop((672, 672)))
         transforms.append(T.RandomPhotometricDistort())
+
     return T.Compose(transforms)
 
 
@@ -210,10 +211,11 @@ def main(
     if useWeights:
         if useChineseWeights:
             print("using ChineseDataWeights")
-            FasterRCNN_ResNet50_FPN_Weights.DEFAULT.url = "https://download.pytorch.org/models/classification_model_state_dict_epoch_50.pth"
+            FasterRCNN_ResNet50_FPN_Weights.DEFAULT.url = "https://download.pytorch.org/models/classification_model_state_dict.pth"
         else:
             print("using models.ResNet18_Weights.IMAGENET1K_V1")
             weights = FasterRCNN_ResNet50_FPN_Weights.DEFAULT
+
     model = torchvision.models.detection.fasterrcnn_resnet50_fpn(weights=weights)
     in_features = model.roi_heads.box_predictor.cls_score.in_features
     model.roi_heads.box_predictor = FastRCNNPredictor(in_features, num_classes)
