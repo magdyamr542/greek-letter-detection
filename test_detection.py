@@ -32,6 +32,7 @@ ex = Experiment("Test Detection")
 ex.observers.append(FileStorageObserver("sacred_test_detection"))
 
 
+@ex.capture
 def load_saved_model(
     checkpoint_fpath: str,
     useWeights: bool,
