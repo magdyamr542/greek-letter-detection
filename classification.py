@@ -11,14 +11,10 @@ Validation: Loss 0.6916 and Accuracy 0.81
 
 from __future__ import print_function
 from __future__ import division
-from functools import partial
 import torch
 import torch.nn as nn
 import torch.optim as optim
 from torchvision import datasets, models, transforms
-from torchvision.models._api import WeightsEnum, Weights
-from torchvision.models.resnet import _COMMON_META
-from torchvision.transforms._presets import ImageClassification
 import time
 from PIL import Image
 import json

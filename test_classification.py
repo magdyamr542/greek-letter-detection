@@ -123,12 +123,25 @@ def create_data_for_testing(test_data_dir: str):
 
 
 @ex.capture
-def load_model(model_path: str, useWeights: bool = True):
+def load_model(
+    model_path: str, useWeights: bool = True, useChineseWeights: bool = False
+):
     num_classes = 25
     checkpoint = torch.load(model_path, map_location=torch.device("cpu"))
-    weights = models.ResNet18_Weights.IMAGENET1K_V1 if useWeights else None
+
+    weights = None
+    if useWeights:
+        weights = models.ResNet18_Weights.IMAGENET1K_V1
+        if useChineseWeights:
+            print("using ChineseDataWeights")
+            weights.url = "https://download.pytorch.org/models/classification_model_state_dict.pth"
+        else:
+            print("using models.ResNet18_Weights.IMAGENET1K_V1")
+            weights = models.ResNet18_Weights.IMAGENET1K_V1
+
     if not useWeights:
         print("using the model without the weights ResNet18_Weights.IMAGENET1K_V1")
+
     model = models.resnet18(weights=weights)
     num_ftrs = model.fc.in_features
     model.fc = nn.Linear(num_ftrs, num_classes)
@@ -251,6 +264,7 @@ def get_evaluation_for_category(
 def my_config():
     checkpoint = ""
     useWeights = True
+    useChineseWeights = (False,)
 
 
 @ex.automain
