@@ -3,8 +3,9 @@ import json
 import os
 from pathlib import Path
 import shutil
+from PIL import Image
 from sklearn.model_selection import train_test_split
-
+from constants import model_input_size
 
 # all images
 images = [
@@ -71,10 +72,10 @@ images = [
     {
         "bln_id": 6847,
         "date_captured": None,
-        "file_name": "./images/homer2/txt113/BNU_Pgr_2344fr46.png",
+        "file_name": "./images/homer2/txt113/BNU_Pgr_2344fr46.jpg",
         "height": 552,
         "id": 6847,
-        "img_url": "./images/homer2/txt113/BNU_Pgr_2344fr46.png",
+        "img_url": "./images/homer2/txt113/BNU_Pgr_2344fr46.jpg",
         "license": 9,
         "width": 666,
     },
@@ -1271,10 +1272,10 @@ images = [
     {
         "bln_id": 4191,
         "date_captured": None,
-        "file_name": "./images/homer2/txt69/G_12516_c_Pap1.png",
+        "file_name": "./images/homer2/txt69/G_12516_c_Pap1.jpg",
         "height": 452,
         "id": 4191,
-        "img_url": "./images/homer2/txt69/G_12516_c_Pap1.png",
+        "img_url": "./images/homer2/txt69/G_12516_c_Pap1.jpg",
         "license": 1,
         "width": 578,
     },
@@ -1609,6 +1610,137 @@ def main():
 
         copy_images("training", train_and_validation, train_images_path)
         copy_images("testing", test, test_images_path)
+
+        print("create crops for train")
+        create_crops_for_train_and_val(dirname)
+        print("done crops for train")
+
+        print("create crops for testing")
+        create_crops_for_testing(dirname)
+        print("done crops for testing")
+
+
+def create_crops_for_train_and_val(data_dir):
+    Path(os.path.join(data_dir, "crops")).mkdir(parents=True, exist_ok=True)
+    Path(os.path.join(data_dir, "crops", "train")).mkdir(parents=True, exist_ok=True)
+    Path(os.path.join(data_dir, "crops", "val")).mkdir(parents=True, exist_ok=True)
+
+    try:
+        f = open(os.path.join(data_dir, "coco_train.json"))
+    except:
+        print("No json file was found!")
+        exit(1)
+
+    data = json.load(f)
+    f.close()
+    l = []
+    print(f"creating crops for training with {len(data['images'])} images")
+    images_dir = os.path.join(data_dir, "training")
+    for i, image in enumerate(data["images"]):
+        img_url = image["img_url"][2:]
+        fname = os.path.join(images_dir, img_url)
+        image_id = image["bln_id"]
+        try:
+            Image.open(fname).convert("RGB")
+            l.append(image_id)
+        except Exception as e:
+            print(e)
+            continue
+
+    train, val = train_test_split(l, random_state=8)
+
+    for i, image in enumerate(data["images"]):
+        img_url = image["img_url"][2:]
+        image_id = image["bln_id"]
+        fname = os.path.join(images_dir, img_url)
+        try:
+            im = Image.open(fname).convert("RGB")
+        except:
+            print(f"File not found {fname}")
+            continue
+
+        if image_id in val:
+            split = "val"
+        else:
+            split = "train"
+        for annotation in data["annotations"]:
+            if annotation["image_id"] == image_id:
+                crop_id = annotation["id"]
+                crop_filename = str(image_id) + "_" + str(crop_id) + ".jpg"
+                x, y, w, h = annotation["bbox"]
+
+                crop_directory = annotation["category_id"]
+                crop_directory = os.path.join(
+                    data_dir, "crops", split, str(crop_directory)
+                )
+
+                if not os.path.exists(crop_directory):
+                    os.mkdir(crop_directory)
+
+                path = os.path.join(crop_directory, crop_filename)
+                crop1 = im.crop((x, y, x + w, y + h))
+                crop1 = crop1.resize(
+                    (model_input_size, model_input_size), Image.Resampling.BILINEAR
+                )
+                crop1.save(path, "JPEG", quality=85)
+
+
+def create_crops_for_testing(data_dir: str):
+    Path(os.path.join(data_dir)).mkdir(parents=True, exist_ok=True)
+    Path(os.path.join(data_dir, "crops", "test")).mkdir(parents=True, exist_ok=True)
+
+    # get the coco.json file
+    try:
+        f = open(os.path.join(data_dir, "coco_test.json"))
+    except:
+        print("No json file was found!")
+        raise
+
+    data = json.load(f)
+    f.close()
+    l = []
+
+    print(f"Creating testing crops for {len(data['images'])} images...")
+    images_dir = os.path.join(data_dir, "testing")
+    for i, image in enumerate(data["images"]):
+        img_url = image["img_url"][2:]
+        fname = os.path.join(images_dir, img_url)
+        image_id = image["bln_id"]
+        try:
+            Image.open(fname).convert("RGB")
+            l.append(image_id)
+        except:
+            print(f"Could not open image with id {image_id}")
+            raise
+
+    for i, image in enumerate(data["images"]):
+        img_url = image["img_url"][2:]
+        image_id = image["bln_id"]
+        fname = os.path.join(images_dir, img_url)
+        try:
+            im = Image.open(fname).convert("RGB")
+        except:
+            print(f"Image {fname} does not exist")
+            raise
+
+        for annotation in data["annotations"]:
+            if annotation["image_id"] == image_id:
+                crop_id = annotation["id"]
+                crop_filename = str(image_id) + "_" + str(crop_id) + ".jpg"
+                x, y, w, h = annotation["bbox"]
+
+                crop_directory = annotation["category_id"]
+                crop_directory = os.path.join(
+                    data_dir, "crops", "test", str(crop_directory)
+                )
+                if not os.path.exists(crop_directory):
+                    os.mkdir(crop_directory)
+                path = os.path.join(crop_directory, crop_filename)
+                crop1 = im.crop((x, y, x + w, y + h))
+                crop1 = crop1.resize(
+                    (model_input_size, model_input_size), Image.Resampling.BILINEAR
+                )
+                crop1.save(path, "JPEG", quality=85)
 
 
 if __name__ == "__main__":
