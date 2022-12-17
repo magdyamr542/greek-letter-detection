@@ -255,6 +255,8 @@ def get_evaluation_for_category(
 
         model_char = do_classify(crop, model, index_to_class)
 
+        print(f"char={char} model_char={model_char}")
+
         if model_char == char:
             dir_correct_num_classifications += 1
 
