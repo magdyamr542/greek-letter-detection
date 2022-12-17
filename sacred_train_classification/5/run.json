@@ -16,13 +16,13 @@
     "name": "Train Classification",
     "repositories": [
       {
-        "commit": "4fddf21a7a588c08dad491b72cff8058a264336b",
-        "dirty": false,
+        "commit": "689d1ed9042f46c3c31dbed822dc7488b1e17068",
+        "dirty": true,
         "url": "git@github.com:magdyamr542/greek-letter-detection.git"
       },
       {
-        "commit": "4fddf21a7a588c08dad491b72cff8058a264336b",
-        "dirty": false,
+        "commit": "689d1ed9042f46c3c31dbed822dc7488b1e17068",
+        "dirty": true,
         "url": "git@github.com:magdyamr542/greek-letter-detection.git"
       }
     ],
@@ -37,7 +37,7 @@
       ]
     ]
   },
-  "heartbeat": "2022-12-16T21:58:33.950727",
+  "heartbeat": "2022-12-17T11:30:50.359569",
   "host": {
     "ENV": {},
     "cpu": "Intel(R) Core(TM) i7-5820K CPU @ 3.30GHz",
@@ -92,7 +92,7 @@
       "--unobserved": false,
       "COMMAND": null,
       "UPDATE": [
-        "epochs=50",
+        "epochs=30",
         "useChineseWeights=True"
       ],
       "help": false,
@@ -101,7 +101,7 @@
   },
   "resources": [],
   "result": null,
-  "start_time": "2022-12-16T20:17:33.806682",
+  "start_time": "2022-12-17T10:32:41.430828",
   "status": "COMPLETED",
-  "stop_time": "2022-12-16T21:58:33.949699"
+  "stop_time": "2022-12-17T11:30:50.358531"
 }

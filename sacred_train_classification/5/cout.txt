@@ -1,360 +1,220 @@
-Num of epochs given 50
-Num of test images 31
+Num of epochs given 30
+Num of test images 30
 No checkpoint given
-Will save the trained model to data/training/saved_checkpoints/31_test_images/classification_model_checkpoint_epoch_50.pt
+Will save the trained model to data/training/saved_checkpoints/30_test_images/classification_model_checkpoint_epoch_30.pt
 using ChineseDataWeights
 got here with cached file /home/ametwall/.cache/torch/hub/checkpoints/classification_model_state_dict.pth
 Using device cuda:0
 No saved checkpoint found. will start training from the beginning...
-Start training at 1671221855.3809667
-Epoch 0/49
+Start training at 1671273162.9853044
+Epoch 0/29
 ----------
 Training...
-train Loss: 1.3330 Acc: 0.6081
+train Loss: 1.3575 Acc: 0.5995
 Evaluating...
-val Loss: 0.8731 Acc: 0.7404
+val Loss: 5.3100 Acc: 0.2515
 Saving checkpoint for epoch 0
-Epoch 1/49
+Epoch 1/29
 ----------
 Training...
-train Loss: 0.9062 Acc: 0.7299
+train Loss: 0.9397 Acc: 0.7164
 Evaluating...
-val Loss: 0.8867 Acc: 0.7377
+val Loss: 6.1428 Acc: 0.2656
 Saving checkpoint for epoch 1
-Epoch 2/49
+Epoch 2/29
 ----------
 Training...
-train Loss: 0.8112 Acc: 0.7557
+train Loss: 0.8261 Acc: 0.7517
 Evaluating...
-val Loss: 0.7715 Acc: 0.7662
+val Loss: 6.5281 Acc: 0.2890
 Saving checkpoint for epoch 2
-Epoch 3/49
+Epoch 3/29
 ----------
 Training...
-train Loss: 0.7457 Acc: 0.7759
+train Loss: 0.7585 Acc: 0.7708
 Evaluating...
-val Loss: 0.7316 Acc: 0.7836
+val Loss: 6.3865 Acc: 0.2848
 Saving checkpoint for epoch 3
-Epoch 4/49
+Epoch 4/29
 ----------
 Training...
-train Loss: 0.6921 Acc: 0.7907
+train Loss: 0.6999 Acc: 0.7892
 Evaluating...
-val Loss: 0.7407 Acc: 0.7845
+val Loss: 6.5571 Acc: 0.2880
 Saving checkpoint for epoch 4
-Epoch 5/49
+Epoch 5/29
 ----------
 Training...
-train Loss: 0.6387 Acc: 0.8053
+train Loss: 0.6538 Acc: 0.8017
 Evaluating...
-val Loss: 0.6960 Acc: 0.7985
+val Loss: 7.3429 Acc: 0.2855
 Saving checkpoint for epoch 5
-Epoch 6/49
+Epoch 6/29
 ----------
 Training...
-train Loss: 0.6015 Acc: 0.8152
+train Loss: 0.6108 Acc: 0.8158
 Evaluating...
-val Loss: 0.6848 Acc: 0.8000
+val Loss: 7.1215 Acc: 0.3030
 Saving checkpoint for epoch 6
-Epoch 7/49
+Epoch 7/29
 ----------
 Training...
-train Loss: 0.5568 Acc: 0.8317
+train Loss: 0.5712 Acc: 0.8266
 Evaluating...
-val Loss: 0.7293 Acc: 0.7942
+val Loss: 6.9487 Acc: 0.2948
 Saving checkpoint for epoch 7
-Epoch 8/49
+Epoch 8/29
 ----------
 Training...
-train Loss: 0.5194 Acc: 0.8409
+train Loss: 0.5346 Acc: 0.8341
 Evaluating...
-val Loss: 0.7027 Acc: 0.8034
+val Loss: 6.8264 Acc: 0.2917
 Saving checkpoint for epoch 8
-Epoch 9/49
+Epoch 9/29
 ----------
 Training...
-train Loss: 0.4798 Acc: 0.8525
+train Loss: 0.4963 Acc: 0.8491
 Evaluating...
-val Loss: 0.7356 Acc: 0.7961
+val Loss: 6.8672 Acc: 0.3009
 Saving checkpoint for epoch 9
-Epoch 10/49
+Epoch 10/29
 ----------
 Training...
-train Loss: 0.4446 Acc: 0.8651
+train Loss: 0.4608 Acc: 0.8585
 Evaluating...
-val Loss: 0.7261 Acc: 0.7961
+val Loss: 7.0898 Acc: 0.2894
 Saving checkpoint for epoch 10
-Epoch 11/49
+Epoch 11/29
 ----------
 Training...
-train Loss: 0.4086 Acc: 0.8734
+train Loss: 0.4246 Acc: 0.8696
 Evaluating...
-val Loss: 0.7704 Acc: 0.7930
+val Loss: 7.3654 Acc: 0.2921
 Saving checkpoint for epoch 11
-Epoch 12/49
+Epoch 12/29
 ----------
 Training...
-train Loss: 0.3796 Acc: 0.8838
+train Loss: 0.3891 Acc: 0.8827
 Evaluating...
-val Loss: 0.7652 Acc: 0.7961
+val Loss: 7.6450 Acc: 0.2832
 Saving checkpoint for epoch 12
-Epoch 13/49
+Epoch 13/29
 ----------
 Training...
-train Loss: 0.3417 Acc: 0.8941
+train Loss: 0.3567 Acc: 0.8919
 Evaluating...
-val Loss: 0.7728 Acc: 0.7963
+val Loss: 7.3352 Acc: 0.2902
 Saving checkpoint for epoch 13
-Epoch 14/49
+Epoch 14/29
 ----------
 Training...
-train Loss: 0.3155 Acc: 0.9050
+train Loss: 0.3271 Acc: 0.9013
 Evaluating...
-val Loss: 0.8083 Acc: 0.7903
+val Loss: 7.7012 Acc: 0.2858
 Saving checkpoint for epoch 14
-Epoch 15/49
+Epoch 15/29
 ----------
 Training...
-train Loss: 0.2870 Acc: 0.9133
+train Loss: 0.3066 Acc: 0.9089
 Evaluating...
-val Loss: 0.8006 Acc: 0.7987
+val Loss: 6.9989 Acc: 0.2876
 Saving checkpoint for epoch 15
-Epoch 16/49
+Epoch 16/29
 ----------
 Training...
-train Loss: 0.2572 Acc: 0.9252
+train Loss: 0.2727 Acc: 0.9203
 Evaluating...
-val Loss: 0.8340 Acc: 0.7926
+val Loss: 7.2522 Acc: 0.2923
 Saving checkpoint for epoch 16
-Epoch 17/49
+Epoch 17/29
 ----------
 Training...
-train Loss: 0.2391 Acc: 0.9305
+train Loss: 0.2564 Acc: 0.9256
 Evaluating...
-val Loss: 0.8419 Acc: 0.7948
+val Loss: 7.2966 Acc: 0.2906
 Saving checkpoint for epoch 17
-Epoch 18/49
+Epoch 18/29
 ----------
 Training...
-train Loss: 0.2244 Acc: 0.9354
+train Loss: 0.2294 Acc: 0.9353
 Evaluating...
-val Loss: 0.8492 Acc: 0.7934
+val Loss: 7.1369 Acc: 0.2884
 Saving checkpoint for epoch 18
-Epoch 19/49
+Epoch 19/29
 ----------
 Training...
-train Loss: 0.2036 Acc: 0.9419
+train Loss: 0.2152 Acc: 0.9409
 Evaluating...
-val Loss: 0.8613 Acc: 0.7913
+val Loss: 7.2790 Acc: 0.2886
 Saving checkpoint for epoch 19
-Epoch 20/49
+Epoch 20/29
 ----------
 Training...
-train Loss: 0.1910 Acc: 0.9463
+train Loss: 0.1996 Acc: 0.9438
 Evaluating...
-val Loss: 0.8656 Acc: 0.7942
+val Loss: 7.3144 Acc: 0.2865
 Saving checkpoint for epoch 20
-Epoch 21/49
+Epoch 21/29
 ----------
 Training...
-train Loss: 0.1752 Acc: 0.9522
+train Loss: 0.1879 Acc: 0.9487
 Evaluating...
-val Loss: 0.8919 Acc: 0.7918
+val Loss: 7.1587 Acc: 0.2898
 Saving checkpoint for epoch 21
-Epoch 22/49
+Epoch 22/29
 ----------
 Training...
-train Loss: 0.1657 Acc: 0.9551
+train Loss: 0.1775 Acc: 0.9525
 Evaluating...
-val Loss: 0.9118 Acc: 0.7914
+val Loss: 7.2137 Acc: 0.2906
 Saving checkpoint for epoch 22
-Epoch 23/49
+Epoch 23/29
 ----------
 Training...
-train Loss: 0.1573 Acc: 0.9580
+train Loss: 0.1640 Acc: 0.9577
 Evaluating...
-val Loss: 0.8896 Acc: 0.7920
+val Loss: 7.2678 Acc: 0.2909
 Saving checkpoint for epoch 23
-Epoch 24/49
+Epoch 24/29
 ----------
 Training...
-train Loss: 0.1496 Acc: 0.9602
+train Loss: 0.1611 Acc: 0.9578
 Evaluating...
-val Loss: 0.9004 Acc: 0.7920
+val Loss: 7.2503 Acc: 0.2886
 Saving checkpoint for epoch 24
-Epoch 25/49
+Epoch 25/29
 ----------
 Training...
-train Loss: 0.1428 Acc: 0.9622
+train Loss: 0.1545 Acc: 0.9593
 Evaluating...
-val Loss: 0.9017 Acc: 0.7911
+val Loss: 7.3009 Acc: 0.2912
 Saving checkpoint for epoch 25
-Epoch 26/49
+Epoch 26/29
 ----------
 Training...
-train Loss: 0.1366 Acc: 0.9642
+train Loss: 0.1512 Acc: 0.9610
 Evaluating...
-val Loss: 0.9033 Acc: 0.7922
+val Loss: 7.2625 Acc: 0.2899
 Saving checkpoint for epoch 26
-Epoch 27/49
+Epoch 27/29
 ----------
 Training...
-train Loss: 0.1324 Acc: 0.9675
+train Loss: 0.1451 Acc: 0.9643
 Evaluating...
-val Loss: 0.9151 Acc: 0.7931
+val Loss: 7.3080 Acc: 0.2879
 Saving checkpoint for epoch 27
-Epoch 28/49
+Epoch 28/29
 ----------
 Training...
-train Loss: 0.1341 Acc: 0.9654
+train Loss: 0.1411 Acc: 0.9648
 Evaluating...
-val Loss: 0.9154 Acc: 0.7905
+val Loss: 7.1977 Acc: 0.2884
 Saving checkpoint for epoch 28
-Epoch 29/49
+Epoch 29/29
 ----------
 Training...
-train Loss: 0.1265 Acc: 0.9693
+train Loss: 0.1372 Acc: 0.9648
 Evaluating...
-val Loss: 0.9145 Acc: 0.7902
+val Loss: 7.2718 Acc: 0.2897
 Saving checkpoint for epoch 29
-Epoch 30/49
-----------
-Training...
-train Loss: 0.1223 Acc: 0.9699
-Evaluating...
-val Loss: 0.9156 Acc: 0.7932
-Saving checkpoint for epoch 30
-Epoch 31/49
-----------
-Training...
-train Loss: 0.1257 Acc: 0.9688
-Evaluating...
-val Loss: 0.9206 Acc: 0.7911
-Saving checkpoint for epoch 31
-Epoch 32/49
-----------
-Training...
-train Loss: 0.1213 Acc: 0.9699
-Evaluating...
-val Loss: 0.9184 Acc: 0.7930
-Saving checkpoint for epoch 32
-Epoch 33/49
-----------
-Training...
-train Loss: 0.1200 Acc: 0.9710
-Evaluating...
-val Loss: 0.9192 Acc: 0.7923
-Saving checkpoint for epoch 33
-Epoch 34/49
-----------
-Training...
-train Loss: 0.1181 Acc: 0.9708
-Evaluating...
-val Loss: 0.9207 Acc: 0.7931
-Saving checkpoint for epoch 34
-Epoch 35/49
-----------
-Training...
-train Loss: 0.1184 Acc: 0.9717
-Evaluating...
-val Loss: 0.9340 Acc: 0.7901
-Saving checkpoint for epoch 35
-Epoch 36/49
-----------
-Training...
-train Loss: 0.1180 Acc: 0.9719
-Evaluating...
-val Loss: 0.9344 Acc: 0.7909
-Saving checkpoint for epoch 36
-Epoch 37/49
-----------
-Training...
-train Loss: 0.1169 Acc: 0.9716
-Evaluating...
-val Loss: 0.9119 Acc: 0.7901
-Saving checkpoint for epoch 37
-Epoch 38/49
-----------
-Training...
-train Loss: 0.1104 Acc: 0.9729
-Evaluating...
-val Loss: 0.9226 Acc: 0.7911
-Saving checkpoint for epoch 38
-Epoch 39/49
-----------
-Training...
-train Loss: 0.1178 Acc: 0.9721
-Evaluating...
-val Loss: 0.9291 Acc: 0.7905
-Saving checkpoint for epoch 39
-Epoch 40/49
-----------
-Training...
-train Loss: 0.1125 Acc: 0.9737
-Evaluating...
-val Loss: 0.9272 Acc: 0.7922
-Saving checkpoint for epoch 40
-Epoch 41/49
-----------
-Training...
-train Loss: 0.1146 Acc: 0.9729
-Evaluating...
-val Loss: 0.9216 Acc: 0.7924
-Saving checkpoint for epoch 41
-Epoch 42/49
-----------
-Training...
-train Loss: 0.1135 Acc: 0.9714
-Evaluating...
-val Loss: 0.9295 Acc: 0.7914
-Saving checkpoint for epoch 42
-Epoch 43/49
-----------
-Training...
-train Loss: 0.1143 Acc: 0.9728
-Evaluating...
-val Loss: 0.9334 Acc: 0.7924
-Saving checkpoint for epoch 43
-Epoch 44/49
-----------
-Training...
-train Loss: 0.1138 Acc: 0.9731
-Evaluating...
-val Loss: 0.9182 Acc: 0.7914
-Saving checkpoint for epoch 44
-Epoch 45/49
-----------
-Training...
-train Loss: 0.1135 Acc: 0.9734
-Evaluating...
-val Loss: 0.9278 Acc: 0.7915
-Saving checkpoint for epoch 45
-Epoch 46/49
-----------
-Training...
-train Loss: 0.1099 Acc: 0.9745
-Evaluating...
-val Loss: 0.9277 Acc: 0.7928
-Saving checkpoint for epoch 46
-Epoch 47/49
-----------
-Training...
-train Loss: 0.1111 Acc: 0.9742
-Evaluating...
-val Loss: 0.9289 Acc: 0.7910
-Saving checkpoint for epoch 47
-Epoch 48/49
-----------
-Training...
-train Loss: 0.1097 Acc: 0.9734
-Evaluating...
-val Loss: 0.9230 Acc: 0.7907
-Saving checkpoint for epoch 48
-Epoch 49/49
-----------
-Training...
-train Loss: 0.1143 Acc: 0.9716
-Evaluating...
-val Loss: 0.9339 Acc: 0.7915
-Saving checkpoint for epoch 49
-Training complete in 100m 59s
+Training complete in 58m 7s
