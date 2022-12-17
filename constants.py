@@ -58,39 +58,14 @@ category_to_label = {
     225: 24,
 }
 
-# the categories are sorted in this way because the used dataloader sorts them this was as well
-categories = [
-    100,
-    107,
-    111,
-    119,
-    120,
-    14,
-    144,
-    150,
-    161,
-    169,
-    17,
-    177,
-    186,
-    201,
-    212,
-    225,
-    23,
-    33,
-    45,
-    59,
-    7,
-    77,
-    8,
-    9,
-]
 
-
-def get_data_by_category(category: int):
+def get_data_by_category(category):
     """
     given a category. it returns the category,label,char tuple
     """
+    if isinstance(category, str):
+        category = int(category)
+
     label = category_to_label[category]
     char = label_to_char[label]
     return category, label, char
