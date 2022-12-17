@@ -196,7 +196,7 @@ def evaluate_model(model) -> int:
         glob.glob(os.path.join(categories_dir_path, "**/*.jpg"), recursive=True)
     )
     class_to_index = datasets.ImageFolder(
-        os.path.join("data", "crops", "train")
+        os.path.join("data", "training", "crops", "train")
     ).class_to_idx
 
     print(f"Number of classes in the dataset is {len(class_to_index)}")
