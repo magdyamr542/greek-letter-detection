@@ -15,7 +15,7 @@ from multiprocessing.dummy import Pool
 import cv2
 import torch
 from PIL import Image, ImageFile
-from typing import List, Tuple, Any
+from typing import Dict, List, Tuple, Any
 import torch.nn as nn
 from torchvision.datasets.dtd import PIL
 from torchvision.transforms import transforms
@@ -199,9 +199,12 @@ def evaluate_model(model) -> int:
         os.path.join("data", "crops", "train")
     ).class_to_idx
 
+    print(f"Number of classes in the dataset is {len(class_to_index)}")
+
     print(f"Will classify {all_crops} crops")
     inputs = [
-        (model, categories_dir_path, category_dir) for category_dir in categories_dirs
+        (model, categories_dir_path, category_dir, class_to_index)
+        for category_dir in categories_dirs
     ]
 
     p = Pool(len(inputs))
@@ -232,9 +235,9 @@ def summarize_evaluation_results(results: List[CategoryEvaluationResult]) -> int
 
 
 def get_evaluation_for_category(
-    input: Tuple[Any, str, str]
+    input: Tuple[Any, str, str, Dict[str, int]]
 ) -> CategoryEvaluationResult:
-    model, category_dir_base, category_dir = input
+    model, category_dir_base, category_dir, class_to_index = input
     crops = glob.glob(
         os.path.join(category_dir_base, category_dir, "**/*.jpg"), recursive=True
     )
@@ -244,11 +247,13 @@ def get_evaluation_for_category(
 
     _, __, char = get_data_by_category(int(category_dir))
 
+    index_to_class = {v: k for k, v in class_to_index.items()}
+
     print(f"Classifying Category={category_dir} Crops={len(crops)} Char={char} ...")
 
     for crop in crops:
 
-        model_char = do_classify(crop, model)
+        model_char = do_classify(crop, model, index_to_class)
 
         if model_char == char:
             dir_correct_num_classifications += 1
