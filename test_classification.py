@@ -273,7 +273,7 @@ def get_evaluation_for_category(
 def my_config():
     checkpoint = ""
     useWeights = True
-    useChineseWeights = (False,)
+    useChineseWeights = False
 
 
 @ex.automain

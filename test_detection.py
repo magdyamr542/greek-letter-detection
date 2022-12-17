@@ -33,10 +33,21 @@ ex.observers.append(FileStorageObserver("sacred_test_detection"))
 
 
 def load_saved_model(
-    checkpoint_fpath: str, useWeights: bool, device=torch.device("cpu")
+    checkpoint_fpath: str,
+    useWeights: bool,
+    useChineseWeights: bool = False,
+    device=torch.device("cpu"),
 ):
     num_classes = 25
-    weights = FasterRCNN_ResNet50_FPN_Weights.COCO_V1 if useWeights else None
+
+    weights = None
+    if useWeights:
+        if useChineseWeights:
+            print("using ChineseDataWeights")
+            FasterRCNN_ResNet50_FPN_Weights.DEFAULT.url = "https://download.pytorch.org/models/classification_model_state_dict.pth"
+        else:
+            print("using models.ResNet18_Weights.IMAGENET1K_V1")
+            weights = FasterRCNN_ResNet50_FPN_Weights.DEFAULT
 
     model = torchvision.models.detection.fasterrcnn_resnet50_fpn(weights=weights)
     in_features = model.roi_heads.box_predictor.cls_score.in_features
