@@ -1,0 +1,6 @@
+{
+  "checkpoint": "data/training/saved_checkpoints/30_test_images/classification_model_checkpoint_epoch_30.pt",
+  "seed": 777178061,
+  "useChineseWeights": true,
+  "useWeights": true
+}
