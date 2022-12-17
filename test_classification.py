@@ -19,9 +19,8 @@ from typing import List, Tuple, Any
 import torch.nn as nn
 from torchvision.datasets.dtd import PIL
 from torchvision.transforms import transforms
-from torchvision import models
-from pathlib import Path
-from constants import categories, get_data_by_category, model_input_size
+from torchvision import models, datasets
+from constants import get_data_by_category, model_input_size
 from sacred import Experiment
 from sacred.observers import FileStorageObserver
 from sacred import SETTINGS
@@ -170,7 +169,7 @@ def cv2_image_to_pil_image(cv2_image: cv2.Mat) -> PIL.Image:
     return Image.fromarray(cv2_image)
 
 
-def do_classify(image_path: str, model) -> str:
+def do_classify(image_path: str, model, category_index_to_category={}) -> str:
     """
     classify gets an image path and a model. it returns the classified label
     """
@@ -181,7 +180,7 @@ def do_classify(image_path: str, model) -> str:
 
     result: torch.Tensor = model(input_batch)
     max_index = result.argmax().item()
-    _, __, char = get_data_by_category(categories[max_index])
+    _, __, char = get_data_by_category(category_index_to_category[max_index])
     return char
 
 
@@ -196,6 +195,9 @@ def evaluate_model(model) -> int:
     all_crops = len(
         glob.glob(os.path.join(categories_dir_path, "**/*.jpg"), recursive=True)
     )
+    class_to_index = datasets.ImageFolder(
+        os.path.join("data", "crops", "train")
+    ).class_to_idx
 
     print(f"Will classify {all_crops} crops")
     inputs = [
