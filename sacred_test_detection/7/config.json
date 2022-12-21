@@ -1,0 +1,7 @@
+{
+  "checkpoint": "data/training/saved_detection_checkpoints/30_test_images/detection_model_checkpoint_epoch_40.pt",
+  "cocoJsonPath": "./data/testing/coco.json",
+  "seed": 433810462,
+  "useChineseWeights": true,
+  "useWeights": true
+}

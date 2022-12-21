@@ -1,0 +1,27 @@
+Given checkpoint data/training/saved_detection_checkpoints/30_test_images/detection_model_checkpoint_epoch_40.pt
+Using coco file in ./data/testing/coco.json
+using ChineseDataWeights
+got here with cached file /home/ametwall/.cache/torch/hub/checkpoints/resnet50-0676ba61.pth
+Loading dataset with 30 images
+Evaluating the model ...
+creating index...
+index created!
+Test:  [ 0/30]  eta: 0:02:24  model_time: 4.5527 (4.5527)  evaluator_time: 0.0172 (0.0172)  time: 4.8053  data: 0.1441  max mem: 0
+Test:  [29/30]  eta: 0:00:04  model_time: 4.8670 (4.7714)  evaluator_time: 0.0104 (0.0232)  time: 4.9541  data: 0.0024  max mem: 0
+Test: Total time: 0:02:24 (4.8268 s / it)
+Averaged stats: model_time: 4.8670 (4.7714)  evaluator_time: 0.0104 (0.0232)
+Accumulating evaluation results...
+DONE (t=0.12s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.007
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.015
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.006
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.002
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.005
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.017
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.003
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.009
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.011
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.002
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.007
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.031

@@ -1,0 +1,135 @@
+{
+  "artifacts": [],
+  "command": "main",
+  "experiment": {
+    "base_dir": "/data/amrmetwally/greek-letter-detection",
+    "dependencies": [
+      "munch==2.5.0",
+      "numpy==1.21.6",
+      "Pillow==9.2.0",
+      "sacred==0.8.2",
+      "scikit-learn==1.0.2",
+      "torch==1.12.1",
+      "torchvision==0.13.1"
+    ],
+    "mainfile": "detection.py",
+    "name": "Train Detection",
+    "repositories": [
+      {
+        "commit": "d664cff71f0f5a0c018a8cd9cde530683d6d8693",
+        "dirty": true,
+        "url": "git@github.com:magdyamr542/greek-letter-detection.git"
+      },
+      {
+        "commit": "d664cff71f0f5a0c018a8cd9cde530683d6d8693",
+        "dirty": true,
+        "url": "git@github.com:magdyamr542/greek-letter-detection.git"
+      },
+      {
+        "commit": "d664cff71f0f5a0c018a8cd9cde530683d6d8693",
+        "dirty": true,
+        "url": "git@github.com:magdyamr542/greek-letter-detection.git"
+      },
+      {
+        "commit": "d664cff71f0f5a0c018a8cd9cde530683d6d8693",
+        "dirty": true,
+        "url": "git@github.com:magdyamr542/greek-letter-detection.git"
+      },
+      {
+        "commit": "d664cff71f0f5a0c018a8cd9cde530683d6d8693",
+        "dirty": true,
+        "url": "git@github.com:magdyamr542/greek-letter-detection.git"
+      }
+    ],
+    "sources": [
+      [
+        "detection.py",
+        "_sources/detection_c27a5c0b9c2858bdd1e104b2e6e6434a.py"
+      ],
+      [
+        "frcnn/engine.py",
+        "_sources/engine_82212f9c9f5e96db8f885dd174fc058b.py"
+      ],
+      [
+        "frcnn/transforms.py",
+        "_sources/transforms_9b94ca6d00775610113807e07efec0d0.py"
+      ],
+      [
+        "frcnn/utils.py",
+        "_sources/utils_f81d3ed1f6b47a4e839acb7cc3a11f5f.py"
+      ],
+      [
+        "utils/get_num_test_images.py",
+        "_sources/get_num_test_images_0d64258387d810f3ffc498df9d0e02ea.py"
+      ]
+    ]
+  },
+  "heartbeat": "2022-12-17T15:25:14.092198",
+  "host": {
+    "ENV": {},
+    "cpu": "Intel(R) Core(TM) i7-5820K CPU @ 3.30GHz",
+    "gpus": {
+      "driver_version": "470.94",
+      "gpus": [
+        {
+          "model": "NVIDIA GeForce GTX 1080",
+          "persistence_mode": false,
+          "total_memory": 8119
+        },
+        {
+          "model": "NVIDIA GeForce GTX 1080",
+          "persistence_mode": false,
+          "total_memory": 8119
+        },
+        {
+          "model": "NVIDIA GeForce GTX 1080",
+          "persistence_mode": false,
+          "total_memory": 8119
+        }
+      ]
+    },
+    "hostname": "rhea",
+    "os": [
+      "Linux",
+      "Linux-4.19.0-17-amd64-x86_64-with-debian-10.10"
+    ],
+    "python_version": "3.7.3"
+  },
+  "meta": {
+    "command": "main",
+    "options": {
+      "--beat-interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": null,
+      "--force": false,
+      "--help": false,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print-config": false,
+      "--priority": null,
+      "--queue": false,
+      "--s3": null,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [
+        "epochs=40",
+        "useChineseWeights=True",
+        "useWeights=True"
+      ],
+      "help": false,
+      "with": true
+    }
+  },
+  "resources": [],
+  "result": null,
+  "start_time": "2022-12-17T14:57:04.093565",
+  "status": "COMPLETED",
+  "stop_time": "2022-12-17T15:25:14.091423"
+}
